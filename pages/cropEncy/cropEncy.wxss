@@ -1,0 +1,80 @@
+/* 导航栏布局相关 */
+.navbar {
+    width: 100%;
+     height: 90rpx;
+    /* 文本不换行 */
+    white-space: nowrap;
+    display: flex;
+    box-sizing: border-box;
+    border-bottom: 1rpx solid #eee;
+    background: #fff;
+    align-items: center;
+    /* 固定在顶部 */
+    position: fixed;
+    left: 0rpx;
+    top: 80rpx;
+  }
+  
+  .nav-item {
+    padding-left: 25rpx;
+    padding-right: 25rpx;
+    height: 100%;
+    display: inline-block;
+    /* 普通文字大小 */
+    font-size: 28rpx;
+  }
+  
+  .nav-text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 4rpx;
+    box-sizing: border-box;
+  }
+  
+  .tab-on {
+    color: #fbbd08;
+    /* 选中放大 */
+    font-size: 38rpx !important;
+    font-weight: 600;
+    border-bottom: 4rpx solid #fbbd08 !important;
+  }
+  /* 固定搜索框 */
+  .search-input {
+      position: fixed;
+      top: 0rpx;
+      left: 0rpx;
+      width: 100%;
+  }
+  .main {
+      margin-top: 180rpx;
+  }
+  .main-body {
+      width: 100%;
+      height: 300rpx;
+      display: flex;
+      border-bottom: 1px solid #dbdbdb;  
+  }
+  .main-img {
+      height: 250rpx;
+  }
+  .main-name {
+      font-weight: 600;
+      font-size: 50rpx;
+      padding-top: 25rpx;
+  }
+  .mian-line {
+      background-color: #7aac36;
+      width: 150rpx;
+      height: 5px;
+  }
+  .main-intro {
+      padding-top: 20rpx;
+      font-size: 30rpx;
+      font-weight: 100;
+  }
+  .none {
+      display: none;
+  }

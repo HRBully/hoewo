@@ -1,0 +1,27 @@
+<!-- 导航栏 -->
+<ab-search-bar placeholder="请输入关键字" value="{{searchValue}}" bindinput="searchInput" bindsearch="searchTab" bindclear="searchClear" class="search-input"/>
+<scroll-view scroll-x class="navbar {{viewBoolean ? 'none':''}}" scroll-with-animation scroll-left="{{scrollLeft}}rpx" >
+  <view class="nav-item" wx:for="{{tabs}}" wx:key="id" bindtap="tabSelect" data-id="{{index}}">
+    <view class="nav-text {{index==tabCur?'tab-on':''}}">{{item.name}}</view>
+  </view>
+</scroll-view>
+<view class="main {{viewBoolean ? 'none':''}}">
+    <view wx:for="{{crops}}" wx:key="id"  class="main-body">
+        <image src="{{item.img}}" class="main-img"></image>
+        <view class="main-text">
+            <view class="main-name">{{item.name}}</view>
+            <view class="mian-line"></view>
+            <view class="main-intro">{{item.intro}}</view>
+        </view>
+    </view>
+</view>
+<view class="main {{viewBoolean ? '':'none'}}">
+    <view wx:for="{{crop}}" wx:key="id"  class="main-body">
+        <image src="{{item.img}}" class="main-img"></image>
+        <view class="main-text">
+            <view class="main-name">{{item.name}}</view>
+            <view class="mian-line"></view>
+            <view class="main-intro">{{item.intro}}</view>
+        </view>
+    </view>
+</view>

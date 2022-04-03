@@ -1,0 +1,20 @@
+{
+  "pages":[
+    "pages/cropEncy/cropEncy",
+    "pages/cropsDetails/cropsDetails",
+    "pages/index/index",
+    "pages/logs/logs",
+    "components/searchInput/searchInput"
+  ],
+  "usingComponents": {
+    
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

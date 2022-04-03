@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ab-search-bar": "../../components/searchInput/searchInput"
+  },
+  "navigationBarTitleText": "农业百科"
+}
