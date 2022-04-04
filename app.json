@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/weather/weather",
     "pages/cropEncy/cropEncy",
+    "pages/weather/weather",
     "pages/cropsDetails/cropsDetails",
     "pages/index/index",
     "pages/logs/logs",

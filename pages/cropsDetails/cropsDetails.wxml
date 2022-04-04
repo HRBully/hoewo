@@ -1,2 +1,3 @@
 <!--pages/cropsDetails/cropsDetails.wxml-->
-<text>pages/cropsDetails/cropsDetails.wxml</text>
+<import src="../../wxParse/wxParse"></import>
+<template is="wxParse" data="{{wxParseData:rich.nodes}}"/>
