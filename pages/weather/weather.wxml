@@ -9,7 +9,7 @@
 			<view class="date">（{{ liveData.liveDate }}）</view>
 		</view>
 		<!-- 更新时间 -->
-		<view class="update">{{ liveData.liveTime }} 更新
+		<view class="update" bindtap="onRefreshBtnClick">{{ liveData.liveTime }} 更新
 			<image class="refreshIcon" src="../../images/refresh.png"></image>
 		</view>
 	</view>

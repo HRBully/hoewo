@@ -49,10 +49,19 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        var that = this;
-        var myAmapFun = new amapFile.AMapWX({key:'8a2664519056bb501bc81cc5caed1594'});
+        this.getLiveWeather()
+        this.getForecastWeather()
+    },
+    /**
+     * 获取实时天气
+     */
+    getLiveWeather(){
+        wx.showToast({ title: '正在加载...', icon: 'loading', duration: 2000000 });
+        let that = this;
+        let myAmapFun = new amapFile.AMapWX({key:'8a2664519056bb501bc81cc5caed1594'});
         myAmapFun.getWeather({
             success: function(data){
+                wx.hideToast();
                 //成功回调
                 const {liveData} = data
                 const date = liveData.reporttime
@@ -62,17 +71,31 @@ Page({
                 that.setData({
                     liveData:liveData
                 })
-                console.log(liveData)
             },
-            fail: function(info){
+            fail: function(error){
+                wx.hideToast();
                 //失败回调
-                console.log(info)
+                if (error) {
+                console.error(error)
+                wx.showModal({ title: '请求失败', content: "请不要多次重复请求，间隔一会儿再来试试吧~", showCancel: false });
+                } else {
+                wx.showModal({ title: '请求超时', content: '请检查网络设置', showCancel: false });
+                }
             }
         })
+    },
+    /**
+     * 获取天气预报
+     */
+    getForecastWeather(){
+        wx.showToast({ title: '正在加载...', icon: 'loading', duration: 2000000 });
+        let that = this;
+        let myAmapFun = new amapFile.AMapWX({key:'8a2664519056bb501bc81cc5caed1594'});
         myAmapFun.getWeather({
             type:'forecast',
             success: function(data){
                 //成功回调
+                wx.hideToast();
                 const {forecast} = data
                 forecast.casts[0].date = "明天"
                 forecast.casts[1].date = "后天"
@@ -84,13 +107,23 @@ Page({
                     forecast:forecast
                 })
             },
-            fail: function(info){
+            fail: function(error){
                 //失败回调
-                console.log(info)
+                wx.hideToast();
+                if (error) {
+                wx.showModal({ title: '请求失败', content: "请不要多次重复请求，间隔一会儿再来试试吧~", showCancel: false });
+                } else {
+                wx.showModal({ title: '请求超时', content: '请检查网络设置', showCancel: false });
+                }
             }
         })
     },
-
+    /**
+     * 更新、刷新实时天气
+     */
+    onRefreshBtnClick(){
+        this.getLiveWeather()  
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
