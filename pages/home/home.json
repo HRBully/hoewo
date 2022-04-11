@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "Header": "/components/headBar/headBar"
+  },
   "navigationBarTitleText": "锄禾",
   "navigationStyle": "custom"
 }

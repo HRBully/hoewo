@@ -1,0 +1,85 @@
+/* components/headBar/headBar.wxss */
+/* components/customHeader/index.wxss */
+
+.customHeader_box {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+.customIcon {
+    flex: 1;
+}
+
+.customIcon image {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+/* 菜单 */
+.menu_box{
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: absolute;
+    left: 10px;
+    z-index: 11;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu_box .customIcon image{
+    width: 36rpx;
+    height: 36rpx;
+}
+
+/* 返回+首页 */
+
+.backHome_box {
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: absolute;
+    left: 10px;
+    z-index: 11;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.backIcon {
+    border-right: 1rpx solid #e5e5e5;
+}
+
+/* 标题 */
+
+.customHeader_title {
+    width: 100%;
+    padding-left: 115px;
+    padding-right: 115px;
+    text-align: center;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+}
+
+/* 自定义顶部距离修正 */
+.customWrap{
+    width: 100%;
+    position: relative;
+    left: 0;
+    z-index: 99998;
+}

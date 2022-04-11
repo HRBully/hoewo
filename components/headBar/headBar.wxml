@@ -1,0 +1,26 @@
+<view class="customHeader_box" style="height:{{titleHeight}}px; background-color:{{bgColor}};">
+    <!-- 菜单 -->
+    <view wx:if="{{menuFlag}}" class="menu_box" style="height:{{capsuleObj.height}}px; top:{{capsuleObj.top}}px;">
+        <view class="customIcon" bindtap="meunClick">
+            <image src="../../images/location.png"></image>
+        </view>
+    </view>
+
+    <!-- 返回+首页 -->
+    <view wx:if="{{backHomeFlag}}" class="backHome_box" style="width:{{capsuleObj.width}}px; height:{{capsuleObj.height}}px; top:{{capsuleObj.top}}px;">
+        <view class="customIcon backIcon" bindtap="backClick">
+            <image src="/images/customBack.png"></image>
+        </view>
+        <view class="customIcon homeIcon" bindtap="homeClick">
+            <image src="/images/customHome.png"></image>
+        </view>
+    </view>
+
+    <!-- 标题 -->
+    <view class="customHeader_title" style="top:{{capsuleObj.top}}px; height:{{capsuleObj.height}}px; line-height:{{capsuleObj.height}}px;">
+        {{customTitle}}
+    </view>
+</view>
+
+<!-- 自定义顶部距离修正 -->
+<view class="customWrap" style="height:{{titleHeight}}px;"></view>

@@ -1,12 +1,36 @@
 {
   "pages":[
+    "pages/home/home",
     "pages/weather/weather",
     "pages/cropEncy/cropEncy",
     "pages/cropsDetails/cropsDetails",
-    "pages/index/index",
+    "pages/addCrop/addCrop",
     "pages/logs/logs",
-    "components/searchInput/searchInput"
+    "pages/person/person",
+    "components/searchInput/searchInput",
+    "components/headBar/headBar"
   ],
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#6cd793",
+    "borderStyle":"white",
+    "list":[{
+      "selectedIconPath": "images/home.png",
+      "iconPath": "images/sechome.png",
+      "pagePath": "pages/home/home",
+      "text": "首页"
+    },{
+      "selectedIconPath": "images/add.png",
+      "iconPath": "images/secadd.png",
+      "pagePath": "pages/addCrop/addCrop",
+      "text": "添加"
+    },{
+      "selectedIconPath": "images/person.png",
+      "iconPath": "images/secperson.png",
+      "pagePath": "pages/person/person",
+      "text": "个人"
+    }]
+  },
   "permission": {
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序位置接口的效果展示"

@@ -1,2 +1,20 @@
 <!--pages/person/person.wxml-->
-<text>pages/person/person.wxml</text>
+<view class="head" wx:if="{{!isLogin}}">
+    <image src="../../images/head.png" class="head-img"></image>
+    <view class="head-name" bindtap="login">点击登录</view>
+</view>
+<view class="head" wx:else>
+    <image src="{{userImg}}" class="head-img"></image>
+    <view class="head-name">{{userName}}</view>
+</view>
+<scroll-view scroll-x class="navbar " scroll-with-animation scroll-left="{{scrollLeft}}rpx">
+    <view class="nav-item" wx:for="{{tabs}}" wx:key="id" bindtap="tabSelect" data-id="{{index}}">
+        <view class="nav-text {{index==tabCur?'tab-on':''}}">{{item.name}}</view>
+    </view>
+</scroll-view>
+<view wx:if="{{!tabCur}}">
+    种植
+</view>
+<view wx:if="{{tabCur}}">
+    设置
+</view>
