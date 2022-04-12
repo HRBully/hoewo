@@ -52,3 +52,41 @@
     font-weight: 600;
     border-bottom: 4rpx solid #6cd793 !important;
   }
+
+  .set {
+    margin-top: 50rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .set-list {
+    width: 600rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .set-list .set-list-text {
+    padding: 20rpx;
+    display: flex;
+  }
+  .set-list-img image{
+    width: 20px;
+    height: 20px;
+  }
+  .set-list-arrow {
+    padding: 20rpx;
+  }
+  .set-list-arrow image{
+    width: 20px;
+    height: 20px;
+  }
+  .divLine {
+    background: #E0E3DA;
+    width: 100%;
+    height: 5rpx;
+  }
+  .set-outlog {
+    margin-top: 40rpx;
+    background-color: #e93325;
+    color: white;
+  }

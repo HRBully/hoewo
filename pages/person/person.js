@@ -15,6 +15,11 @@ Page({
                 id: 1
             },
         ],
+        setitems: [
+            { text: '意见反馈', url: '#', icon: '', tips: '', arrows: '' },
+            { text: '关于我们', url: '#', icon: '', tips: '', arrows: '' },
+            { text: '联系客服', url: '#', icon: '', tips: '', arrows: '' }
+          ]
     },
 
     onLoad: function (options) {

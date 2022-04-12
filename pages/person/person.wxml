@@ -1,7 +1,7 @@
 <!--pages/person/person.wxml-->
-<view class="head" wx:if="{{!isLogin}}">
+<view class="head" wx:if="{{!isLogin}}" bindtap="login">
     <image src="../../images/head.png" class="head-img"></image>
-    <view class="head-name" bindtap="login">点击登录</view>
+    <view class="head-name" >点击登录</view>
 </view>
 <view class="head" wx:else>
     <image src="{{userImg}}" class="head-img"></image>
@@ -15,6 +15,33 @@
 <view wx:if="{{!tabCur}}">
     种植
 </view>
-<view wx:if="{{tabCur}}">
-    设置
+<view wx:if="{{tabCur}}" class="set">
+    <view class="set-body">
+        <block wx:for="{{setitems}}" wx:key="setitem">
+            <navigator url="item.url" class="set-list">
+                <view class="set-list-text">
+                    <view class="set-list-img">
+                    <image src="../../images/home.png"></image>
+                </view>{{item.text}}</view>
+                <view class="set-list-arrow">
+                    <image src="../../images/arrow.png"></image>
+                </view>
+            </navigator>
+            <view class="divLine"></view>
+        </block>
+        <!--位置授权-->
+        <block>
+            <navigator url="item.url" class="set-list">
+                <view class="set-list-text">
+                    <view class="set-list-img">
+                    <image src="../../images/home.png"></image>
+                </view>位置授权</view>
+                <view class="set-list-arrow">
+                    <image src="../../images/arrow.png"></image>
+                </view>
+            </navigator>
+            <view class="divLine"></view>
+        </block>
+        <button class="set-outlog">退出登录</button>
+    </view>
 </view>
