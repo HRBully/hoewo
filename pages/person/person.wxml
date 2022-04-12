@@ -21,27 +21,30 @@
             <navigator url="item.url" class="set-list">
                 <view class="set-list-text">
                     <view class="set-list-img">
-                    <image src="../../images/home.png"></image>
-                </view>{{item.text}}</view>
+                        <image src="../../images/home.png"></image>
+                    </view>
+                    {{item.text}}
+                </view>
                 <view class="set-list-arrow">
                     <image src="../../images/arrow.png"></image>
                 </view>
             </navigator>
-            <view class="divLine"></view>
+            <view class="divLine" ></view>
         </block>
         <!--位置授权-->
         <block>
-            <navigator url="item.url" class="set-list">
+            <view class="set-list" bindtap="openSetting">
                 <view class="set-list-text">
                     <view class="set-list-img">
                     <image src="../../images/home.png"></image>
-                </view>位置授权</view>
-                <view class="set-list-arrow">
+                </view>授权设置</view>
+                <view class="set-list-arrow " >
                     <image src="../../images/arrow.png"></image>
                 </view>
-            </navigator>
-            <view class="divLine"></view>
+            </view>
+            <view class="divLine" ></view>
         </block>
-        <button class="set-outlog">退出登录</button>
+        <button class="set-outlog" wx:if="{{isLogin}}" bindtap="outLog">退出登录</button>
+
     </view>
 </view>

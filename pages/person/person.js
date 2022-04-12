@@ -4,7 +4,7 @@ Page({
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         isHide: true,
         isLogin: false,
-        openid:'',
+        openid: '',
         tabCur: 0, //默认选中
         tabs: [{
                 name: '种植',
@@ -15,11 +15,28 @@ Page({
                 id: 1
             },
         ],
-        setitems: [
-            { text: '意见反馈', url: '#', icon: '', tips: '', arrows: '' },
-            { text: '关于我们', url: '#', icon: '', tips: '', arrows: '' },
-            { text: '联系客服', url: '#', icon: '', tips: '', arrows: '' }
-          ]
+        setitems: [{
+                text: '意见反馈',
+                url: '#',
+                icon: '',
+                tips: '',
+                arrows: ''
+            },
+            {
+                text: '关于我们',
+                url: '#',
+                icon: '',
+                tips: '',
+                arrows: ''
+            },
+            {
+                text: '联系客服',
+                url: '#',
+                icon: '',
+                tips: '',
+                arrows: ''
+            }
+        ]
     },
 
     onLoad: function (options) {
@@ -35,14 +52,24 @@ Page({
                 title: '未登录',
                 icon: 'none',
                 duration: 1500
-              })
+            })
             this.setData({
                 isLogin: false
             })
         }
     },
+    openSetting() {
+        if(this.data.isLogin) {
+            wx.openSetting()
+        }else {
+            wx.showToast({
+                title: '请先登录',
+                icon: 'none',
+                duration: 1500
+            })
+        }
+    },
     login() {
-
         console.log(1)
         wx.getUserProfile({
                 desc: '用户完善会员资料',
@@ -52,13 +79,13 @@ Page({
                     title: '登录成功',
                     icon: 'success',
                     duration: 2000
-                  })
+                })
                 wx.setStorageSync('userInfo', res.userInfo)
                 wx.cloud.callFunction({
                     name: 'login',
                 }).then(res => {
                     this.setData({
-                        openid:res.result.openid
+                        openid: res.result.openid
                     })
                     wx.setStorageSync('openid', res.result.openid)
                 })
@@ -71,6 +98,23 @@ Page({
             .catch(err => {
                 console.log("用户拒绝了微信授权登录", err);
             })
+    },
+    outLog() {
+        wx.showModal({
+            title: '提示',
+            content: '是否退出当前账号'
+        }).then(res => {
+            if (res.confirm) {
+                this.setData({
+                    isLogin: false,
+                    userImg: '',
+                    userName: ''
+                })
+                wx.clearStorage()
+            } else if (res.cancel) {
+
+            }
+        })
     },
     tabSelect(e) {
         this.setData({

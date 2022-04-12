@@ -64,10 +64,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
   .set-list .set-list-text {
     padding: 20rpx;
     display: flex;
+  }
+  .set-list-img {
+    margin-right: 20rpx;
   }
   .set-list-img image{
     width: 20px;
@@ -75,6 +79,7 @@
   }
   .set-list-arrow {
     padding: 20rpx;
+    line-height: 1;
   }
   .set-list-arrow image{
     width: 20px;
@@ -86,7 +91,10 @@
     height: 5rpx;
   }
   .set-outlog {
-    margin-top: 40rpx;
+    margin-top: 100rpx;
     background-color: #e93325;
     color: white;
+  }
+  .set-switch {
+    padding-right: 0rpx;
   }

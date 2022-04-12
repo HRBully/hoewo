@@ -37,6 +37,9 @@
     }
   },
   "lazyCodeLoading": "requiredComponents",
+  "requiredBackgroundModes":[
+    "location"
+  ],
   "usingComponents": {
     
   },
