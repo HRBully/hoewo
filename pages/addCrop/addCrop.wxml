@@ -1,2 +1,23 @@
-<!--pages/addCrop/addCrop.wxml-->
-<text>pages/addCrop/addCrop.wxml</text>
+<!-- 
+    list：最外层结构
+    book-item：单元格渲染模块
+    book-poster：书籍配图
+    book-info：书籍介绍
+    book-collect：加入收藏按钮
+    book-info-title：书籍名称/标题
+    book-info-other：书籍缩略介绍
+ -->
+<view class="book-list">
+    <view class="book-item">
+        <view class="book-poster">
+            <image src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8cb255da618249d0857e6ecfc5017340~tplv-k3u1fbpfcp-watermark.image?" />
+        </view>
+        <view class="book-info">
+            <view class="book-info-title">深入浅出Vite</view>
+            <view class="book-info-other">这是一个简短的介绍,这是一个简短的介绍,这是一个简短的介绍</view>
+        </view>
+        <view class="book-collect">
+            <text>加入收藏</text>
+        </view>
+    </view>
+</view>
