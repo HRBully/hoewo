@@ -7,17 +7,25 @@
     book-info-title：书籍名称/标题
     book-info-other：书籍缩略介绍
  -->
+
 <view class="book-list">
-    <view class="book-item">
+    <view class="book-item" wx:for="{{books}}" wx:key="id">
         <view class="book-poster">
-            <image src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8cb255da618249d0857e6ecfc5017340~tplv-k3u1fbpfcp-watermark.image?" />
+            <image src="{{item.img}}" />
         </view>
         <view class="book-info">
-            <view class="book-info-title">深入浅出Vite</view>
-            <view class="book-info-other">这是一个简短的介绍,这是一个简短的介绍,这是一个简短的介绍</view>
+            <view class="book-info-title">{{item.title}}</view>
+            <view class="book-info-other">{{item.intro}}</view>
         </view>
         <view class="book-collect">
             <text>加入收藏</text>
         </view>
     </view>
+</view>
+<view class="loader" wx:if="{{isLoader}}">
+    <view class="dot"></view>
+    <view class="dot"></view>
+    <view class="dot"></view>
+    <view class="dot"></view>
+    <view class="dot"></view>
 </view>

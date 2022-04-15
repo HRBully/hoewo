@@ -25,7 +25,7 @@ Page({
     viewBoolean: false
   },
   onLoad: function () {
-    wx.cloud.database().collection('crops').get()
+    wx.cloud.database().collection('crops').limit(1).get()
       .then(res => {
         console.log(res.data)
         this.setData({
@@ -37,7 +37,7 @@ Page({
   tabSelect(e) {
     let name = this.data.tabs[e.currentTarget.dataset.id].name
     if (name === "全部") {
-      wx.cloud.database().collection('crops').get()
+      wx.cloud.database().collection('crops').skip(this.data.crops.length).limit(2).get()
         .then(res => {
           console.log(res.data)
           this.setData({
@@ -46,8 +46,8 @@ Page({
         })
     } else {
       wx.cloud.database().collection('crops').where({
-          kind: name
-        }).get()
+          done:false
+        }).limit(2).get()
         .then(res => {
           this.setData({
             crops: res.data
