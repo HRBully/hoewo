@@ -1,4 +1,3 @@
-// pages/addCrop/addCrop.js
 Page({
 
     /**
@@ -15,15 +14,31 @@ Page({
     onLoad: function (options) {
         this.loadBooks(this.data.books.length)
     },
+    /**
+     * 生命周期函数--监听页面显示
+     * 显示调用loadbooks加载函数
+     */
     onShow: function () {
+        // 显示后重新加载
         this.setData({
             books: []
         })
         this.loadBooks(this.data.books.length)
     },
+     /**
+     * 加载函数--加载百科数据
+     * 1. 调用获取用户收藏接口，拿到用户收藏数据
+     * 2. 调用获取百科数据，从n开始，长度为6
+     * skip(n)：从数据库的第n项开始
+     * limit(6)：获取6项
+     * 3. 筛选百科获取的数组内包含用户所收藏的数据，来控制收藏样式
+     * 4. 合并数组
+     */
     loadBooks: function (n) {
         let openid = wx.getStorageSync('openid')
+        // 判断是否登录
         if (openid) {
+            // 收藏接口
             wx.cloud.database().collection('collects').where({
                     _openid: openid
                 }).get()
@@ -31,9 +46,11 @@ Page({
                     let arr = res.data
                     console.log("arr",arr)
                     console.log(arr.length)
+                    // 百科接口
                     wx.cloud.database().collection('books').skip(n).limit(6).get().then(res => {
                         let books = res.data
                         console.log(books, arr)
+                        // 筛选用户是否收藏
                         books.forEach(item => {
                             for (let i = 0; i < arr.length; i++) {
                                 console.log(item.title, arr[i].title)
@@ -42,6 +59,7 @@ Page({
                                 }
                             }
                         })
+                        // 合并数组
                         this.setData({
                             books: this.data.books.concat(books)
                         })
@@ -54,6 +72,7 @@ Page({
                 icon: 'none',
                 duration: 1500
             })
+            // 未登录无需筛选
             wx.cloud.database().collection('books').skip(n).limit(6).get().then(res => {
                 console.log(res.data)
                 this.setData({
@@ -63,6 +82,12 @@ Page({
         }
 
     },
+     /**
+     * 添加收藏函数
+     * 1. 判断登录
+     * 2. 寻找收藏目标下标
+     * 3. 调用添加接口为数据库添加收藏数据
+     */
     addCollect: function (e) {
         let openid = wx.getStorageSync('openid')
         if (openid) {
@@ -95,6 +120,11 @@ Page({
             })
         }
     },
+     /**
+     * 移除收藏函数
+     * 调用移除收藏接口
+     * where：根据特定的键值对来对数据进行删除
+     */
     removeCollect(e) {
         let collect = e.currentTarget.dataset.item
         let openid = wx.getStorageSync('openid')
@@ -107,6 +137,7 @@ Page({
                 wx.showToast({
                     title: '取消收藏成功',
                 })
+                // 样式控制
                 let index = this.data.books.findIndex(item => item.title === collect.title)
                 this.setData({
                     ['books[' + index + '].isCollect']: false
@@ -114,6 +145,11 @@ Page({
             }
         })
     },
+     /**
+     * 生命周期函数--监听用户触底动作
+     * 控制动画
+     * 调用加载函数，以当前数据为基准进行数据获取
+     */
     onReachBottom: function () {
         this.setData({
             isLoader: true
@@ -136,13 +172,16 @@ Page({
             title: '刷新中...',
         })
         let openid = wx.getStorageSync('openid')
+        // 登录判断
         if (openid) {
+            // 用户收藏接口
             wx.cloud.database().collection('collects').where({
                     _openid: openid
                 }).get()
                 .then(res => {
                     let arr = res.data
                     console.log(arr)
+                    // 刷新页面，从0开始获取，并直接覆盖原来数组
                     wx.cloud.database().collection('books').skip(0).limit(6).get().then(res => {
                         let books = res.data
                         console.log(books, arr)

@@ -54,19 +54,6 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle":"black"
   },
-  "tabBar": {
-    "backgroundColor":"",
-    "list": [{
-      "pagePath": "pages/home/home",
-      "text": "首页"
-    }, {
-      "pagePath": "pages/addCrop/addCrop",
-      "text": "新建"
-    },{
-      "pagePath": "pages/person/person",
-      "text": "个人"
-    }]
-  },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
