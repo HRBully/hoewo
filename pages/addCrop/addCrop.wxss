@@ -73,7 +73,20 @@
     position: relative;
     z-index: 2;
 }
-
+.book-item .book-uncollect text {
+    height: 60rpx;
+    line-height: 60rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    border-radius: 30rpx;
+    background-color: #f0f7ff;
+    font-size: 28rpx;
+    font-weight: 500;
+    text-align: center;
+    color: #f87b5b;
+    position: relative;
+    z-index: 2;
+  }
 .loader {
     position: absolute;
     left: 40%;

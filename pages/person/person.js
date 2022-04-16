@@ -6,8 +6,9 @@ Page({
         isLogin: false,
         openid: '',
         tabCur: 0, //默认选中
+        collects:[],
         tabs: [{
-                name: '种植',
+                name: '收藏',
                 id: 0
             },
             {
@@ -40,28 +41,15 @@ Page({
     },
 
     onLoad: function (options) {
-        let userInfo = wx.getStorageSync('userInfo')
-        if (userInfo) {
-            this.setData({
-                isLogin: true,
-                userImg: userInfo.avatarUrl,
-                userName: userInfo.nickName
-            })
-        } else {
-            wx.showToast({
-                title: '未登录',
-                icon: 'none',
-                duration: 1500
-            })
-            this.setData({
-                isLogin: false
-            })
-        }
+       this.isLogin()
+    },
+    onShow() {
+       this.isLogin()
     },
     openSetting() {
-        if(this.data.isLogin) {
+        if (this.data.isLogin) {
             wx.openSetting()
-        }else {
+        } else {
             wx.showToast({
                 title: '请先登录',
                 icon: 'none',
@@ -87,6 +75,7 @@ Page({
                     this.setData({
                         openid: res.result.openid
                     })
+                    this.getCollects(res.result.openid)
                     wx.setStorageSync('openid', res.result.openid)
                 })
                 this.setData({
@@ -94,6 +83,7 @@ Page({
                     userImg: res.userInfo.avatarUrl,
                     userName: res.userInfo.nickName
                 })
+                
             })
             .catch(err => {
                 console.log("用户拒绝了微信授权登录", err);
@@ -122,4 +112,53 @@ Page({
             scrollLeft: (e.currentTarget.dataset.id - 2) * 200
         })
     },
+    getCollects(openid) {
+        wx.cloud.database().collection('collects').where({
+            _openid: openid
+        }).get()
+        .then(res => {
+            console.log(res.data)
+            this.setData({
+                collects:res.data
+            })
+        })
+    },
+    isLogin() {
+        let userInfo = wx.getStorageSync('userInfo')
+        if (userInfo) {
+        let openid = wx.getStorageSync('openid')
+            this.setData({
+                isLogin: true,
+                userImg: userInfo.avatarUrl,
+                userName: userInfo.nickName
+            })
+            this.getCollects(openid)
+        } else {
+            wx.showToast({
+                title: '未登录',
+                icon: 'none',
+                duration: 1500
+            })
+            this.setData({
+                isLogin: false
+            })
+        }
+    },
+    removeCollect(e) {
+        let collect = e.currentTarget.dataset.item
+        wx.cloud.database().collection('collects').doc(collect._id).remove({
+            success:res => {
+                console.log(res)
+                wx.showToast({
+                  title: '取消收藏成功',
+                })
+                let arr = this.data.collects.filter( item => {
+                    return item._id !== collect._id
+                })
+                this.setData({
+                    collects: arr
+                })
+            }
+        })
+    }
 })

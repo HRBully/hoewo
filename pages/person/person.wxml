@@ -13,7 +13,23 @@
     </view>
 </scroll-view>
 <view wx:if="{{!tabCur}}">
-    种植
+    <view class="book-list">
+    <view class="book-item" wx:for="{{collects}}" wx:key="id">
+        <view class="book-poster">
+            <image src="{{item.img}}" />
+        </view>
+        <view class="book-info">
+            <view class="book-info-title">{{item.title}}</view>
+            <view class="book-info-other">{{item.intro}}</view>
+        </view>
+        <view class="book-collect" bindtap="addCollect" data-item="{{item}}" wx:if="{{!item.isCollect}}">
+            <text>加入收藏</text>
+        </view>
+        <view class="book-uncollect" bindtap="removeCollect" data-item="{{item}}" wx:else="{{!item.isCollect}}">
+            <text>取消收藏</text>
+        </view>
+    </view>
+</view>
 </view>
 <view wx:if="{{tabCur}}" class="set">
     <view class="set-body">
