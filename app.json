@@ -1,10 +1,7 @@
 {
   "pages":[
     "pages/home/home",
-<<<<<<< Updated upstream
     "pages/weather/weather",
-    "pages/cropEncy/cropEncy",
-    "pages/cropsDetails/cropsDetails",
     "pages/addCrop/addCrop",
     "pages/logs/logs",
     "pages/person/person",
@@ -39,15 +36,14 @@
   },
   "lazyCodeLoading": "requiredComponents",
   "requiredBackgroundModes":[
-    "location"
-=======
+    "location",
     "pages/cropEncy/cropEncy",
     "pages/cropsDetails/cropsDetails",
     "pages/person/person",
     "pages/logs/logs",
     "pages/addCrop/addCrop",
     "components/searchInput/searchInput"
->>>>>>> Stashed changes
+
   ],
   "usingComponents": {
     
