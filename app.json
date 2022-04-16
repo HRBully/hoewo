@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/home/home",
+<<<<<<< Updated upstream
     "pages/weather/weather",
     "pages/cropEncy/cropEncy",
     "pages/cropsDetails/cropsDetails",
@@ -39,15 +40,36 @@
   "lazyCodeLoading": "requiredComponents",
   "requiredBackgroundModes":[
     "location"
+=======
+    "pages/cropEncy/cropEncy",
+    "pages/cropsDetails/cropsDetails",
+    "pages/person/person",
+    "pages/logs/logs",
+    "pages/addCrop/addCrop",
+    "components/searchInput/searchInput"
+>>>>>>> Stashed changes
   ],
   "usingComponents": {
     
   },
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#35d492",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "backgroundColor":"",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/addCrop/addCrop",
+      "text": "新建"
+    },{
+      "pagePath": "pages/person/person",
+      "text": "个人"
+    }]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

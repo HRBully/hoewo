@@ -25,7 +25,11 @@ Page({
     viewBoolean: false
   },
   onLoad: function () {
+<<<<<<< Updated upstream
     wx.cloud.database().collection('crops').limit(1).get()
+=======
+    wx.cloud.database().collection('crops').get()
+>>>>>>> Stashed changes
       .then(res => {
         console.log(res.data)
         this.setData({
@@ -37,7 +41,11 @@ Page({
   tabSelect(e) {
     let name = this.data.tabs[e.currentTarget.dataset.id].name
     if (name === "全部") {
+<<<<<<< Updated upstream
       wx.cloud.database().collection('crops').skip(this.data.crops.length).limit(2).get()
+=======
+      wx.cloud.database().collection('crops').get()
+>>>>>>> Stashed changes
         .then(res => {
           console.log(res.data)
           this.setData({
@@ -46,12 +54,18 @@ Page({
         })
     } else {
       wx.cloud.database().collection('crops').where({
+<<<<<<< Updated upstream
           done:false
         }).limit(2).get()
+=======
+          kind: name
+        }).get()
+>>>>>>> Stashed changes
         .then(res => {
           this.setData({
             crops: res.data
           })
+<<<<<<< Updated upstream
         })
     }
 
@@ -110,4 +124,64 @@ Page({
     })
   }
 
+=======
+        })
+    }
+
+    this.setData({
+      tabCur: e.currentTarget.dataset.id,
+      scrollLeft: (e.currentTarget.dataset.id - 2) * 200
+    })
+  },
+  searchInput: function (e) {
+    if (e.detail.value !== "") {
+      this.setData({
+        viewBoolean: true
+      })
+    } else {
+      this.setData({
+        viewBoolean: false,
+        crop: []
+      })
+    }
+
+  },
+  /**
+   * 搜索框清除监听
+   */
+  searchClear: function (e) {
+    this.setData({
+      viewBoolean: false,
+      crop: []
+    })
+  },
+  /**
+   * 搜索框右侧按钮点击监听
+   */
+  searchTab: function (e) {
+    let _key = e.detail.key;
+    let _value = e.detail.value;
+    if (_key === 'search') {
+      console.log('searchTab >>> search');
+      console.log(e.detail.value);
+    } else if (_key === 'back') {
+      console.log('searchTab >>> back');
+      console.log(e.detail);
+    }
+    wx.cloud.database().collection('crops').where({
+        name: e.detail.value
+      }).get()
+      .then(res => {
+        this.setData({
+          crop: res.data
+        })
+      })
+  },
+  cropClick(e) {
+    console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url:'../../pages/cropsDetails/cropsDetails?id='+ e.currentTarget.dataset.id,
+    })
+  }
+>>>>>>> Stashed changes
 })

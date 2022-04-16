@@ -6,7 +6,11 @@
     </view>
 </scroll-view>
 <view class="main {{viewBoolean ? 'none':''}}">
+<<<<<<< Updated upstream
     <view wx:for="{{crops}}" wx:key="id" class="main-body" bindtap="cropsDetails" data-id="{{item._id}}">
+=======
+    <view wx:for="{{crops}}" wx:key="id"  class="main-body" bindtap="cropClick" data-id="{{item._id}}">
+>>>>>>> Stashed changes
         <image src="{{item.img}}" class="main-img"></image>
         <view class="main-text">
             <view class="main-name">{{item.name}}</view>
@@ -16,7 +20,11 @@
     </view>
 </view>
 <view class="main {{viewBoolean ? '':'none'}}">
+<<<<<<< Updated upstream
     <view wx:for="{{crop}}" wx:key="id" class="main-body" bindtap="cropsDetails" data-id="{{item._id}}">
+=======
+    <view wx:for="{{crop}}" wx:key="id"  class="madin-body" data-id="{{item._id}}">
+>>>>>>> Stashed changes
         <image src="{{item.img}}" class="main-img"></image>
         <view class="main-text">
             <view class="main-name">{{item.name}}</view>

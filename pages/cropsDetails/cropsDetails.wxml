@@ -1,3 +1,10 @@
+<<<<<<< Updated upstream
 <!--pages/cropsDetails/cropsDetails.wxml-->
 <import src="../../wxParse/wxParse"></import>
 <template is="wxParse" data="{{wxParseData:rich.nodes}}"/>
+=======
+<import src="../../wxParse/wxParse"></import>
+<view>
+    <template is="wxParse" data="{{wxParseData:courseDetail.nodes}}" />
+</view>
+>>>>>>> Stashed changes
