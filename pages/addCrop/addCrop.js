@@ -29,7 +29,8 @@ Page({
                 }).get()
                 .then(res => {
                     let arr = res.data
-                    console.log(arr)
+                    console.log("arr",arr)
+                    console.log(arr.length)
                     wx.cloud.database().collection('books').skip(n).limit(6).get().then(res => {
                         let books = res.data
                         console.log(books, arr)
