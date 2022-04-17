@@ -50,10 +50,7 @@ function wxParse(bindName = 'wxParseData', type='html', data='<div class="color:
   that.setData(bindData)
   that.wxParseImgLoad = wxParseImgLoad;
   that.wxParseImgTap = wxParseImgTap;
-<<<<<<< Updated upstream
-=======
   return transData
->>>>>>> Stashed changes
 }
 // 图片点击事件
 function wxParseImgTap(e) {

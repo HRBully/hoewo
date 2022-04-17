@@ -12,7 +12,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.loadBooks(this.data.books.length)
+        // this.loadBooks(this.data.books.length)
     },
     /**
      * 生命周期函数--监听页面显示
@@ -20,10 +20,12 @@ Page({
      */
     onShow: function () {
         // 显示后重新加载
+        console.log("----------------")
         this.setData({
             books: []
         })
         this.loadBooks(this.data.books.length)
+        // this.loadBooks(0)
     },
      /**
      * 加载函数--加载百科数据
@@ -33,6 +35,11 @@ Page({
      * limit(6)：获取6项
      * 3. 筛选百科获取的数组内包含用户所收藏的数据，来控制收藏样式
      * 4. 合并数组
+     */
+    /**
+     * deBug: 首次加载数据不能过于少  数据高度未触底导致页面死掉，无法进行触底加载，数据充足的前提可以首次加载8-10个数据 当前：7
+     * deBug: 页面加载跟onShow重复渲染 数据加倍， 取消页面加载渲染，用onshow来热更新数据，每次从零开始请求刷新数据
+     * deBug：修复个人页取消收藏样式bug，跟这个页面之前一样
      */
     loadBooks: function (n) {
         let openid = wx.getStorageSync('openid')
@@ -47,9 +54,10 @@ Page({
                     console.log("arr",arr)
                     console.log(arr.length)
                     // 百科接口
-                    wx.cloud.database().collection('books').skip(n).limit(6).get().then(res => {
+                    wx.cloud.database().collection('books').skip(n).limit(7).get().then(res => {
                         let books = res.data
-                        console.log(books, arr)
+                        console.log("books", books)
+                        console.log(books.length)
                         // 筛选用户是否收藏
                         books.forEach(item => {
                             for (let i = 0; i < arr.length; i++) {
@@ -63,6 +71,7 @@ Page({
                         this.setData({
                             books: this.data.books.concat(books)
                         })
+                        console.log("现在数据总数",this.data.books.length)
                     })
                 })
 

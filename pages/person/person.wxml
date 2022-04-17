@@ -22,11 +22,9 @@
             <view class="book-info-title">{{item.title}}</view>
             <view class="book-info-other">{{item.intro}}</view>
         </view>
-        <view class="book-collect" bindtap="addCollect" data-item="{{item}}" wx:if="{{!item.isCollect}}">
-            <text>加入收藏</text>
-        </view>
-        <view class="book-uncollect" bindtap="removeCollect" data-item="{{item}}" wx:else="{{!item.isCollect}}">
-            <text>取消收藏</text>
+        <view class="book-collect" >
+            <text bindtap="addCollect" data-item="{{item}}" wx:if="{{!item.isCollect}}">加入收藏</text>
+            <text bindtap="removeCollect" data-item="{{item}}" wx:else="{{!item.isCollect}}">取消收藏</text>
         </view>
     </view>
 </view>
