@@ -1,0 +1,5 @@
+<!--components/location/location.wxml-->
+<view class="container" bindtap="onClick">
+    <view class="location">{{location}}</view>
+    <view class="triangular"></view>
+</view>

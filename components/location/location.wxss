@@ -1,0 +1,13 @@
+/* components/location/location.wxss */
+.container {
+    display: flex;
+    color: white;
+}
+.triangular {
+    width: 0px;
+    height: 0px;
+    margin-top: 19rpx;
+    margin-left: 10rpx;
+    border: 15rpx solid transparent;
+    border-top-color: white;
+}
