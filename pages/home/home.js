@@ -5,7 +5,10 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        // 主题（背景）颜色
+        themeColor: '#90e0a8',
+        month: 0,
+        day: 0,
     },
 
     /**
@@ -19,14 +22,19 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
+        
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        let date = new Date()
+        console.log(date);
+        this.setData({
+            day: date.getDate(),
+            month: date.getMonth() + 1
+        })
     },
 
     /**
