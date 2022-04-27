@@ -1,6 +1,63 @@
 /* pages/home/home.wxss */
+.container {
+    height: 100%;
+}
 .header {
     background-color: #35d492;
     width: 100%;
     height: 100rpx;
+}
+.home-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 26rpx 40rpx;
+    height: 210rpx;
+    color: white;
+}
+.title-left {
+    display: flex;
+    flex-direction: column;
+}
+.remain-time {
+    font-size: 24rpx;
+}
+.current-time {
+    font-size: 52rpx;
+    padding-top: 15rpx;
+}
+.verse {
+    font-size: 20rpx;
+    padding-top: 10rpx;
+}
+.solarTerm {
+    font-family: '华文行楷';
+    width: 35rpx;
+    font-size: 40rpx;
+}
+.article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    width: 705rpx;
+    margin:20rpx auto ;
+    border-radius: 40rpx;
+}
+.article-select {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 614rpx;
+    font-size: 40rpx;
+    color: #5c5c5c;
+    line-height: 66rpx;
+}
+.select {
+    width: 298rpx;
+    height: 66rpx;
+    border-bottom: solid 4rpx #7d7d7d;
+}
+.active {
+    border-bottom: solid 4rpx #39a863;
 }

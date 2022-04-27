@@ -1,0 +1,12 @@
+<!--components/mesCard/mesCard.wxml-->
+<view class="card">
+    <!-- 文字标题 -->
+    <view class="title">{{mescontent.title}}</view>
+    <!-- 文字主体 -->
+    <view class="content">
+        <!-- 图片 -->
+        <image src="{{mescontent.src}}" wx:if="{{imgflag}}" class="img"></image>
+        <!-- 文章 -->
+        <view class="message">{{mescontent.message}}</view>
+    </view>
+</view>

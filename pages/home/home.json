@@ -1,7 +1,8 @@
 {
   "usingComponents": {
-    "Header": "/components/headBar/headBar"
+    "Header": "/components/headBar/headBar",
+    "x-weather": "/components/weather/weather",
+    "x-card": "/components/mesCard/mesCard"
   },
-  "navigationBarTitleText": "锄禾",
   "navigationStyle": "custom"
 }

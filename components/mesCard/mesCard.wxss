@@ -1,0 +1,36 @@
+/* components/mesCard/mesCard.wxss */
+.card {
+    height: 140rpx;
+    width: 614rpx;
+    border-bottom: 1rpx solid #ebebeb;
+    margin-top: 12rpx;
+}
+
+.title {
+    color: #5c5c5c;
+    height: 35rpx;
+    font-size: 30rpx;
+    font-weight: 800;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.content {
+    display: flex;
+}
+.img {
+    width: 110rpx;
+    height: 95rpx;
+}
+.message {
+    height: 89rpx;
+    color: #7d7d7d;
+    font-size: 20rpx;
+    margin-top: 10rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    /* 只显示三行 */
+    -webkit-line-clamp: 3;
+}

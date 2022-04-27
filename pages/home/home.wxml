@@ -1,2 +1,38 @@
 <!--pages/home/home.wxml-->
 <Header menuFlag customTitle="首页"></Header>
+<view class="container" style="background-color: {{themeColor}};">
+    <!-- 文字日期诗句 -->
+    <view class="home-title">
+        <!-- 日期，诗句 -->
+        <view class="title-left">
+            <!-- 距离节气日期 -->
+            <view class="remain-time">距离{{solarTerm}}还有{{remainTime}}天</view>
+            <!-- 今日日期 -->
+            <view class="current-time">{{month}}月{{day}}日</view>
+            <!-- 节气诗句 -->
+            <block wx:for="{{verse}}">
+                <view class="verse">{{item}}</view>
+            </block>
+
+        </view>
+        <!-- 节气 -->
+        <view class="solarTerm">{{solarTerm}}</view>
+    </view>
+    <!-- 天气 -->
+    <view>
+        <x-weather></x-weather>
+    </view>
+    <!-- 文章 -->
+    <view class="article">
+        <!-- 文章选择类型 -->
+        <view class="article-select">
+            <view class="select {{selectFlag?'active':''}}" bindtap="toConsult">咨询</view>
+            <view class="select {{selectFlag?'':'active'}}" bindtap="toNews">新闻</view>
+        </view>
+        <!-- 文章列表 -->
+        <block wx:for="{{consult}}">
+            <x-card mescontent="{{item}}"></x-card>
+        </block>
+        
+    </view>
+</view>
