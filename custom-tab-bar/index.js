@@ -1,6 +1,7 @@
 // custom-tab-bar/index.js
 const app = getApp()
-let season = 'spring'
+
+let season = wx.getStorageSync('season')
 Component({
     /**
      * 组件的属性列表
