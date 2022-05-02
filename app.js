@@ -26,5 +26,6 @@ App({
   },
   globalData: {
     loginStatus: false,
+    selected: 0,// tabbar跳转页面index
   },
 })

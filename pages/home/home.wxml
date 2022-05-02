@@ -10,7 +10,7 @@
             <!-- 今日日期 -->
             <view class="current-time">{{month}}月{{day}}日</view>
             <!-- 节气诗句 -->
-            <block wx:for="{{verse}}">
+            <block wx:for="{{verse}}" wx:key="index">
                 <view class="verse">{{item}}</view>
             </block>
 
@@ -30,9 +30,9 @@
             <view class="select {{selectFlag?'':'active'}}" bindtap="toNews">新闻</view>
         </view>
         <!-- 文章列表 -->
-        <block wx:for="{{consult}}">
+        <block wx:for="{{consult}}" wx:key="index">
             <x-card mescontent="{{item}}"></x-card>
         </block>
-        
     </view>
 </view>
+<x-tabbar></x-tabbar>

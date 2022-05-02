@@ -8,15 +8,29 @@ Page({
      * 页面的初始数据
      */
     data: {
-        // 主题（背景）颜色
-        themeColor: '#90e0a8',
+        themeColor: '#90e0a8',// 主题（背景）颜色
+        tabbarColor: '#37b565',// tabbar颜色
         month: 0,// 今月
         day: 0,// 今天
         remainTime: 0,// 剩余时间
         solarTerm: '夏至',// 节气
         verse: [],// 诗句
-        selectFlag: true,// 控制文章类型边框样式,
+        selectFlag: true,// 控制文章类型边框样式
         consult: [],// 咨询信息
+    },
+    // 判断季节
+    judgeSeason(month) {
+        switch (true) {
+            case month >= 3 && month <= 5:
+                this.setData({
+                    tabbarColor: '#fff'
+                })
+                break
+        }
+    },
+    // 设置主题
+    setTheme() {
+
     },
     // 获取节气信息
     getSolarTerm() {
@@ -153,12 +167,23 @@ Page({
         account = 0
         this.getNews()
     },
+    // 解决需要点击两次 tabbar 图标才会变换
+    changeIcon() {
+        if (typeof this.getTabBar === 'function' &&
+            this.getTabBar()) {
+            this.getTabBar().setData({
+                selected: 0
+            })
+        }
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
         this.getSolarTerm()
         this.getConsult()
+        this.judgeSeason(this.data.month)
+        console.log(options.index);
     },
 
     /**
@@ -172,7 +197,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this.changeIcon()
     },
 
     /**

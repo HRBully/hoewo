@@ -6,45 +6,46 @@ Page({
         isLogin: false,
         openid: '',
         tabCur: 0, //默认选中
-        collects:[],
+        collects: [],
         tabs: [{
-                name: '收藏',
-                id: 0
-            },
-            {
-                name: '设置',
-                id: 1
-            },
+            name: '收藏',
+            id: 0
+        },
+        {
+            name: '设置',
+            id: 1
+        },
         ],
         setitems: [{
-                text: '意见反馈',
-                url: '#',
-                icon: '',
-                tips: '',
-                arrows: ''
-            },
-            {
-                text: '关于我们',
-                url: '#',
-                icon: '',
-                tips: '',
-                arrows: ''
-            },
-            {
-                text: '联系客服',
-                url: '#',
-                icon: '',
-                tips: '',
-                arrows: ''
-            }
+            text: '意见反馈',
+            url: '#',
+            icon: '',
+            tips: '',
+            arrows: ''
+        },
+        {
+            text: '关于我们',
+            url: '#',
+            icon: '',
+            tips: '',
+            arrows: ''
+        },
+        {
+            text: '联系客服',
+            url: '#',
+            icon: '',
+            tips: '',
+            arrows: ''
+        }
         ]
     },
 
     onLoad: function (options) {
-       this.isLogin()
+        this.isLogin()
     },
     onShow() {
-       this.isLogin()
+        this.changeIcon()
+        this.isLogin()
     },
     openSetting() {
         if (this.data.isLogin) {
@@ -60,8 +61,8 @@ Page({
     login() {
         console.log(1)
         wx.getUserProfile({
-                desc: '用户完善会员资料',
-            })
+            desc: '用户完善会员资料',
+        })
             .then(res => {
                 wx.showToast({
                     title: '登录成功',
@@ -83,7 +84,7 @@ Page({
                     userImg: res.userInfo.avatarUrl,
                     userName: res.userInfo.nickName
                 })
-                
+
             })
             .catch(err => {
                 console.log("用户拒绝了微信授权登录", err);
@@ -116,17 +117,17 @@ Page({
         wx.cloud.database().collection('collects').where({
             _openid: openid
         }).get()
-        .then(res => {
-            console.log(res.data)
-            this.setData({
-                collects:res.data
+            .then(res => {
+                console.log(res.data)
+                this.setData({
+                    collects: res.data
+                })
             })
-        })
     },
     isLogin() {
         let userInfo = wx.getStorageSync('userInfo')
         if (userInfo) {
-        let openid = wx.getStorageSync('openid')
+            let openid = wx.getStorageSync('openid')
             this.setData({
                 isLogin: true,
                 userImg: userInfo.avatarUrl,
@@ -147,12 +148,12 @@ Page({
     removeCollect(e) {
         let collect = e.currentTarget.dataset.item
         wx.cloud.database().collection('collects').doc(collect._id).remove({
-            success:res => {
+            success: res => {
                 console.log(res)
                 wx.showToast({
-                  title: '取消收藏成功',
+                    title: '取消收藏成功',
                 })
-                let arr = this.data.collects.filter( item => {
+                let arr = this.data.collects.filter(item => {
                     return item._id !== collect._id
                 })
                 this.setData({
@@ -160,5 +161,14 @@ Page({
                 })
             }
         })
-    }
+    },
+    // 解决需要点击两次 tabbar 图标才会变换
+    changeIcon() {
+        if (typeof this.getTabBar === 'function' &&
+            this.getTabBar()) {
+            this.getTabBar().setData({
+                selected: 3
+            })
+        }
+    },
 })
