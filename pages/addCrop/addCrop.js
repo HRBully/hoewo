@@ -46,6 +46,9 @@ Page({
         let openid = wx.getStorageSync('openid')
         // 判断是否登录
         if (openid) {
+            wx.showLoading({
+                title: '加载中',
+            })
             // 收藏接口
             wx.cloud.database().collection('collects').where({
                 _openid: openid
@@ -72,6 +75,7 @@ Page({
                         this.setData({
                             books: this.data.books.concat(books)
                         })
+                        wx.hideLoading()
                         console.log("现在数据总数", this.data.books.length)
                     })
                 })

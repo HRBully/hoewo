@@ -7,7 +7,7 @@
     book-info-title：书籍名称/标题
     book-info-other：书籍缩略介绍
  -->
-
+<Header menuFlag customTitle="百科"></Header>
 <view class="book-list">
     <view class="book-item" wx:for="{{books}}" wx:key="id">
         <view class="book-poster">
@@ -16,10 +16,6 @@
         <view class="book-info">
             <view class="book-info-title">{{item.title}}</view>
             <view class="book-info-other">{{item.intro}}</view>
-        </view>
-        <view class="book-collect">
-            <text bindtap="addCollect" data-item="{{item}}" wx:if="{{!item.isCollect}}">加入收藏</text>
-            <text bindtap="removeCollect" data-item="{{item}}" wx:else="{{!item.isCollect}}">取消收藏</text>
         </view>
     </view>
 </view>

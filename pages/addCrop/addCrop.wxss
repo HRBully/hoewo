@@ -15,8 +15,8 @@
 }
 
 .book-item .book-poster {
-    width: 132rpx;
-    height: 164rpx;
+    width: 190rpx;
+    height: 130rpx;
     flex-shrink: 0;
     box-shadow: 3px 4px 12px 0 rgb(0 0 0 / 20%);
     overflow: hidden;
@@ -35,21 +35,26 @@
     flex-grow: 1;
     overflow: hidden;
     box-sizing: border-box;
-    font-size: 30rpx;
     color: #2e3135;
 }
 
 .book-info .book-info-title {
-    font-size: 36rpx;
-    font-weight: 700;
+    font-size: 30rpx;
+    color: #313131;
+    font-weight: 600;
 }
 
 .book-info .book-info-other {
     flex-direction: column;
     align-items: flex-start;
-    font-size: 28rpx;
-    color: #71777c;
-    margin-top: 12rpx
+    font-size: 25rpx;
+    color: #535353;
+    margin-top: 12rpx;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .book-item .book-collect {

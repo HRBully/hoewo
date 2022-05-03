@@ -1,5 +1,8 @@
 {
-  "usingComponents": {},
+    "usingComponents": {
+        "Header": "/components/headBar/headBar"
+      },
   "enablePullDownRefresh": true,
-  "navigationBarTitleText": "百科"
+  "navigationBarTitleText": "百科",
+  "navigationStyle": "custom"
 }
