@@ -57,7 +57,7 @@ Page({
                 let solarTerm = data.name
                 let time = data.time.split('-')
                 // 将季节存储到storage中
-                wx.setStorageSync('season', data.season)
+             
                 // 将获取到的节气日期由字符串转数字,用于去0
                 year = time[0]
                 time[1] = Number.parseInt(time[1])

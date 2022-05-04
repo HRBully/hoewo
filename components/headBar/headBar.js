@@ -34,6 +34,7 @@ Component({
             titleHeight: app.globalData.titleHeight,
             capsuleObj: app.globalData.capsuleObj
         })
+        
     },
 
     options: {

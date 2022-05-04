@@ -1,8 +1,13 @@
 // app.js
 App({
   // 小程序启动执行
+  globalData: {
+    loginStatus: false,
+    selected: 0,// tabbar跳转页面index
+    season:''
+  },
   onLaunch() {
-    
+      
     console.log("小程序启动")
     wx.cloud.init({
       // 云开发环境id
@@ -12,7 +17,6 @@ App({
     let capsuleObj = wx.getMenuButtonBoundingClientRect();
     // console.log("==胶囊信息==");
     // console.log(capsuleObj);
-
     wx.getSystemInfo({
       success: (res) => {
         // console.log("==获取系统信息==");
@@ -23,9 +27,7 @@ App({
       },
       failure() {}
     })
+    
   },
-  globalData: {
-    loginStatus: false,
-    selected: 0,// tabbar跳转页面index
-  },
+
 })
