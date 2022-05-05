@@ -1,9 +1,10 @@
+
 .book-list {
     width: 100%;
 }
 
 .book-list .book-item {
-    padding: 28rpx 32rpx;
+    padding: 28rpx 40rpx;
     display: flex;
     box-sizing: border-box;
     background-color: #fff;

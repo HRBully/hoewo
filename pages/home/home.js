@@ -8,7 +8,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        themeColor: '#90e0a8',// 主题（背景）颜色
+        themeColor: 'linear-gradient(to bottom , #72db95, #addec2)',// 主题（背景）颜色
         tabbarColor: '#37b565',// tabbar颜色
         month: 0,// 今月
         day: 0,// 今天

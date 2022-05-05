@@ -1,6 +1,7 @@
 {
     "usingComponents": {
-        "Header": "/components/headBar/headBar"
+        "Header": "/components/headBar/headBar",
+        "search": "/components/searchInput/searchInput"
       },
   "enablePullDownRefresh": true,
   "navigationBarTitleText": "百科",

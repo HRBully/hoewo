@@ -1,12 +1,11 @@
-<view class="ab-search-bar">
-  <view class="ab-search-bar__box">
-    <icon class="ab-search-bar__icon" type="search" size="{{iconSize}}" />
-    <view class="ab-search-bar__divider" />
-    <input class="ab-search-bar__input" type="text" placeholder="{{placeholder}}" value="{{value}}" bindinput="_searchInput" bindconfirm="_searchConfirm" confirm-type="search" />
-    <view class="ab-search-bar__icon-clear" wx:if="{{value.length > 0}}" bindtap="_searchClear">
+<view class="search-bar">
+  <view class="search-bar__box" catchtap="{{readOnly ? '_readOnly' : ''}}">
+    <icon class="search-bar__icon" type="search" size="{{iconSize}}" />
+    <view class="search-bar__divider" />
+    <input class="search-bar__input" type="text" placeholder="{{placeholder}}" value="{{value}}" disabled="{{readOnly}}" bindinput="_searchInput" bindconfirm="_searchConfirm" confirm-type="search" />
+    <view class="search-bar__icon-clear" wx:if="{{value.length > 0}}" bindtap="_searchClear">
       <icon type="clear" size="{{iconSize}}" />
     </view>
   </view>
-  <view class="ab-search-bar__search-btn" bindtap="_searchConfirm" data-key="{{value.length > 0?'search':'back'}}">{{value.length > 0?'搜索':'搜索'}}
-  </view>
+  <button class="search-bar__search-btn" size="mini" wx:if="{{!readOnly}}" bindtap="_searchConfirm" data-key="search">搜索</button>
 </view>

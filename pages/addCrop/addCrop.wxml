@@ -1,4 +1,6 @@
 <!-- 
+    header: 自定义tab
+    search：搜索组件
     list：最外层结构
     book-item：单元格渲染模块
     book-poster：书籍配图
@@ -8,6 +10,9 @@
     book-info-other：书籍缩略介绍
  -->
 <Header menuFlag customTitle="百科"></Header>
+<view class="header">
+  <search readOnly="true" bind:readOnlyEle="goSearch" />
+</view>
 <view class="book-list">
     <view class="book-item" wx:for="{{books}}" wx:key="id">
         <view class="book-poster">

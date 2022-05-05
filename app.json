@@ -5,6 +5,7 @@
         "pages/addCrop/addCrop",
         "pages/logs/logs",
         "pages/person/person",
+        "pages/search/search",
         "components/searchInput/searchInput",
         "components/headBar/headBar",
         "pages/identify/identify"

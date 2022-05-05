@@ -1,6 +1,6 @@
 <!--pages/home/home.wxml-->
 <Header menuFlag customTitle="首页"></Header>
-<view class="container" style="background-color: {{themeColor}};">
+<view class="container" style="background-image: {{themeColor}};" >
     <!-- 文字日期诗句 -->
     <view class="home-title">
         <!-- 日期，诗句 -->
@@ -15,6 +15,7 @@
             </block>
 
         </view>
+            <image src="cloud://helpfarmers-5g7z61ck3843e204.6865-helpfarmers-5g7z61ck3843e204-1310763858/springmountain.png" class="spring-mountain"></image>
         <!-- 节气 -->
         <view class="solarTerm">{{solarTerm}}</view>
     </view>
