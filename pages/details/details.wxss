@@ -1,0 +1,240 @@
+/* pages/details/details.wxss */
+.card-container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.book-card-header {
+    border-radius: 4rpx;
+    padding-bottom: 20rpx;
+    margin: 15rpx 15rpx 40rpx 15rpx;
+    position: relative;
+    box-shadow: 0 2rpx 4rpx rgb(0 0 0 / 5%);
+    background-color: #fff;
+}
+
+.book-info {
+    padding: 30rpx;
+    border: 10rpx solid #53cc7b;
+    border-radius: 20rpx;
+}
+
+.book-info .poster {
+    width: 170rpx;
+    height: 238rpx;
+    float: left;
+    position: relative;
+    border-radius: 8rpx;
+    background-repeat: no-repeat;
+    margin-right: 26rpx;
+}
+
+.book-info .poster image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8rpx;
+    cursor: zoom-in;
+}
+
+.book-info .info {
+    font-size: 23rpx;
+    height: 238rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-info .info .title {
+    font-size: 45rpx;
+    font-weight: 700;
+    /* text-align: center; */
+    color: #333;
+}
+
+.book-info .info .media {
+    font-size: 25rpx;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.scroll-view {
+    height: calc(100vh - 571rpx);
+}
+
+.addCollect {
+    display: flex;
+    margin-left: 50rpx;
+}
+
+.clickRead {
+    display: flex;
+}
+
+.navbar {
+    width: 100%;
+    height: 90rpx;
+    /* 文本不换行 */
+    white-space: nowrap;
+    display: flex;
+    box-sizing: border-box;
+    border-bottom: 2rpx solid #eee;
+    background: #fff;
+    align-items: center;
+}
+
+.nav-item {
+    padding-left: 25rpx;
+    padding-right: 25rpx;
+    height: 100%;
+    width: 350rpx;
+    display: inline-block;
+    /* 普通文字大小 */
+    font-size: 28rpx;
+}
+
+.nav-text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 4rpx;
+    box-sizing: border-box;
+}
+
+.tab-on {
+    color: #2c7546;
+    /* 选中放大 */
+    font-size: 38rpx !important;
+    font-weight: 600;
+    border-bottom: 4rpx solid #2c7546!important;
+}
+
+.book-list {
+    width: 100%;
+}
+
+.btns {
+    display: flex;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    z-index: 999;
+    padding: 24rpx 40rpx;
+    background: #fff;
+    justify-content: space-around;
+}
+
+.btns text {
+    flex-basis: 260rpx;
+    flex-shrink: 0;
+    border-radius: 8rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 23rpx;
+    padding-left: 36rpx;
+    padding-right: 36rpx;
+    color: #54bf7b;
+    text-align: center;
+    background-color: rgba(28, 222, 70, 0.068);
+    border: 2rpx solid rgba(34, 222, 28, 0.952);
+    margin-left: 28rpx;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+#untext {
+    color: #de1c31;
+    background-color: rgba(222, 28, 49, 0.05);
+    border: 2rpx solid rgba(222, 28, 49, 0.3);
+}
+
+.icon {
+    align-self: center;
+    height: 37rpx;
+    width: 37rpx;
+    margin-right: 5rpx;
+    line-height: 37rpx;
+}
+
+.icon image {
+    height: 100%;
+    width: 100%;
+}
+
+.btns view {
+    flex-basis: 0%;
+    flex-grow: 1;
+    margin-left: .8rem;
+}
+
+.mulu-content {
+    padding: 15rpx 15rpx 0;
+}
+
+.mulu-item {
+    margin: auto;
+    padding: 20rpx 40rpx;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    transition: all .2s;
+    overflow: hidden;
+}
+
+.mulu-item .left {
+    position: relative;
+    /* top: 4rpx; */
+    margin: auto 0;
+    min-width: 44rpx;
+    height: 100%;
+    flex-shrink: 0;
+    line-height: 48rpx;
+    font-size: 30rpx;
+    color: #8a919f;
+}
+
+.mulu-item .left::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 8rpx;
+    height: 100%;
+    background-color: #84e1a3;
+}
+
+.mulu-item .mid {
+    margin-left: 35rpx;
+    margin-right: auto;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.mulu-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 4rpx solid #e4e6eb;
+}
+
+.mulu-title {
+    /* font-size: 0; */
+}
+
+.mulu-intro {
+    font-size: 24rpx;
+    line-height: 36rpx;
+    margin-top: 4rpx;
+    color: #8a919f;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

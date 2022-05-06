@@ -1,2 +1,13 @@
 <!--pages/search/search.wxml-->
 <search bind:search="search" />
+<view class="book-list">
+    <view class="book-item" wx:for="{{books}}" wx:key="id">
+        <view class="book-poster">
+            <image src="{{item.img}}" />
+        </view>
+        <view class="book-info">
+            <view class="book-info-title">{{item.title}}</view>
+            <view class="book-info-other">{{item.intro}}</view>
+        </view>
+    </view>
+</view>

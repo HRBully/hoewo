@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "pre-build": "/components/preBuild/preBuild"
+      }
+}

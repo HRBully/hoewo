@@ -11,7 +11,6 @@ const getResult = async (content) => {
   let alive = recursion(content, result, types, 0)
 
   // let alive = Promise.resolve();
-
   // for (const item of types) {
   //   alive = db.collection(item).where({
   //     title: db.RegExp({

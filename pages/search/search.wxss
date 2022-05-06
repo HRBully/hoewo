@@ -1,1 +1,2 @@
 /* pages/search/search.wxss */
+@import "../addCrop/addCrop.wxss";

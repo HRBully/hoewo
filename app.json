@@ -6,6 +6,7 @@
         "pages/logs/logs",
         "pages/person/person",
         "pages/search/search",
+        "pages/details/details",
         "components/searchInput/searchInput",
         "components/headBar/headBar",
         "pages/identify/identify"

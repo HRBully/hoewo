@@ -26,6 +26,12 @@ Page({
         this.getBooks(this.data.books.length)
         // this.getBooks(0)
     },
+    // 详情路由跳转
+    goBook(e) {
+        wx.navigateTo({
+            url: '../details/details?title=' + e.currentTarget.dataset.name
+        })
+    },
     /**
     * 加载函数--加载百科数据
     * 1. 调用获取用户收藏接口，拿到用户收藏数据
