@@ -1,6 +1,6 @@
 /* components/mesCard/mesCard.wxss */
 .card {
-    height: 140rpx;
+    /* height: 140rpx; */
     width: 614rpx;
     border-bottom: 1rpx solid #ebebeb;
     margin-top: 12rpx;
@@ -23,7 +23,8 @@
     height: 95rpx;
 }
 .message {
-    height: 89rpx;
+    /* height: 89rpx; */
+    margin-bottom: 10rpx;
     color: #7d7d7d;
     font-size: 20rpx;
     margin-top: 10rpx;

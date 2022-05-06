@@ -18,7 +18,6 @@ Component({
         location:'北京'
     },
     onLoad: function (options) {
-        // this.getBooks(this.data.books.length)
         var QQMapWX = require('../../common/qqmap-wx-jssdk')
         var qqmapsdk = new QQMapWX({
             key: '5BKBZ-UQBEP-CX4DM-LCCZB-FPUTE-IEBJZ'
