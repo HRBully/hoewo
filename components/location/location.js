@@ -1,8 +1,6 @@
 // components/location/location.js
-var QQMapWX = require('../../common/qqmap-wx-jssdk')
-var qqmapsdk = new QQMapWX({
-    key: '5BKBZ-UQBEP-CX4DM-LCCZB-FPUTE-IEBJZ'
-})
+
+
 // 用户是否打开位置消息权限
 var modal = true
 Component({
@@ -18,6 +16,13 @@ Component({
      */
     data: {
         location:'北京'
+    },
+    onLoad: function (options) {
+        // this.getBooks(this.data.books.length)
+        var QQMapWX = require('../../common/qqmap-wx-jssdk')
+        var qqmapsdk = new QQMapWX({
+            key: '5BKBZ-UQBEP-CX4DM-LCCZB-FPUTE-IEBJZ'
+        })
     },
     pageLifetimes: {
         show(){
