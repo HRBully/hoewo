@@ -1,0 +1,46 @@
+.top-img{
+    margin: 20rpx;
+    width: 95%;
+    height: 440rpx;
+    border:1rpx solid #efefef;
+    border-radius: 20rpx;
+    box-shadow: 1rpx 1rpx 15rpx #ddd;
+    overflow: hidden;
+  }
+  .top-img image{
+    width: 100%;
+    height: 100%;
+  }
+  .center{
+    margin: 20rpx;
+    width: 95%;
+  }
+  .selece-img{
+    font-size: 26rpx ;
+    color:red;
+  }
+  .center button{
+    margin-top: 30rpx;
+  }
+  .bottom{
+    margin: 20rpx;
+    width: 95%;
+    height: 300rpx;
+    border:1rpx solid #efefef;
+    border-radius: 20rpx;
+    box-shadow: 1rpx 1rpx 15rpx #ddd;
+  }
+  .title{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20rpx;
+  }
+  .title text {
+    font-weight: 700;
+    font-size: 32rpx;
+  }
+  .info{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20rpx;
+  }

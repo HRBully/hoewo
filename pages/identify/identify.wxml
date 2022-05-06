@@ -1,2 +1,23 @@
-<!--pages/identify/identify.wxml-->
-<text>pages/identify/identify.wxml</text>
+<!-- 图片展示 -->
+<view class="top-img">
+<image src="{{image}}" ></image>
+</view>
+
+<!-- 选择图片及植物识别 -->
+<view class="center">
+<text class="selece-img" wx:if="{{isShow}}">请选择图片！</text>
+<button bindtap="imgSelect">选择图片</button>
+<button type="primary" bindtap="plant" >植物识别</button>
+</view>
+
+<!-- 识别结果 -->
+<view class="bottom" wx:if="{{result.length != 0}}">
+  <view class="title">
+    <text>植物名称</text>
+    <text>识别率</text>
+  </view>
+  <view class="info" wx:for="{{result}}" wx:key="index">
+    <text>{{item.name}}</text>
+    <text>{{item.score}}</text>
+  </view>
+</view>
