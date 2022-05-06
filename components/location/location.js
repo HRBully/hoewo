@@ -86,10 +86,8 @@ Component({
         },
         // 点击事件
         onClick() {
-            console.log('111');
             wx.checkSession({
                 fail: (res) => {
-                    console.log('222');
                     wx.showLoading({
                       title: '登录中...',
                     })
@@ -102,6 +100,5 @@ Component({
                 }
             })
         }
-
     }
 })
