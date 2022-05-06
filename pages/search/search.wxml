@@ -1,2 +1,2 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<search bind:search="search" />

@@ -9,7 +9,7 @@
     book-info-title：书籍名称/标题
     book-info-other：书籍缩略介绍
  -->
-<Header menuFlag customTitle="百科"></Header>
+<Header  customTitle="百科"></Header>
 <view class="header">
   <search readOnly="true" bind:readOnlyEle="goSearch" />
 </view>

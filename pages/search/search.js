@@ -5,7 +5,40 @@ Page({
      * 页面的初始数据
      */
     data: {
+        books: [],
+    },
 
+    search(event) {
+        this.setData({
+            books: [],
+        })
+        const {
+            value
+        } = event.detail
+        wx.cloud.callFunction({
+            name: 'search',
+            data: {
+                content: value
+            }
+        }).then((res) => {
+            console.log(res);
+            const {
+                result
+            } = res;
+            let {
+                books,
+            } = result;
+            if (!books) {
+                wx.showToast({
+                    title: '暂无相关信息',
+                    icon: 'none',
+                    duration: 1500
+                })
+            }
+            this.setData({
+                books
+            })
+        })
     },
 
     /**
