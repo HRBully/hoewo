@@ -9,6 +9,7 @@
         "pages/details/details",
         "components/searchInput/searchInput",
         "components/headBar/headBar",
+        "pages/cont/cont",
         "pages/identify/identify"
     ],
     "tabBar": {

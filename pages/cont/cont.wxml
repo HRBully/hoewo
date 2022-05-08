@@ -1,0 +1,2 @@
+<!--pages/cont/cont.wxml-->
+<pre-build id="preContent" bindName="{{title}}" data="{{content}}" />

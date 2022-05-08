@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "pre-build": "/components/preBuild/preBuild"
+  },
+  "navigationBarTitleText": "戏剧详情"
+}
