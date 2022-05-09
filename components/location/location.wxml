@@ -1,5 +1,5 @@
 <!--components/location/location.wxml-->
-<view class="container" bindtap="onClick">
+<view class="container" catchtap="onClick">
     <view class="location">{{location}}</view>
     <!-- 倒三角 -->
     <!-- <view class="triangular"></view> -->

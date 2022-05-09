@@ -26,6 +26,8 @@
 
 .spring-mountain {
     height: 250rpx;
+    position: relative;
+    left: 60rpx;
 }
 
 .remain-time {
@@ -49,8 +51,10 @@
 
 .solarTerm {
     font-family: '华文行楷';
+    position: relative;
+    right: 60rpx;
     width: 35rpx;
-    font-size: 40rpx;
+    font-size: 100rpx;
 }
 
 .article {

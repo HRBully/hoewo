@@ -3,6 +3,7 @@
     <view wx:if="{{menuFlag}}" class="menu_box" style="height:{{capsuleObj.height}}px; top:{{capsuleObj.top}}px;">
         <view class="customIcon" bindtap="meunClick">
             <image src="../../images/location.png"></image>
+            <x-location></x-location>
         </view>
     </view>
 

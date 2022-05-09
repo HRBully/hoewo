@@ -11,12 +11,14 @@
 }
 
 .customIcon {
+    display: flex;
     flex: 1;
 }
 
 .customIcon image {
     width: 30rpx;
     height: 30rpx;
+    margin-right: 8rpx;
 }
 
 /* 菜单 */

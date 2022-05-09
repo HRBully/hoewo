@@ -1,6 +1,8 @@
 // components/location/location.js
-
-
+var QQMapWX = require('../../common/qqmap-wx-jssdk')
+var qqmapsdk = new QQMapWX({
+    key: '5BKBZ-UQBEP-CX4DM-LCCZB-FPUTE-IEBJZ'
+})
 // 用户是否打开位置消息权限
 var modal = true
 Component({
@@ -18,10 +20,6 @@ Component({
         location:'北京'
     },
     onLoad: function (options) {
-        var QQMapWX = require('../../common/qqmap-wx-jssdk')
-        var qqmapsdk = new QQMapWX({
-            key: '5BKBZ-UQBEP-CX4DM-LCCZB-FPUTE-IEBJZ'
-        })
     },
     pageLifetimes: {
         show(){
@@ -51,8 +49,10 @@ Component({
                             longitude
                         },
                         success: (res)=> {
+                            console.log(res)
                             wx.setStorageSync('location', res.result.address_component)
-                            let { street: location } = wx.getStorageSync('location')
+                            // 省 province 市 city 区 district 街道 street 最低级地址 street_number
+                            let { city: location } = wx.getStorageSync('location')
                             this.setData({
                                 location
                             })
