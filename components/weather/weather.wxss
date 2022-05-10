@@ -1,1 +1,55 @@
 /* components/weather/weather.wxss */
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    width: 705rpx;
+    height: 164rpx;
+    margin: 20rpx auto;
+    border-radius: 44rpx;
+    color: #15ad67;
+}
+.today {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 49%;
+    height: 100rpx;
+    border-right: 3rpx solid #65d78b;
+
+}
+.tomorrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 49%;
+    height: 100rpx;
+}
+.wea_icon image{
+    width: 100rpx;
+    height: 90rpx;
+}
+.tem {
+    font-size: 48rpx;
+}
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 5rpx;
+    height: 85rpx;
+}
+.bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20rpx;
+}
+.date {
+    line-height: 85rpx;
+    font-size: 20rpx;
+}

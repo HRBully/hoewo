@@ -1,2 +1,43 @@
 <!--components/weather/weather.wxml-->
-
+<view class="box">
+<!-- 今日天气 -->
+    <view class="today">
+    <!-- 第一行 -->
+        <view class="top">
+        <!-- 天气图标 -->
+            <view class="wea_icon">
+                <image src="{{wea_img}}"></image>
+            </view>
+            <!-- 当前气温 -->
+            <view class="tem">{{tem}}</view>
+            <!-- 日期 -->
+            <view class="date">{{month}}/{{day}}</view>
+        </view>
+        <!-- 第二行 -->
+        <view class="bottom">
+        <!-- 最高/最低气温 -->
+            <view>{{temH}}/{{temL}}</view>
+            <!-- 天气 -->
+            <view>{{wea}}</view>
+            <!-- 空气质量 -->
+            <view>空气{{air_level}}</view>
+        </view>
+    </view>
+    <!-- 明日天气 -->
+    <view class="tomorrow">
+    <!-- 第一行 -->
+        <view class="top">
+            <view class="wea_icon">
+                <image src="{{nextwea_img}}"></image>
+            </view>
+            <view class="tem">{{nexttem}}</view>
+            <view class="date">{{nextmonth}}/{{day +1}}</view>
+        </view>
+        <!-- 第二行 -->
+        <view class="bottom">
+            <view>{{nexttemH}}/{{nexttemL}}</view>
+            <view>{{nextwea}}</view>
+            <view>空气{{nextair_level}}</view>
+        </view>
+    </view>
+</view>
