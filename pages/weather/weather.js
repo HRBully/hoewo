@@ -1,5 +1,4 @@
-// 引入高德api
-var amapFile = require('../../lib/amap-wx.js');
+
 // pages/weather/weather.js
 Page({
 
@@ -7,76 +6,62 @@ Page({
      * 页面的初始数据
      */
     data: {
+        // 背景色浅
+        bgc1: '#7fdc9f',
+        // 背景色深
+        bgc2: '#37cd69',
         // 当日天气
         liveData:{},
         // 天气预报
-        forecast:{},
-        // 星期转换表
-        weekday:{
-            1:"周一",
-            2:"周二",
-            3:"周三",
-            4:"周四",
-            5:"周五",
-            6:"周六",
-            7:"周日",
-        },
-        // 天气图片转换表
-        tianqiImage:{
-            "晴":"../../images/tianqi/qing.png",
-            "多云":"../../images/tianqi/duoyun.png",
-            "阴":"../../images/tianqi/yin.png",
-            "沙尘暴":"../../images/tianqi/shachenbao.png",
-            "冻雨":"../../images/tianqi/bingbao.png",
-            "冰雹":"../../images/tianqi/bingbao.png",
-            "浮尘":"../../images/tianqi/fuchen.png",
-            "台风":"../../images/tianqi/taifeng.png",
-            "小雪":"../../images/tianqi/xiaoxue.png",
-            "中雪":"../../images/tianqi/zhongxue.png",
-            "大雪":"../../images/tianqi/daxue.png",
-            "雾":"../../images/tianqi/wu.png",
-            "雾霾":"../../images/tianqi/wumai.png",
-            "小雨":"../../images/tianqi/xiaoyu.png",
-            "中雨":"../../images/tianqi/zhongyu.png",
-            "大雨":"../../images/tianqi/dayu.png",
-            "雷阵雨":"../../images/tianqi/leizhenyu.png",
-            "雨夹雪":"../../images/tianqi/yujiaxue.png",
-            "云":"../../images/tianqi/yun.png",
-        }
+        forecast:[],
     },
-
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
         this.getLiveWeather()
-        this.getForecastWeather()
+        this.getNextWeather()
     },
     /**
-     * 获取实时天气
+     * 获取当前天气
      */
     getLiveWeather(){
-        wx.showToast({ title: '正在加载...', icon: 'loading', duration: 2000000 });
-        let that = this;
-        let myAmapFun = new amapFile.AMapWX({key:'8a2664519056bb501bc81cc5caed1594'});
-        myAmapFun.getWeather({
-            success: function(data){
+        wx.showToast({ title: '正在加载...', icon: 'loading', duration: 2000000 })
+        wx.request({
+            url: 'https://v0.yiketianqi.com/free/day/api?unescape=1&version=v1&appid=44831462&appsecret=nyT7UNR2',
+            //成功回调
+            success: (res) => {
                 wx.hideToast();
-                //成功回调
-                const {liveData} = data
-                const date = liveData.reporttime
-                liveData.liveDate = date.split(" ")[0]
-                liveData.liveTime = date.split(" ")[1]
-                liveData.weatherPic = that.data.tianqiImage[data.weather.data]
-                that.setData({
-                    liveData:liveData
+                console.log(res);
+                let liveData = {}
+                // 当前时间
+                let date = new Date()
+                let hour = date.getHours()
+                hour = hour<10?'0'+huor:hour
+                let minutes = date.getMinutes()
+                minutes = minutes<10?'0'+minutes:minutes
+                let sec = date.getSeconds()
+                sec = sec<10?'0'+sec:sec
+                let liveTime = `${hour}:${minutes}:${sec}`
+                // 当前天气
+                liveData.city = res.data.city
+                liveData.liveDate = res.data.date
+                liveData.liveTime = liveTime
+                liveData.temperature = res.data.tem
+                liveData.weatherPic = `../../images/tianqi/${res.data.wea_img}.png`
+                liveData.weather = res.data.wea
+                liveData.humidity = res.data.humidity
+                liveData.winddirection = res.data.win.split('风')[0]
+                liveData.windpower = res.data.win_speed
+                liveData.pressure = res.data.pressure
+                this.setData({
+                    liveData
                 })
             },
-            fail: function(error){
+            // 失败回调
+            fail: (error) => {
                 wx.hideToast();
-                //失败回调
                 if (error) {
-                console.error(error)
                 wx.showModal({ title: '请求失败', content: "请不要多次重复请求，间隔一会儿再来试试吧~", showCancel: false });
                 } else {
                 wx.showModal({ title: '请求超时', content: '请检查网络设置', showCancel: false });
@@ -84,31 +69,34 @@ Page({
             }
         })
     },
-    /**
+        /**
      * 获取天气预报
      */
-    getForecastWeather(){
-        wx.showToast({ title: '正在加载...', icon: 'loading', duration: 2000000 });
-        let that = this;
-        let myAmapFun = new amapFile.AMapWX({key:'8a2664519056bb501bc81cc5caed1594'});
-        myAmapFun.getWeather({
-            type:'forecast',
-            success: function(data){
-                //成功回调
+    getNextWeather(){
+        wx.showToast({ title: '正在加载...', icon: 'loading', duration: 2000000 })
+        wx.request({
+            url: 'https://yiketianqi.com/api?unescape=1&version=v1&appid=44831462&appsecret=nyT7UNR2',
+            //成功回调
+            success: (res) => {
                 wx.hideToast();
-                const {forecast} = data
-                forecast.casts[0].date = "明天"
-                forecast.casts[1].date = "后天"
-                forecast.casts[2].date = that.data.weekday[forecast.casts[2].week]
-                for(let i in forecast.casts){
-                    forecast.casts[i].weatherPic = that.data.tianqiImage[forecast.casts[i].dayweather]
-                }
-                that.setData({
-                    forecast:forecast
+                console.log(res.data.data);
+                let forecast = []
+                forecast = res.data.data
+                forecast.splice(0,1)
+                forecast.forEach((item) => {
+                    // 图片路径
+                    item.weatherPic = `../../images/tianqi/${item.wea_img}.png`
+                    // 白天气温
+                    item.tem1 = item.tem1.split('℃')[0]
+                    // 夜间气温
+                    item.tem2 = item.tem2.split('℃')[0]
+                })
+                this.setData({
+                    forecast
                 })
             },
-            fail: function(error){
-                //失败回调
+            // 失败回调
+            fail: (error) => {
                 wx.hideToast();
                 if (error) {
                 wx.showModal({ title: '请求失败', content: "请不要多次重复请求，间隔一会儿再来试试吧~", showCancel: false });

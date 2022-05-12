@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: -webkit-linear-gradient(top, #3d395a, #435f6d);
+  /* background: -webkit-linear-gradient(top, #3d395a, #435f6d); */
   color: white;
 }
 
@@ -129,7 +129,7 @@
 
 /* 今日天气 */
 .app .today {
-  height: 43vh;
+  height: 40vh;
   width: 100%;
   margin-top: 2vh;
 }
@@ -176,7 +176,7 @@
 /* 温度详情 */
 .app .today .baseInfo .detail {
   height: 100;
-  width: 25%;
+  width: 30%;
   padding-left: 2vw;
   display: flex;
   flex-direction: column;
@@ -206,7 +206,7 @@
 
 /* 更多信息 */
 .app .today .moreInfo {
-  height: 20vh;
+  height: 15vh;
   width: 100%;
   margin-top: 1vh;
   display: flex;
@@ -235,7 +235,7 @@
 
 /* 未来天气预报 */
 .app .forecast {
-  height: 21vh;
+  /* height: 21vh; */
   width: 100%;
   margin-top: 2vh;
   border-radius: 20rpx;
@@ -262,6 +262,8 @@
   height: 100%;
   width: 80%;
   padding: 0;
+  margin: 0 auto;
+  font-size: 10pt;
 }
 
 .app .forecast .item {
@@ -272,12 +274,10 @@
   justify-content: center;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2rpx solid gray;
 }
-
-.app .forecast .separator {
-  width: 100%;
-  height: 2rpx;
-  border-top: 2rpx solid gray;
+ .app .forecast .container .item:last-child {
+    border: none
 }
 
 .app .forecast .info {

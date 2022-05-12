@@ -1,5 +1,5 @@
 <!--components/weather/weather.wxml-->
-<view class="box">
+<view class="box" catchtap="toWeather">
 <!-- 今日天气 -->
     <view class="today">
     <!-- 第一行 -->
@@ -9,18 +9,18 @@
                 <image src="{{wea_img}}"></image>
             </view>
             <!-- 当前气温 -->
-            <view class="tem">{{tem}}</view>
+            <view class="tem">{{tem}}℃</view>
             <!-- 日期 -->
             <view class="date">{{month}}/{{day}}</view>
         </view>
         <!-- 第二行 -->
         <view class="bottom">
         <!-- 最高/最低气温 -->
-            <view>{{temH}}/{{temL}}</view>
+            <view>{{temH}}℃/{{temL}}℃</view>
             <!-- 天气 -->
             <view>{{wea}}</view>
             <!-- 空气质量 -->
-            <view>空气{{air_level}}</view>
+            <view>{{win}}</view>
         </view>
     </view>
     <!-- 明日天气 -->
@@ -37,7 +37,7 @@
         <view class="bottom">
             <view>{{nexttemH}}/{{nexttemL}}</view>
             <view>{{nextwea}}</view>
-            <view>空气{{nextair_level}}</view>
+            <view>{{nextwin}}</view>
         </view>
     </view>
 </view>

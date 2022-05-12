@@ -1,79 +1,67 @@
 <!--pages/weather/weather.wxml-->
-<view class="app">
-  <!-- 地址、时间、更新时间 -->
-	<view class="header">
-		<!-- 地址、时间 -->
-		<view class="info">
-			<image class="localIcon" src="../../images/location.png"></image>
-			<view class="city">{{ liveData.city }}</view>
-			<view class="date">（{{ liveData.liveDate }}）</view>
-		</view>
-		<!-- 更新时间 -->
-		<view class="update" bindtap="onRefreshBtnClick">{{ liveData.liveTime }} 更新
-			<image class="refreshIcon" src="../../images/refresh.png"></image>
-		</view>
-	</view>
+<view class="app" style="background: -webkit-linear-gradient(top, {{bgc1}}, {{bgc2}});">
+    <!-- 地址、时间、更新时间 -->
+    <view class="header">
+        <!-- 地址、时间 -->
+        <view class="info">
+            <image class="localIcon" src="../../images/location.png"></image>
+            <view class="city">{{ liveData.city }}</view>
+            <view class="date">（{{ liveData.liveDate }}）</view>
+        </view>
+        <!-- 更新时间 -->
+        <view class="update" bindtap="onRefreshBtnClick">{{ liveData.liveTime }} 更新
+            <image class="refreshIcon" src="../../images/refresh.png"></image>
+        </view>
+    </view>
 
-	<!-- 今日天气信息 -->
-	<view class="today">
-		<view class="baseInfo">
-			<!-- 温度 -->
-			<view class="temperature">{{ liveData.temperature }}
-				<view class="symbol">℃</view>
-			</view>
-			<!-- 图片 -->
-			<view class="weatherIcon">
-				<image class="image" src="{{liveData.weatherPic}}"></image>
-			</view>
-			<!-- 全天 -->
-			<view class="detail">
-				<view class="type">{{ liveData.weather }}</view>
-				<view class="temperature">温度：{{ liveData.temperature }} ℃</view>
-				<!-- <view class="temperature">夜晚：{{ weatherInfo.today.night_air_temperature }} ℃</view> -->
-			</view>
-		</view>
-		<!-- 其他信息 -->
-		<view class="moreInfo">
-			<!-- 1 -->
-			<!-- <view class="item">空气：{{ weatherInfo.now.aqiDetail.quality }}</view> -->
-      <view class="item">湿度：{{ liveData.humidity }}%</view>
-			<view class="separator"></view>
-			<view class="item">风向：{{ liveData.winddirection }}</view>
-			<view class="separator"></view>
-      <view class="item">风力：{{ liveData.windpower }}级</view>
-			<!-- <view class="item">PM 2.5：{{ weatherInfo.now.aqiDetail.pm2_5 }}</view> -->
-			<!-- 2 -->
-			<!-- <view class="item">气压：{{ weatherInfo.today.air_press }}</view> -->
-			<!-- <view class="separator"></view> -->
-			<!-- <view class="item">风向：{{ liveData.winddirection }}</view> -->
-			<!-- <view class="separator"></view> -->
-			<!-- <view class="item">风力：{{ liveData.windpower }}</view> -->
-		</view>
-	</view>
-  <!-- 天气预报 -->
-	<swiper class="forecast" autoplay="true" interval="5000" circular="true">
-		<!-- 第一页 -->
-		<swiper-item class="block">
-			<!-- 前空白部分 -->
-			<view class="blank"></view>
-			<!-- 天气信息 -->
-			<view class="container">
-				<view style="width: 100%;" wx:for="{{ forecast.casts }}" wx:for-index="index" wx:for-item="forecast" wx:key="week">
-					<view class="separator" wx:if="{{ index === 1}}"></view>
-					<view class="item">
-						<view>{{ forecast.date }}</view>
-						<view class="info">
-							<image class="icon" src="{{ forecast.weatherPic }}"></image>
-							<view class="type">{{ forecast.dayweather }} / {{ forecast.nightweather }}</view>
-						</view>
-						<view>{{ forecast.daytemp }} / {{ forecast.nighttemp }} ℃</view>
-					</view>
-					<view class="separator" wx:if="{{ index === 1 }}"></view>
-				</view>
-			</view>
-			<!-- 后空白部分 -->
-			<view class="blank">
-			</view>
-		</swiper-item>
-  </swiper>
+    <!-- 今日天气信息 -->
+    <view class="today">
+        <view class="baseInfo">
+            <!-- 温度 -->
+            <view class="temperature">{{ liveData.temperature }}
+                <view class="symbol">℃</view>
+            </view>
+            <!-- 图片 -->
+            <view class="weatherIcon">
+                <image class="image" src="{{liveData.weatherPic}}"></image>
+            </view>
+            <!-- 全天 -->
+            <view class="detail">
+                <view class="type">{{ liveData.weather }}</view>
+                <view class="temperature">气压：{{liveData.pressure}}</view>
+                <!-- <view class="temperature">夜晚：{{ weatherInfo.today.night_air_temperature }} ℃</view> -->
+            </view>
+        </view>
+        <!-- 其他信息 -->
+        <view class="moreInfo">
+            <!-- 1 -->
+            <!-- <view class="item">空气：{{ weatherInfo.now.aqiDetail.quality }}</view> -->
+            <view class="item">湿度：{{ liveData.humidity }}</view>
+            <view class="separator"></view>
+            <view class="item">风向：{{ liveData.winddirection }}</view>
+            <view class="separator"></view>
+            <view class="item">风力：{{ liveData.windpower }}</view>
+            <!-- <view class="item">PM 2.5：{{ weatherInfo.now.aqiDetail.pm2_5 }}</view> -->
+            <!-- 2 -->
+            <!-- <view class="item">气压：{{ weatherInfo.today.air_press }}</view> -->
+            <!-- <view class="separator"></view> -->
+            <!-- <view class="item">风向：{{ liveData.winddirection }}</view> -->
+            <!-- <view class="separator"></view> -->
+            <!-- <view class="item">风力：{{ liveData.windpower }}</view> -->
+        </view>
+    </view>
+    <!-- 天气预报 -->
+    <view class="forecast">
+        <!-- 天气信息 -->
+        <view class="container">
+            <view style="width: 100%;" wx:for="{{ forecast }}" wx:index="index" wx:key="week" class="item">
+                <view>{{ item.day }}</view>
+                <view class="info">
+                    <image class="icon" src="{{ item.weatherPic }}"></image>
+                    <view class="type">{{ item.wea }} </view>
+                </view>
+                <view>{{ item.tem1 }} / {{ item.tem2 }} ℃</view>
+            </view>
+        </view>
+    </view>
 </view>
