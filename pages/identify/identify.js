@@ -68,6 +68,35 @@ Page({
             }
         })
     },
+    // 关键字搜索
+    search(value) {
+        this.setData({
+            books: [],
+        })
+        wx.cloud.callFunction({
+            name: 'search',
+            data: {
+                content: value,
+                type:'contents'
+            }
+        }).then((res) => {
+            console.log(res);
+            const {
+                result
+            } = res;
+            let {
+                contents
+            } = result;
+            if (!contents) {
+                wx.showToast({
+                    title: '暂无相关信息',
+                    icon: 'none',
+                    duration: 1500
+                })
+            }
+            console.log(contents)
+        })
+    },
     //获取识别结果
     getResult(token) {
         wx.request({
@@ -92,9 +121,28 @@ Page({
     },
     //result结果过滤
     resultFilter(arr) {
+        let cropstr = ''
         arr.forEach((item) => {
             item.score = (item.score.toFixed(4) * 100).toFixed(2) + '%'
+            cropstr+=item.name
         })
+        let croparr = cropstr.split('')
+        console.log(croparr)
+        let maxName, maxNum = 0
+        // 遍历数组
+        let res = {}
+        croparr.forEach((item) => {
+          res[item] ? res[item] += 1 : res[item] = 1
+        })
+        // 遍历 res
+        for (let i in res) {
+          if (res[i] > maxNum) {
+            maxNum = res[i]
+            maxName = i
+          }
+        }
+        this.search(maxName)
+    
         return arr
     },
     // 解决需要点击两次 tabbar 图标才会变换
