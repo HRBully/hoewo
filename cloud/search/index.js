@@ -4,13 +4,14 @@ cloud.init();
 
 const db = cloud.database();
 
-const getResult = async (content) => {
-  const types = ['books'];
+const getResult = async (content,type) => {
+  const types = [type];
   const result = {};
 
   let alive = recursion(content, result, types, 0)
 
   // let alive = Promise.resolve();
+
   // for (const item of types) {
   //   alive = db.collection(item).where({
   //     title: db.RegExp({
@@ -78,9 +79,9 @@ const recursion = (content, result, types, index) => {
 }
 
 exports.main = (event) => {
-  const { content } = event;
+  const { content,type} = event;
   if (!content) return true
 
-  return getResult(content);
+  return getResult(content,type);
 
 }

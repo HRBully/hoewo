@@ -18,7 +18,8 @@ Page({
         wx.cloud.callFunction({
             name: 'search',
             data: {
-                content: value
+                content: value,
+                type:'books'
             }
         }).then((res) => {
             console.log(res);
@@ -26,7 +27,7 @@ Page({
                 result
             } = res;
             let {
-                books,
+                books,contents
             } = result;
             if (!books) {
                 wx.showToast({
@@ -38,6 +39,7 @@ Page({
             this.setData({
                 books
             })
+            console.log(contents)
         })
     },
 
