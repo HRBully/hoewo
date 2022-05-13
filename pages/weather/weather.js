@@ -32,16 +32,12 @@ Page({
             //成功回调
             success: (res) => {
                 wx.hideToast();
-                console.log(res);
                 let liveData = {}
                 // 当前时间
                 let date = new Date()
-                let hour = date.getHours()
-                hour = hour<10?'0'+huor:hour
-                let minutes = date.getMinutes()
-                minutes = minutes<10?'0'+minutes:minutes
-                let sec = date.getSeconds()
-                sec = sec<10?'0'+sec:sec
+                let hour = date.getHours()<10?'0'+date.getHours():date.getHours()
+                let minutes = date.getMinutes()<10?'0'+date.getMinutes():date.getMinutes()
+                let sec = date.getSeconds()<10?'0'+date.getSeconds():date.getSeconds()
                 let liveTime = `${hour}:${minutes}:${sec}`
                 // 当前天气
                 liveData.city = res.data.city
@@ -79,7 +75,6 @@ Page({
             //成功回调
             success: (res) => {
                 wx.hideToast();
-                console.log(res.data.data);
                 let forecast = []
                 forecast = res.data.data
                 forecast.splice(0,1)
