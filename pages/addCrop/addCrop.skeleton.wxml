@@ -1,0 +1,113 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/5/13 下午7:25:12
+使用方法：
+在 C:\Users\hogsk\WeChatProjects\HoeWo\pages\addCrop\addCrop.wxml 引入模板
+
+```
+<import src="addCrop.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 C:\Users\hogsk\WeChatProjects\HoeWo\pages\addCrop\addCrop.wxss 中引入样式
+```
+@import "./addCrop.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view is="components/headBar/headBar">
+      <view class="headBar--customHeader_box" style="height:84px; background-color:#72db95;">
+        <view class="headBar--customHeader_title sk-transparent sk-text-25-0000-113 sk-text" style="top: 48px; height: 32px; line-height: 32px; background-position-x: 50%;">
+          百科
+        </view>
+      </view>
+      <view class="headBar--customWrap" style="height:84px;"></view>
+    </view>
+    <view class="header">
+      <view is="components/searchInput/searchInput">
+        <view class="searchInput--search-bar">
+          <view class="searchInput--search-bar__box">
+            <icon class="searchInput--search-bar__icon sk-image" size="13" type="search" color="#EFEFEF"></icon>
+            <view class="searchInput--search-bar__divider"></view>
+            <view class="searchInput--search-bar__input sk-image" placeholder="请输入搜索内容" type="text" value="true" disabled="true"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="book-list">
+      <view class="book-item" data-name="小麦1">
+        <view class="book-poster">
+          <image lazy-load="true" class="sk-image"></image>
+        </view>
+        <view class="book-info">
+          <view class="book-info-title sk-transparent sk-text-14-2857-251 sk-text">小麦1</view>
+          <view class="book-info-other sk-transparent sk-text-14-2857-600 sk-text">这是一个很这是一个很简短的介绍这是一个很简短的介绍这是一个很简短的介绍这是一个很简短的介绍这是一个很简短的介绍这是一个很简短的介绍简短的介绍</view>
+        </view>
+      </view>
+      <view class="book-item" data-name="玉米2">
+        <view class="book-poster">
+          <image lazy-load="true" class="sk-image"></image>
+        </view>
+        <view class="book-info">
+          <view class="book-info-title sk-transparent sk-text-14-2857-477 sk-text">玉米2</view>
+          <view class="book-info-other sk-transparent sk-text-14-2857-341 sk-text">这是一段很简单的介绍</view>
+        </view>
+      </view>
+      <view class="book-item" data-name="水稻3">
+        <view class="book-poster">
+          <image lazy-load="true" class="sk-image"></image>
+        </view>
+        <view class="book-info">
+          <view class="book-info-title sk-transparent sk-text-14-2857-682 sk-text">水稻3</view>
+          <view class="book-info-other sk-transparent sk-text-14-2857-144 sk-text">这是一个很简短的介绍</view>
+        </view>
+      </view>
+      <view class="book-item" data-name="马铃薯4">
+        <view class="book-poster">
+          <image lazy-load="true" class="sk-image"></image>
+        </view>
+        <view class="book-info">
+          <view class="book-info-title sk-transparent sk-text-14-2857-935 sk-text">马铃薯4</view>
+          <view class="book-info-other sk-transparent sk-text-14-2857-174 sk-text">这是一个很简短的介绍</view>
+        </view>
+      </view>
+      <view class="book-item" data-name="番茄5">
+        <view class="book-poster">
+          <image lazy-load="true" class="sk-image"></image>
+        </view>
+        <view class="book-info">
+          <view class="book-info-title sk-transparent sk-text-14-2857-229 sk-text">番茄5</view>
+          <view class="book-info-other sk-transparent sk-text-14-2857-920 sk-text">这是一个很简短的介绍</view>
+        </view>
+      </view>
+      <view class="book-item" data-name="棉花6">
+        <view class="book-poster">
+          <image lazy-load="true" class="sk-image"></image>
+        </view>
+        <view class="book-info">
+          <view class="book-info-title sk-transparent sk-text-14-2857-422 sk-text">棉花6</view>
+          <view class="book-info-other sk-transparent sk-text-14-2857-186 sk-text">这是</view>
+        </view>
+      </view>
+      <view class="book-item" data-name="花生7">
+        <view class="book-poster">
+          <image lazy-load="true" class="sk-image"></image>
+        </view>
+        <view class="book-info">
+          <view class="book-info-title sk-transparent sk-text-14-2857-127 sk-text">花生7</view>
+          <view class="book-info-other sk-transparent sk-text-14-2857-67 sk-text">这是一个</view>
+        </view>
+      </view>
+      <view class="book-item" data-name="芸豆8">
+        <view class="book-poster">
+          <image lazy-load="true" class="sk-image"></image>
+        </view>
+        <view class="book-info">
+          <view class="book-info-title sk-transparent sk-text-14-2857-787 sk-text">芸豆8</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

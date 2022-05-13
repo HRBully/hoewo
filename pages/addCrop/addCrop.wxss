@@ -1,4 +1,5 @@
 
+@import "./addCrop.skeleton.wxss";
 .book-list {
     width: 100%;
 }

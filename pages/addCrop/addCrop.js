@@ -4,27 +4,30 @@ Page({
      */
     data: {
         books: [],
-        isLoader: false
+        isLoader: false,
+        loading: true,
+        hidden:true,
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        // this.getBooks(this.data.books.length)
+        this.getBooks(this.data.books.length)
+        var _this=this;
+        var set=setInterval(function(){
+          clearInterval(set);
+          _this.setData({
+            loading:false,//停止骨架屏
+            hidden:false
+          })
+        },1500)
     },
     /**
      * 生命周期函数--监听页面显示
      * 显示调用getbooks加载函数
      */
     onShow: function () {
-        this.changeIcon()
-        // 显示后重新加载
-        console.log("----------------")
-        this.setData({
-            books: []
-        })
-        this.getBooks(this.data.books.length)
-        // this.getBooks(0)
+        this.changeIcon()   
     },
     // 详情路由跳转
     goBook(e) {

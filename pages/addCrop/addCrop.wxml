@@ -9,14 +9,16 @@
     book-info-title：书籍名称/标题
     book-info-other：书籍缩略介绍
  -->
+<import src="addCrop.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
 <Header  customTitle="百科"></Header>
 <view class="header">
   <search readOnly="true" bind:readOnlyEle="goSearch" />
 </view>
-<view class="book-list">
+<view class="book-list" hidden="{{hidden}}">
     <view class="book-item" wx:for="{{books}}" wx:key="id" bindtap="goBook" data-name="{{item.title}}">
         <view class="book-poster">
-            <image src="{{item.img}}" />
+            <image lazy-load="true" src="{{item.img}}" />
         </view>
         <view class="book-info">
             <view class="book-info-title">{{item.title}}</view>
