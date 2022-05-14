@@ -1,7 +1,8 @@
 // pages/home/home.js
 let year = 2022
 // 下拉刷新次数
-let account = 0
+let accountConsult = 0
+let accountNews = 0
 Page({
 
     /**
@@ -19,21 +20,9 @@ Page({
         consult: [], // 咨询信息
         news: [], // 新闻信息
         currentHeight: 0, // 现在swiper 高度 
-        currentTab: 0
-    },
-    // 判断季节
-    judgeSeason(month) {
-        switch (true) {
-            case month >= 3 && month <= 5:
-                this.setData({
-                    tabbarColor: '#fff'
-                })
-                break
-        }
-    },
-    // 设置主题
-    setTheme() {
-
+        currentTab: 0, // 当前 swiper-item
+        consultFlag: true, // 节流
+        newsFlag: true, // 节流
     },
     // 获取节气信息
     getSolarTerm() {
@@ -119,51 +108,56 @@ Page({
     },
     // 获取咨询信息
     getConsult() {
-        wx.showLoading({
-            title: '加载中',
-        })
-        wx.cloud.callFunction({
-            name: 'home',
-            data: {
-                account,
-                $url: 'getConsult'
-            },
-            success: (res) => {
-                account++
-                this.setData({
-                    consult: this.data.consult.concat(res.result.data),
-                })
-                console.log(this.data.consult);
-                wx.hideLoading()
-                // 获取swiper 高度
-                this.toConsult()
-            },
+        // 节流
+        if (this.data.consultFlag) {
+            this.setData({
+                consultFlag: false
+            })
+            wx.cloud.callFunction({
+                name: 'home',
+                data: {
+                    accountConsult,
+                    $url: 'getConsult'
+                },
+                success: (res) => {
+                    accountConsult++
+                    this.setData({
+                        consult: this.data.consult.concat(res.result.data),
+                        consultFlag: true
+                    })
+                    // 获取swiper 高度
+                    this.toConsult()
+                },
 
-        })
+            })
+        }
+
     },
     // 获取新闻信息
     getNews() {
-        wx.showLoading({
-            title: '加载中',
-        })
-        wx.cloud.callFunction({
-            name: 'home',
-            data: {
-                account,
-                $url: 'getNews'
-            },
-            success: (res) => {
-                account++
-                this.setData({
-                    news: this.data.news.concat(res.result.data)
-                })
-                wx.hideLoading()
-            }
-        })
+        if (this.data.newsFlag) {
+            this.setData({
+                newsFlag: false
+            })
+            wx.cloud.callFunction({
+                name: 'home',
+                data: {
+                    accountNews,
+                    $url: 'getNews'
+                },
+                success: (res) => {
+                    accountNews++
+                    this.setData({
+                        news: this.data.news.concat(res.result.data),
+                        newsFlag: true
+                    })
+                }
+            })
+        }
+
     },
     // 前往咨询列表
     toConsult() {
-        account = 0
         let height = 152 * this.data.consult.length
         this.setData({
             currentTab: 0,
@@ -173,7 +167,6 @@ Page({
     },
     // 前往新闻列表
     toNews() {
-        account = 0
         let height = 152 * this.data.news.length
         this.setData({
             currentTab: 1,
@@ -204,8 +197,6 @@ Page({
         this.getSolarTerm()
         this.getConsult()
         this.getNews()
-        this.judgeSeason(this.data.month)
-        // console.log(options.index);
     },
 
     /**
@@ -250,7 +241,6 @@ Page({
         } else if (this.currentTab === 1) {
             this.getNews()
         }
-
     },
 
     /**
