@@ -24,13 +24,13 @@
     <x-weather></x-weather>
   </view>
   <!-- 文章 -->
-  <view class="article">
+    <view class="article">
     <!-- 文章选择类型 -->
     <view class="article-select">
       <view class="select {{selectFlag?'active':''}}" bindtap="toConsult">咨询</view>
       <view class="select {{selectFlag?'':'active'}}" bindtap="toNews">新闻</view>
     </view>
-    <swiper class="article-swiper" style="height: {{currentHeight}}rpx;" bindchange="swiperChange" current="{{currentTab}}">
+    <swiper class="article-swiper" style="height: {{currentHeight}}rpx; " bindchange="swiperChange" current="{{currentTab}}">
       <swiper-item item-id="0">
           <view  class="article-swiper-item">
           <!-- 咨询文章列表 -->
@@ -51,4 +51,5 @@
 
     </swiper>
   </view>
+
 </view>

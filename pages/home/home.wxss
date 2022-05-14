@@ -1,9 +1,6 @@
 /* pages/home/home.wxss */
 .container {
-    height: 100%;
-}
-page {
-  height: 100%;
+  min-height: 100vh;
 }
 
 .header {

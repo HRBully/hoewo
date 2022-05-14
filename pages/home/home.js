@@ -8,15 +8,15 @@ Page({
      * 页面的初始数据
      */
     data: {
-        themeColor: 'linear-gradient(to bottom , #72db95, #addec2)',// 主题（背景）颜色
-        tabbarColor: '#37b565',// tabbar颜色
-        month: 0,// 今月
-        day: 0,// 今天
-        remainTime: 0,// 剩余时间
-        solarTerm: '夏至',// 节气
-        verse: [],// 诗句
-        selectFlag: true,// 控制文章类型边框样式
-        consult: [],// 咨询信息
+        themeColor: 'linear-gradient(to bottom , #72db95, #addec2)', // 主题（背景）颜色
+        tabbarColor: '#37b565', // tabbar颜色
+        month: 0, // 今月
+        day: 0, // 今天
+        remainTime: 0, // 剩余时间
+        solarTerm: '夏至', // 节气
+        verse: [], // 诗句
+        selectFlag: true, // 控制文章类型边框样式
+        consult: [], // 咨询信息
         news: [], // 新闻信息
         currentHeight: 0, // 现在swiper 高度 
         currentTab: 0
@@ -60,7 +60,7 @@ Page({
                 let solarTerm = data.name
                 let time = data.time.split('-')
                 // 将季节存储到storage中
-             
+
                 // 将获取到的节气日期由字符串转数字,用于去0
                 year = time[0]
                 time[1] = Number.parseInt(time[1])
@@ -84,8 +84,8 @@ Page({
     // 日期在今年所在天数
     getRemainTime(month, day) {
         let date = 0
-        switch (month - 1) {    // date 加的是上个月的 所有天数
-            case 11:       //利用switch的 穿透性 自动累加前面的月份
+        switch (month - 1) { // date 加的是上个月的 所有天数
+            case 11: //利用switch的 穿透性 自动累加前面的月份
                 date += 30;
             case 10:
                 date += 31;
@@ -103,15 +103,16 @@ Page({
                 date += 30;
             case 3:
                 date += 31;
-            case 2: if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
-                date += 29;
-            } else {
-                date += 28
-            }  // 二月份 因为平年、闰年的原因需要判断 平年+28天， 闰年 + 29天 
-            //闰年的判断规则： 四年一闰年，百年不闰年，四百年又是闰年
-            case 1:
-                date += 31;
-                break;
+            case 2:
+                if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+                    date += 29;
+                } else {
+                    date += 28
+                } // 二月份 因为平年、闰年的原因需要判断 平年+28天， 闰年 + 29天 
+                //闰年的判断规则： 四年一闰年，百年不闰年，四百年又是闰年
+                case 1:
+                    date += 31;
+                    break;
         }
         date += day;
         return date
@@ -128,14 +129,16 @@ Page({
                 $url: 'getConsult'
             },
             success: (res) => {
-              let height = 152 * res.result.data.length
                 account++
                 this.setData({
-                    consult: res.result.data,
-                    currentHeight: height
+                    consult: this.data.consult.concat(res.result.data),
                 })
+                console.log(this.data.consult);
                 wx.hideLoading()
-            }
+                // 获取swiper 高度
+                this.toConsult()
+            },
+
         })
     },
     // 获取新闻信息
@@ -152,7 +155,7 @@ Page({
             success: (res) => {
                 account++
                 this.setData({
-                    news: res.result.data
+                    news: this.data.news.concat(res.result.data)
                 })
                 wx.hideLoading()
             }
@@ -179,7 +182,7 @@ Page({
         })
     },
     swiperChange(e) {
-        if(e.detail.current === 0) {
+        if (e.detail.current === 0) {
             this.toConsult()
         } else {
             this.toNews()
@@ -208,9 +211,7 @@ Page({
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function () {
-
-    },
+    onReady: function () {},
 
     /**
      * 生命周期函数--监听页面显示
@@ -244,6 +245,11 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
+        if (this.data.currentTab === 0) {
+            this.getConsult()
+        } else if (this.currentTab === 1) {
+            this.getNews()
+        }
 
     },
 
