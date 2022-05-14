@@ -17,6 +17,9 @@ Page({
         verse: [],// 诗句
         selectFlag: true,// 控制文章类型边框样式
         consult: [],// 咨询信息
+        news: [], // 新闻信息
+        currentHeight: 0, // 现在swiper 高度 
+        currentTab: 0
     },
     // 判断季节
     judgeSeason(month) {
@@ -125,9 +128,11 @@ Page({
                 $url: 'getConsult'
             },
             success: (res) => {
+              let height = 152 * res.result.data.length
                 account++
                 this.setData({
-                    consult: res.result.data
+                    consult: res.result.data,
+                    currentHeight: height
                 })
                 wx.hideLoading()
             }
@@ -147,7 +152,7 @@ Page({
             success: (res) => {
                 account++
                 this.setData({
-                    consult: res.result.data
+                    news: res.result.data
                 })
                 wx.hideLoading()
             }
@@ -155,19 +160,30 @@ Page({
     },
     // 前往咨询列表
     toConsult() {
-        this.setData({
-            selectFlag: true
-        })
         account = 0
-        this.getConsult()
+        let height = 152 * this.data.consult.length
+        this.setData({
+            currentTab: 0,
+            selectFlag: true,
+            currentHeight: height,
+        })
     },
     // 前往新闻列表
     toNews() {
-        this.setData({
-            selectFlag: false
-        })
         account = 0
-        this.getNews()
+        let height = 152 * this.data.news.length
+        this.setData({
+            currentTab: 1,
+            selectFlag: false,
+            currentHeight: height
+        })
+    },
+    swiperChange(e) {
+        if(e.detail.current === 0) {
+            this.toConsult()
+        } else {
+            this.toNews()
+        }
     },
     // 解决需要点击两次 tabbar 图标才会变换
     changeIcon() {
@@ -184,8 +200,9 @@ Page({
     onLoad: function (options) {
         this.getSolarTerm()
         this.getConsult()
+        this.getNews()
         this.judgeSeason(this.data.month)
-        console.log(options.index);
+        // console.log(options.index);
     },
 
     /**

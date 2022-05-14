@@ -32,7 +32,7 @@ Page({
             //成功回调
             success: (res) => {
                 wx.hideToast();
-                let liveData = {}
+                
                 // 当前时间
                 let date = new Date()
                 let hour = date.getHours()<10?'0'+date.getHours():date.getHours()
@@ -40,6 +40,7 @@ Page({
                 let sec = date.getSeconds()<10?'0'+date.getSeconds():date.getSeconds()
                 let liveTime = `${hour}:${minutes}:${sec}`
                 // 当前天气
+                let liveData = {}
                 liveData.city = res.data.city
                 liveData.liveDate = res.data.date
                 liveData.liveTime = liveTime

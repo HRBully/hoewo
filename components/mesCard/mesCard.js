@@ -22,7 +22,7 @@ Component({
     },
     lifetimes: {
         attached() {
-            if (this.properties.mescontent.src.length) {
+            if (this.properties.mescontent.src) {
                 this.setData({
                     imgFlag: true
                 })

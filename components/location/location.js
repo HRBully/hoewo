@@ -49,7 +49,6 @@ Component({
                             longitude
                         },
                         success: (res)=> {
-                            console.log(res)
                             wx.setStorageSync('location', res.result.address_component)
                             // 省 province 市 city 区 district 街道 street 最低级地址 street_number
                             let { city: location } = wx.getStorageSync('location')

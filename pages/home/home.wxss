@@ -2,6 +2,9 @@
 .container {
     height: 100%;
 }
+page {
+  height: 100%;
+}
 
 .header {
     background-color: #35d492;
@@ -86,4 +89,17 @@
 
 .active {
     border-bottom: solid 4rpx #39a863;
+}
+.article-swiper {
+  width: 100%;
+}
+.article-swiper-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+swiper-item {
+  overflow: visible;
 }
