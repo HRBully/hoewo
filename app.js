@@ -6,7 +6,6 @@ App({
         season: 'spring'
     },
     onLaunch() {
-        this.getSeason()
         console.log("小程序启动")
         wx.cloud.init({
             // 云开发环境id
