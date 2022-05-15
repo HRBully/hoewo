@@ -5,26 +5,6 @@ App({
         loginStatus: false,
         season: 'spring'
     },
-    // 获取季节
-    getSeason() {
-        let date = new Date()
-        let month = date.getMonth() + 1
-        switch (month) {
-            case month > 2 && month < 6:
-                this.globalData.season = 'spring'
-                break;
-            case month > 5 && month < 9:
-                this.globalData.season = 'summer'
-                break;
-            case month > 8 && month < 12:
-                this.globalData.season = 'autumn'
-                break;
-            case month > 11 || month <3:
-                this.globalData.season = 'winter'
-                break;
-        }
-
-    },
     onLaunch() {
         this.getSeason()
         console.log("小程序启动")
