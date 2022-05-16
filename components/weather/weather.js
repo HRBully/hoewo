@@ -52,9 +52,6 @@ Component({
                             icon: 'success',
                             duration: 2000
                         })
-                        // 登陆后获取天气
-                        this.getLiveWeather()
-                        this.getNextWeather()
                         // 存放个人信息
                         wx.setStorageSync('userInfo', res.userInfo)
                         locationCom.getLocation()

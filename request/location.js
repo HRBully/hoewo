@@ -1,7 +1,6 @@
 
 // 获取用户地址
 export async function getLocation() {
-    console.log('111');
     var QQMapWX = require('../lib/qqmap-wx-jssdk')
     var qqmapsdk = new QQMapWX({
         key: '5BKBZ-UQBEP-CX4DM-LCCZB-FPUTE-IEBJZ'
@@ -23,7 +22,11 @@ export async function getLocation() {
                         city: location
                     } = wx.getStorageSync('location')
                     wx.setStorageSync('city', location.split('市')[0])
-                    return location
+                    let page = getCurrentPages().pop()
+                    page.getWeather()
+                    wx.navigateTo({
+                        url: '../../pages/weather/weather',
+                    })
                 }
 
             })
