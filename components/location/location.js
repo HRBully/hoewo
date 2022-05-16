@@ -84,19 +84,26 @@ Component({
         },
         // 点击事件
         onClick() {
-            wx.checkSession({
-                fail: (res) => {
-                    wx.showLoading({
-                      title: '登录中...',
-                    })
-                    wx.login({
-                        success: (res) => {
-                            wx.hideLoading()
-                            this.getLocation()
-                        }
-                    })
-                }
+            wx.getUserProfile({
+                desc: '用户完善会员资料',
             })
+                .then(res => {
+                    wx.showToast({
+                        title: '登录成功',
+                        icon: 'success',
+                        duration: 2000
+                    })
+                    this.getLocation()
+                    wx.setStorageSync('userInfo', res.userInfo)
+                    wx.cloud.callFunction({
+                        name: 'login',
+                    }).then(res => {
+                        wx.setStorageSync('openid', res.result.openid)
+                    })
+                })
+                .catch(err => {
+                    console.log("用户拒绝了微信授权登录", err);
+                })
         }
     }
 })
