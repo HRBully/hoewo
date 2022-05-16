@@ -190,6 +190,12 @@ Page({
             })
         }
     },
+    // 登录后获取天气
+    getWeather(){
+        let weather = this.selectComponent('#weather')
+        weather.getLiveWeather()
+        weather.getNextWeather()
+    },
     /**
      * 生命周期函数--监听页面加载
      */

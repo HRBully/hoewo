@@ -1,6 +1,6 @@
 {
-  "component": true,
-  "usingComponents": {
-      "x-location": "../location/location"
+    "component": true,
+    "usingComponents": {
+        "x-location": "../location/location"
+    }
   }
-}

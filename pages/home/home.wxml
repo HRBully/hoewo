@@ -21,7 +21,7 @@
   </view>
   <!-- 天气 -->
   <view>
-    <x-weather></x-weather>
+    <x-weather id="weather"></x-weather>
   </view>
   <!-- 文章 -->
     <view class="article">

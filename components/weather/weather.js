@@ -1,4 +1,6 @@
-// components/weather/weather.js
+// components/weather/weather.js 
+let city = '北京'
+let locationCom = require('../../request/location.js') 
 Component({
     /**
      * 组件的属性列表
@@ -35,14 +37,46 @@ Component({
     methods: {
         // 跳转天气页面
         toWeather() {
-            wx.navigateTo({
-                url: '../../pages/weather/weather',
-            })
+            let userInfo = wx.getStorageSync('userInfo')
+            if (userInfo) {
+                wx.navigateTo({
+                    url: '../../pages/weather/weather',
+                })
+            } else {
+                wx.getUserProfile({
+                        desc: '用户完善会员资料',
+                    })
+                    .then(res => {
+                        wx.showToast({
+                            title: '登录成功',
+                            icon: 'success',
+                            duration: 2000
+                        })
+                        // 登陆后获取天气
+                        this.getLiveWeather()
+                        this.getNextWeather()
+                        // 存放个人信息
+                        wx.setStorageSync('userInfo', res.userInfo)
+                        locationCom.getLocation()
+                        wx.cloud.callFunction({
+                            name: 'login',
+                        }).then(res => {
+                            wx.setStorageSync('openid', res.result.openid)
+                        })
+                    })
+                    .catch(err => {
+                        console.log("用户拒绝了微信授权登录", err);
+                    })
+            }
+
         },
         // 获取天气信息
         getNextWeather() {
+            if (wx.getStorageSync('city')) {
+                city = wx.getStorageSync('city')
+            }
             wx.request({
-                url: 'https://yiketianqi.com/api?unescape=1&version=v1&appid=44831462&appsecret=nyT7UNR2',
+                url: `https://yiketianqi.com/api?unescape=1&version=v1&appid=44831462&appsecret=nyT7UNR2&city=${city}`,
                 success: (res) => {
                     // 今日日期
                     let date = res.data.data[0].date
@@ -72,8 +106,11 @@ Component({
             })
         },
         getLiveWeather() {
+            if (wx.getStorageSync('city')) {
+                city = wx.getStorageSync('city')
+            }
             wx.request({
-                url: 'https://v0.yiketianqi.com/free/day/api?unescape=1&version=v1&appid=44831462&appsecret=nyT7UNR2',
+                url: `https://v0.yiketianqi.com/free/day/api?unescape=1&version=v1&appid=44831462&appsecret=nyT7UNR2&city=${city}`,
                 //成功回调
                 success: (res) => {
                     this.setData({

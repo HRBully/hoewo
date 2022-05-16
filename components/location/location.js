@@ -1,5 +1,5 @@
 // components/location/location.js
-var QQMapWX = require('../../common/qqmap-wx-jssdk')
+var QQMapWX = require('../../lib/qqmap-wx-jssdk')
 var qqmapsdk = new QQMapWX({
     key: '5BKBZ-UQBEP-CX4DM-LCCZB-FPUTE-IEBJZ'
 })
@@ -23,12 +23,10 @@ Component({
     },
     pageLifetimes: {
         show(){
-            // 判断用户登陆      
-            wx.checkSession({
-                success: (res) => {
-                    this.getLocation()
-                }
-              })
+            let userInfo = wx.getStorageSync('userInfo')
+            if(userInfo) {
+                this.getLocation()
+            }
         }
     },
     /**
@@ -52,6 +50,9 @@ Component({
                             wx.setStorageSync('location', res.result.address_component)
                             // 省 province 市 city 区 district 街道 street 最低级地址 street_number
                             let { city: location } = wx.getStorageSync('location')
+                            wx.setStorageSync('city', location.split('市')[0])
+                            let page = getCurrentPages().pop()
+                            page.getWeather()
                             this.setData({
                                 location
                             })
