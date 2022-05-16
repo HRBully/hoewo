@@ -1,17 +1,19 @@
 <!-- 图片展示 -->
 <view class="top-img">
-<image src="{{image}}" ></image>
+    <image src="{{image}}"></image>
 </view>
 
 <!-- 选择图片及植物识别 -->
 <view class="center">
-<text class="selece-img" wx:if="{{isShow}}">请选择图片！</text>
-<button bindtap="imgSelect">选择图片</button>
-<button type="primary" bindtap="plant" >植物识别</button>
+    <text class="selece-img" wx:if="{{isShow}}">请选择图片！</text>
+    <view class="selece-btn">
+        <button bindtap="imgSelect">选择图片</button>
+        <button type="primary" bindtap="plant">植物识别</button>
+    </view>
 </view>
 
 <!-- 识别结果 -->
-<view class="bottom" wx:if="{{result.length != 0}}">
+<!-- <view class="bottom" wx:if="{{result.length != 0}}">
   <view class="title">
     <text>植物名称</text>
     <text>识别率</text>
@@ -20,4 +22,19 @@
     <text>{{item.name}}</text>
     <text>{{item.score}}</text>
   </view>
-</view>
+</view> -->
+<scroll-view class="scroll-view" scroll-y>
+    <view class="mulu-content">
+        <view class="mulu-list">
+            <view class="mulu-item" wx:for="{{contents}}" wx:key="index" bindtap="goCont" data-chapter="{{item.chapter}}">
+                <view class="left">{{index+1}}</view>
+                <view class="mid">
+                    <view class="mulu-title">{{item.title}}</view>
+                    <view class="mulu-intro">{{}}</view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+</scroll-view>
+<view wx:if="{{contents.length}}" class="center-text">根据识别结果为您推荐以上内容</view>

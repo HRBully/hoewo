@@ -8,6 +8,7 @@ Page({
         base64Img: '',
         token: '',
         result: [],
+        contents:[],
         /*
           百度AI识别的apikey跟密钥，动用或改动配置请告知
           author@Ned
@@ -71,7 +72,7 @@ Page({
     // 关键字搜索
     search(value) {
         this.setData({
-            books: [],
+            contents: [],
         })
         wx.cloud.callFunction({
             name: 'search',
@@ -80,7 +81,6 @@ Page({
                 type:'contents'
             }
         }).then((res) => {
-            console.log(res);
             const {
                 result
             } = res;
@@ -95,6 +95,10 @@ Page({
                 })
             }
             console.log(contents)
+            this.setData({
+                contents
+            })
+            console.log(this.data.contents)
         })
     },
     //获取识别结果
@@ -142,7 +146,7 @@ Page({
           }
         }
         this.search(maxName)
-    
+        console.log(maxName)
         return arr
     },
     // 解决需要点击两次 tabbar 图标才会变换
