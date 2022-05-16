@@ -85,26 +85,32 @@ Component({
         },
         // 点击事件
         onClick() {
-            wx.getUserProfile({
-                desc: '用户完善会员资料',
-            })
-                .then(res => {
-                    wx.showToast({
-                        title: '登录成功',
-                        icon: 'success',
-                        duration: 2000
-                    })
-                    this.getLocation()
-                    wx.setStorageSync('userInfo', res.userInfo)
-                    wx.cloud.callFunction({
-                        name: 'login',
-                    }).then(res => {
-                        wx.setStorageSync('openid', res.result.openid)
-                    })
+            let userInfo = wx.getStorageSync('userInfo')
+            if(userInfo) {
+                return
+            } else {
+                wx.getUserProfile({
+                    desc: '用户完善会员资料',
                 })
-                .catch(err => {
-                    console.log("用户拒绝了微信授权登录", err);
-                })
+                    .then(res => {
+                        wx.showToast({
+                            title: '登录成功',
+                            icon: 'success',
+                            duration: 2000
+                        })
+                        this.getLocation()
+                        wx.setStorageSync('userInfo', res.userInfo)
+                        wx.cloud.callFunction({
+                            name: 'login',
+                        }).then(res => {
+                            wx.setStorageSync('openid', res.result.openid)
+                        })
+                    })
+                    .catch(err => {
+                        console.log("用户拒绝了微信授权登录", err);
+                    })
+            }
+            
         }
     }
 })
