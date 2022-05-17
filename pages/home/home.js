@@ -3,6 +3,11 @@ let year = 2022
 // 下拉刷新次数
 let accountConsult = 0
 let accountNews = 0
+// 页面节点宽度
+let heightTitle = 0
+let heightWeather = 0
+let heightSelect = 0
+let heightTabbar = 48
 Page({
 
     /**
@@ -158,20 +163,20 @@ Page({
     },
     // 前往咨询列表
     toConsult() {
-        let height = 152 * this.data.consult.length
+        // let height = 152 * this.data.consult.length
         this.setData({
             currentTab: 0,
             selectFlag: true,
-            currentHeight: height,
+            // currentHeight: height,
         })
     },
     // 前往新闻列表
     toNews() {
-        let height = 152 * this.data.news.length
+        // let height = 152 * this.data.news.length
         this.setData({
             currentTab: 1,
             selectFlag: false,
-            currentHeight: height
+            // currentHeight: height
         })
     },
     swiperChange(e) {
@@ -191,10 +196,35 @@ Page({
         }
     },
     // 登录后获取天气
-    getWeather(){
+    getWeather() {
         let weather = this.selectComponent('#weather')
         weather.getLiveWeather()
         weather.getNextWeather()
+    },
+    // 获取swiper 高度
+    getSwiperHeight() {
+        setTimeout(()=> {
+        let systemInfo = wx.getSystemInfoSync()
+        let pageHeight = systemInfo.windowHeight - heightTabbar - systemInfo.statusBarHeight - 60
+        let height = pageHeight - heightTitle - heightWeather - heightSelect - 10
+        this.setData({
+            currentHeight: height
+        })
+        }, 500)
+
+    },
+    // 获取其他页面元素宽度
+    getHeight(){
+        let query = wx.createSelectorQuery();
+        query.select('.home-title').boundingClientRect(rect => {
+            heightTitle = rect.height;
+        }).exec();
+        query.select('.weather').boundingClientRect(rect => {
+            heightWeather = rect.height;
+        }).exec();
+        query.select('.article-select').boundingClientRect(rect => {
+            heightSelect = rect.height;
+        }).exec();
     },
     /**
      * 生命周期函数--监听页面加载
@@ -208,13 +238,15 @@ Page({
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function () {},
-
+    onReady: function () {
+        this.getHeight()       
+    },
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
         this.changeIcon()
+        this.getSwiperHeight()
     },
 
     /**

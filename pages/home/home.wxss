@@ -1,6 +1,7 @@
 /* pages/home/home.wxss */
 .container {
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -15,7 +16,7 @@
     padding: 26rpx 40rpx;
     height: 210rpx;
     color: white;
-
+    flex-shrink: 0;
 }
 
 .title-left {
@@ -66,6 +67,8 @@
     width: 705rpx;
     margin: 20rpx auto;
     border-radius: 40rpx;
+    padding-bottom: 20rpx;
+    box-sizing: content-box;
 }
 
 .article-select {

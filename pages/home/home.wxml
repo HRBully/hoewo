@@ -1,55 +1,58 @@
 <!--pages/home/home.wxml-->
 <Header menuFlag customTitle="首页"></Header>
 <view class="container" style="background-image: {{themeColor}};">
-  <!-- 文字日期诗句 -->
-  <view class="home-title">
-    <!-- 日期，诗句 -->
-    <view class="title-left">
-      <!-- 距离节气日期 -->
-      <view class="remain-time">距离{{solarTerm}}还有{{remainTime}}天</view>
-      <!-- 今日日期 -->
-      <view class="current-time">{{month}}月{{day}}日</view>
-      <!-- 节气诗句 -->
-      <block wx:for="{{verse}}" wx:key="index">
-        <view class="verse">{{item}}</view>
-      </block>
-
+    <!-- 文字日期诗句 -->
+    <view class="home-title">
+        <!-- 日期，诗句 -->
+        <view class="title-left">
+            <!-- 距离节气日期 -->
+            <view class="remain-time">距离{{solarTerm}}还有{{remainTime}}天</view>
+            <!-- 今日日期 -->
+            <view class="current-time">{{month}}月{{day}}日</view>
+            <!-- 节气诗句 -->
+            <block wx:for="{{verse}}" wx:key="index">
+                <view class="verse">{{item}}</view>
+            </block>
+        </view>
+        <image src="cloud://helpfarmers-5g7z61ck3843e204.6865-helpfarmers-5g7z61ck3843e204-1310763858/springmountain.png" class="spring-mountain"></image>
+        <!-- 节气 -->
+        <view class="solarTerm">{{solarTerm}}</view>
     </view>
-    <image src="cloud://helpfarmers-5g7z61ck3843e204.6865-helpfarmers-5g7z61ck3843e204-1310763858/springmountain.png" class="spring-mountain"></image>
-    <!-- 节气 -->
-    <view class="solarTerm">{{solarTerm}}</view>
-  </view>
-  <!-- 天气 -->
-  <view>
-    <x-weather id="weather"></x-weather>
-  </view>
-  <!-- 文章 -->
+    <!-- 天气 -->
+    <view class="weather">
+        <x-weather id="weather"></x-weather>
+    </view>
+    <!-- 文章 -->
     <view class="article">
-    <!-- 文章选择类型 -->
-    <view class="article-select">
-      <view class="select {{selectFlag?'active':''}}" bindtap="toConsult">咨询</view>
-      <view class="select {{selectFlag?'':'active'}}" bindtap="toNews">新闻</view>
+        <!-- 文章选择类型 -->
+        <view class="article-select">
+            <view class="select {{selectFlag?'active':''}}" bindtap="toConsult">咨询</view>
+            <view class="select {{selectFlag?'':'active'}}" bindtap="toNews">新闻</view>
+        </view>
+        <swiper class="article-swiper" style="height: {{currentHeight}}px; " bindchange="swiperChange" current="{{currentTab}}">
+            <swiper-item item-id="0">
+                <scroll-view style="height: {{currentHeight}}px; " scroll-y="true" bindscrolltolower="getConsult">
+                    <view class="article-swiper-item">
+                        <!-- 咨询文章列表 -->
+                        <block wx:for="{{consult}}" wx:key="index">
+                            <x-card mescontent="{{item}}" class="item"></x-card>
+                        </block>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+
+            <swiper-item item-id="1">
+                <scroll-view style="height: {{currentHeight}}px; " scroll-y="true" bindscrolltolower="getNews">
+                    <view class="article-swiper-item">
+                        <!-- 新闻文章列表 -->
+                        <block wx:for="{{news}}" wx:key="index">
+                            <x-card mescontent="{{item}}"></x-card>
+                        </block>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+
+        </swiper>
     </view>
-    <swiper class="article-swiper" style="height: {{currentHeight}}rpx; " bindchange="swiperChange" current="{{currentTab}}">
-      <swiper-item item-id="0">
-          <view  class="article-swiper-item">
-          <!-- 咨询文章列表 -->
-          <block wx:for="{{consult}}" wx:key="index">
-            <x-card mescontent="{{item}}" class="item"></x-card>
-          </block>
-        </view>
-      </swiper-item>
-
-      <swiper-item item-id="1">
-        <view  class="article-swiper-item">
-          <!-- 新闻文章列表 -->
-          <block wx:for="{{news}}" wx:key="index">
-            <x-card mescontent="{{item}}"></x-card>
-          </block>
-        </view>
-      </swiper-item>
-
-    </swiper>
-  </view>
 
 </view>
