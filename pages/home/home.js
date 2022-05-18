@@ -7,7 +7,8 @@ let accountNews = 0
 let heightTitle = 0
 let heightWeather = 0
 let heightSelect = 0
-let heightTabbar = 48
+let heightTabbar = 0
+
 Page({
 
     /**
@@ -205,8 +206,9 @@ Page({
     getSwiperHeight() {
         setTimeout(()=> {
         let systemInfo = wx.getSystemInfoSync()
-        let pageHeight = systemInfo.windowHeight - heightTabbar - systemInfo.statusBarHeight - 60
-        let height = pageHeight - heightTitle - heightWeather - heightSelect - 10
+        let heightTabbar = wx.getStorageSync('heightTabbar')
+        let pageHeight = systemInfo.windowHeight  - systemInfo.statusBarHeight - heightTabbar- 60
+        let height = pageHeight - heightTitle - heightWeather - heightSelect  -10
         this.setData({
             currentHeight: height
         })
@@ -215,7 +217,7 @@ Page({
     },
     // 获取其他页面元素宽度
     getHeight(){
-        let query = wx.createSelectorQuery();
+        let query = this.createSelectorQuery();
         query.select('.home-title').boundingClientRect(rect => {
             heightTitle = rect.height;
         }).exec();
@@ -225,6 +227,7 @@ Page({
         query.select('.article-select').boundingClientRect(rect => {
             heightSelect = rect.height;
         }).exec();
+
     },
     /**
      * 生命周期函数--监听页面加载

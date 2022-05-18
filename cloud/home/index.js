@@ -22,14 +22,14 @@ exports.main = async (event, context) => {
         // 下拉刷新次数
         let account = event.accountConsult
         console.log(account);
-        let result = await db.collection('consult').skip(account * 5).limit(5).get()
+        let result = await db.collection('consult').skip(account * 7).limit(7).get()
         ctx.body = result
     })
     // 获取新闻信息
     app.router('getNews', async (ctx, next) => {
         // 下拉刷新次数
         let account = event.accountNews
-        let result = await db.collection('news').skip(account * 5).limit(5).get()
+        let result = await db.collection('news').skip(account * 7).limit(7).get()
         ctx.body = result
     })
     return app.serve()

@@ -38,7 +38,12 @@ Component({
     properties: {
 
     },
-    attached: function () {},
+    attached() {
+        let query = this.createSelectorQuery();
+        query.select('.tab-bar').boundingClientRect(function (rect) {
+          wx.setStorageSync('heightTabbar', rect.height)     // 将获取到的高度设置缓存，以便之后使用
+        }).exec();
+    },
     /**
      * 组件的初始数据
      */
