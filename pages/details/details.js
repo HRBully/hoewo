@@ -114,23 +114,23 @@ Page({
             title,
             openid
         })
-        // wx.cloud.database().collection('collects').where({
-        //     _openid: openid
-        // }).get().then(res => {
-        //     console.log(res.data)
-        //     res.data.forEach(item => {
-        //         if (this.data.title === item.title) {
-        //             this.setData({
-        //                 isCollect: true
-        //             })
-        //         } else {
-        //             this.setData({
-        //                 isCollect: false
-        //             })
-        //         }
-        //     })
-        //     console.log(this.data.isCollect)
-        // })
+        wx.cloud.database().collection('collects').where({
+            _openid: openid
+        }).get().then(res => {
+            console.log(res.data)
+            res.data.forEach(item => {
+                if (this.data.title === item.title) {
+                    this.setData({
+                        isCollect: true
+                    })
+                } else {
+                    this.setData({
+                        isCollect: false
+                    })
+                }
+            })
+            console.log(this.data.isCollect)
+        })
         this.getintro(title)
     },
 

@@ -162,6 +162,11 @@ Page({
             }
         })
     },
+    goBook(e) {
+        wx.navigateTo({
+            url: '../details/details?title=' + e.currentTarget.dataset.name
+        })
+    },
     // 解决需要点击两次 tabbar 图标才会变换
     changeIcon() {
         if (typeof this.getTabBar === 'function' &&

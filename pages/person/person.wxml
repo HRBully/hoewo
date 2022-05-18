@@ -1,7 +1,7 @@
 <!--pages/person/person.wxml-->
 <view class="head" wx:if="{{!isLogin}}" bindtap="login">
     <image src="../../images/head.png" class="head-img"></image>
-    <view class="head-name" >点击登录</view>
+    <view class="head-name">点击登录</view>
 </view>
 <view class="head" wx:else>
     <image src="{{userImg}}" class="head-img"></image>
@@ -14,20 +14,16 @@
 </scroll-view>
 <view wx:if="{{!tabCur}}">
     <view class="book-list">
-    <view class="book-item" wx:for="{{collects}}" wx:key="id">
-        <view class="book-poster">
-            <image src="{{item.img}}" />
-        </view>
-        <view class="book-info">
-            <view class="book-info-title">{{item.title}}</view>
-            <view class="book-info-other">{{item.intro}}</view>
-        </view>
-        <view class="book-collect" >
-            <text bindtap="addCollect" data-item="{{item}}" wx:if="{{!item.isCollect}}">加入收藏</text>
-            <text bindtap="removeCollect" data-item="{{item}}" wx:else="{{!item.isCollect}}">取消收藏</text>
+        <view class="book-item" wx:for="{{collects}}" wx:key="id" bindtap="goBook" data-name="{{item.title}}">
+            <view class="book-poster">
+                <image src="{{item.img}}" />
+            </view>
+            <view class="book-info">
+                <view class="book-info-title">{{item.title}}</view>
+                <view class="book-info-other">{{item.intro}}</view>
+            </view>
         </view>
     </view>
-</view>
 </view>
 <view wx:if="{{tabCur}}" class="set">
     <view class="set-body">
@@ -43,20 +39,21 @@
                     <image src="../../images/arrow.png"></image>
                 </view>
             </navigator>
-            <view class="divLine" ></view>
+            <view class="divLine"></view>
         </block>
         <!--位置授权-->
         <block>
             <view class="set-list" bindtap="openSetting">
                 <view class="set-list-text">
                     <view class="set-list-img">
-                    <image src="../../images/home.png"></image>
-                </view>授权设置</view>
-                <view class="set-list-arrow " >
+                        <image src="../../images/home.png"></image>
+                    </view>授权设置
+                </view>
+                <view class="set-list-arrow ">
                     <image src="../../images/arrow.png"></image>
                 </view>
             </view>
-            <view class="divLine" ></view>
+            <view class="divLine"></view>
         </block>
         <button class="set-outlog" wx:if="{{isLogin}}" bindtap="outLog">退出登录</button>
 
