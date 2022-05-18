@@ -5,7 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        loading:true
     },
     getcontent() {
         let { title, chapter } = this.data
@@ -30,6 +30,13 @@ Page({
             chapter
         })
         this.getcontent()
+        let that = this
+        var set=setInterval(function(){
+            clearInterval(set);
+            that.setData({
+                loading:false,//停止骨架屏
+            })
+          },1000)
     },
 
     /**

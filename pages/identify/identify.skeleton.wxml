@@ -1,0 +1,93 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/5/18 下午4:04:06
+使用方法：
+在 C:\Users\hogsk\WeChatProjects\HoeWo\pages\identify\identify.wxml 引入模板
+
+```
+<import src="identify.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 C:\Users\hogsk\WeChatProjects\HoeWo\pages\identify\identify.wxss 中引入样式
+```
+@import "./identify.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="top-img">
+      <image class="sk-image"></image>
+    </view>
+    <view class="center">
+      <view class="selece-btn">
+        <button class="sk-transparent sk-button sk-pseudo sk-pseudo-circle">选择图片</button>
+        <button class="sk-transparent sk-button sk-pseudo sk-pseudo-circle">植物识别</button>
+      </view>
+    </view>
+    <scroll-view scroll-y="true" class="scroll-view">
+      <view class="mulu-content">
+        <view class="mulu-list">
+          <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="1">
+            <view class="left sk-transparent sk-text-18-7500-951 sk-text sk-pseudo sk-pseudo-circle">1</view>
+            <view class="mid">
+              <view class="mulu-title sk-transparent sk-text-14-2857-651 sk-text">小麦1</view>
+              <view class="mulu-intro"></view>
+            </view>
+          </view>
+          <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="1">
+            <view class="left sk-transparent sk-text-18-7500-433 sk-text sk-pseudo sk-pseudo-circle">2</view>
+            <view class="mid">
+              <view class="mulu-title sk-transparent sk-text-14-2857-422 sk-text">小麦1</view>
+              <view class="mulu-intro"></view>
+            </view>
+          </view>
+          <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="1">
+            <view class="left sk-transparent sk-text-18-7500-433 sk-text sk-pseudo sk-pseudo-circle">3</view>
+            <view class="mid">
+              <view class="mulu-title sk-transparent sk-text-14-2857-392 sk-text">小麦1</view>
+              <view class="mulu-intro"></view>
+            </view>
+          </view>
+          <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="1">
+            <view class="left sk-transparent sk-text-18-7500-273 sk-text sk-pseudo sk-pseudo-circle">4</view>
+            <view class="mid">
+              <view class="mulu-title sk-transparent sk-text-14-2857-803 sk-text">小麦1</view>
+              <view class="mulu-intro"></view>
+            </view>
+          </view>
+          <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="1">
+            <view class="left sk-transparent sk-text-18-7500-292 sk-text sk-pseudo sk-pseudo-circle">5</view>
+            <view class="mid">
+              <view class="mulu-title sk-transparent sk-text-14-2857-981 sk-text">小麦1</view>
+              <view class="mulu-intro"></view>
+            </view>
+          </view>
+          <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="1">
+            <view class="left sk-transparent sk-text-18-7500-821 sk-text sk-pseudo sk-pseudo-circle">6</view>
+            <view class="mid">
+              <view class="mulu-title sk-transparent sk-text-14-2857-314 sk-text">小麦1</view>
+              <view class="mulu-intro"></view>
+            </view>
+          </view>
+          <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="1">
+            <view class="left sk-transparent sk-text-18-7500-686 sk-text sk-pseudo sk-pseudo-circle">7</view>
+            <view class="mid">
+              <view class="mulu-title sk-transparent sk-text-14-2857-784 sk-text">小麦1</view>
+              <view class="mulu-intro"></view>
+            </view>
+          </view>
+          <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="1">
+            <view class="left sk-transparent sk-text-18-7500-647 sk-text sk-pseudo sk-pseudo-circle">8</view>
+            <view class="mid">
+              <view class="mulu-title sk-transparent sk-text-14-2857-608 sk-text">小麦1</view>
+              <view class="mulu-intro"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="center-text sk-transparent sk-text-14-2857-723 sk-text" style="background-position-x: 50%;">根据识别结果为您推荐以上内容</view>
+  </view>
+</template>

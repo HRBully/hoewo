@@ -1,4 +1,6 @@
 <!--pages/home/home.wxml-->
+<import src="home.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
 <Header menuFlag customTitle="首页"></Header>
 <view class="container" style="background-image: {{themeColor}};">
     <!-- 文字日期诗句 -->

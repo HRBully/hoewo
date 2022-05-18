@@ -2,8 +2,9 @@ Page({
     data: {
         //判断小程序的API，回调，参数，组件等是否在当前版本可用。
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        loading:true,
         isHide: true,
-        isLogin: false,
+        isLogin: true,
         openid: '',
         tabCur: 0, //默认选中
         collects: [],
@@ -42,6 +43,13 @@ Page({
 
     onLoad: function (options) {
         this.isLogin()
+        let that = this
+        var set=setInterval(function(){
+            clearInterval(set);
+            that.setData({
+                loading:false,//停止骨架屏
+            })
+          },2000)
     },
     onShow() {
         this.changeIcon()

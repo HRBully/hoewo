@@ -1,0 +1,54 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/5/18 下午7:43:16
+使用方法：
+在 C:\Users\hogsk\WeChatProjects\HoeWo\pages\cont\cont.wxml 引入模板
+
+```
+<import src="cont.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 C:\Users\hogsk\WeChatProjects\HoeWo\pages\cont\cont.wxss 中引入样式
+```
+@import "./cont.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view is="components/preBuild/preBuild" id="preContent">
+      <view>
+        <view class="preBuild--wxParse-section" style="font-size: 16px; color: black; padding: 0 10px; line-height: 1.6; word-spacing: 0px; letter-spacing: 0px; word-break: break-word; word-wrap: break-word; text-align: left; font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, 'PingFang SC', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          <view class="preBuild--wxParse-h2" style="margin-top: 30px; margin-bottom: 15px; padding: 0px; font-weight: bold; color: black; border-bottom: 2px solid rgb(239, 112, 96); font-size: 1.3em;">
+            <view class="preBuild--content preBuild--wxParse-span preBuild--wxParse-inline" style="display: inline-block; font-weight: bold; background: rgb(239, 112, 96); color: #ffffff; padding: 3px 10px 1px; border-top-right-radius: 3px; border-top-left-radius: 3px; margin-right: 3px;">
+              <view class="preBuild--WxEmojiView preBuild--wxParse-inline sk-transparent sk-text-18-7500-360 sk-text" style="true">表现手法</view>
+            </view>
+            <view class="preBuild--suffix preBuild--wxParse-span preBuild--wxParse-inline" style="true"></view>
+            <view class="preBuild--wxParse-span preBuild--wxParse-inline" style="display: inline-block; vertical-align: bottom; border-bottom: 36px solid #efebe9; border-right: 20px solid transparent;"></view>
+          </view>
+          <view class="preBuild--wxParse-p" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: black;">
+            <view class="preBuild--WxEmojiView preBuild--wxParse-inline sk-transparent sk-text-19-2308-96 sk-text" style="true">京剧表演的四种艺术手法：唱、念、做、打，也是京剧表演四项基本功。</view>
+          </view>
+          <view class="preBuild--wxParse-p" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: black;">
+            <view class="preBuild--WxEmojiView preBuild--wxParse-inline sk-transparent sk-text-19-2308-887 sk-text" style="true">唱指歌唱，念指具有音乐性的念白，二者相辅相成，构成歌舞化的京剧表演艺术两大要素之一的“歌”，做指舞蹈化的形体动作，打指武打和翻跌的技艺，二者相互结合，构成歌舞化的京剧表演艺术两大要素之一的“舞”。</view>
+          </view>
+          <view class="preBuild--wxParse-p" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: black;">
+            <view class="preBuild--WxEmojiView preBuild--wxParse-inline sk-transparent sk-text-19-2308-748 sk-text" style="true">戏曲演员从小就要从这四个方面进行训练，虽然有的演员擅长唱功（唱功老生），有的行当以做功（</view>
+            <view class="preBuild--wxParse-inline preBuild--wxParse-a" data-src="https://baike.baidu.com/item/%E8%8A%B1%E6%97%A6" style="text-decoration: none; word-wrap: break-word; font-weight: bold; color: rgb(239, 112, 96); border-bottom: 1px solid rgb(239, 112, 96);">
+              <view class="preBuild--WxEmojiView preBuild--wxParse-inline sk-transparent sk-text-19-2308-925 sk-text" style="true">花旦</view>
+            </view>
+            <view class="preBuild--WxEmojiView preBuild--wxParse-inline sk-transparent sk-text-19-2308-509 sk-text" style="true">）为主，有的以武打为主（</view>
+            <view class="preBuild--wxParse-inline preBuild--wxParse-a" data-src="https://baike.baidu.com/item/%E6%AD%A6%E5%87%80" style="text-decoration: none; word-wrap: break-word; font-weight: bold; color: rgb(239, 112, 96); border-bottom: 1px solid rgb(239, 112, 96);">
+              <view class="preBuild--WxEmojiView preBuild--wxParse-inline sk-transparent sk-text-19-2308-521 sk-text" style="true">武净</view>
+            </view>
+            <view class="preBuild--WxEmojiView preBuild--wxParse-inline sk-transparent sk-text-19-2308-994 sk-text" style="true">）。但是要求每一个演员必须有过硬的唱、念、做、打四种基本功。只有这样才能充分地发挥京剧的艺术特色。更好地表现和刻画戏中的各种人物形象。</view>
+          </view>
+          <view class="preBuild--wxParse-p" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: black;">
+            <view class="preBuild--WxEmojiView preBuild--wxParse-inline sk-transparent sk-text-19-2308-566 sk-text" style="true">京剧有唱，有舞，有对白，有武打，有各种象征性的动作，是一种高度综合性的艺术。</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,3 +1,4 @@
+@import "./weather.skeleton.wxss";
 .app {
   min-height: 96vh;
   width: 94vw;

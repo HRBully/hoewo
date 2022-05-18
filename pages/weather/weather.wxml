@@ -1,4 +1,6 @@
 <!--pages/weather/weather.wxml-->
+<import src="weather.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
 <view class="app" style="background: -webkit-linear-gradient(top, {{bgc1}}, {{bgc2}});">
     <!-- 地址、时间、更新时间 -->
     <view class="header">

@@ -1,4 +1,6 @@
 <!--pages/person/person.wxml-->
+<import src="person.skeleton.wxml" />
+<template is="skeleton" wx:if="{{loading}}" />
 <view class="head" wx:if="{{!isLogin}}" bindtap="login">
     <image src="../../images/head.png" class="head-img"></image>
     <view class="head-name">点击登录</view>
@@ -7,23 +9,24 @@
     <image src="{{userImg}}" class="head-img"></image>
     <view class="head-name">{{userName}}</view>
 </view>
-<scroll-view scroll-x class="navbar " scroll-with-animation scroll-left="{{scrollLeft}}rpx">
+<scroll-view scroll-x class="navbar " scroll-with-animation scroll-left="{{scrollLeft}}rpx" wx:if="{{!loading}}">
     <view class="nav-item" wx:for="{{tabs}}" wx:key="id" bindtap="tabSelect" data-id="{{index}}">
         <view class="nav-text {{index==tabCur?'tab-on':''}}">{{item.name}}</view>
     </view>
 </scroll-view>
 <view wx:if="{{!tabCur}}">
-    <view class="book-list">
-        <view class="book-item" wx:for="{{collects}}" wx:key="id" bindtap="goBook" data-name="{{item.title}}">
-            <view class="book-poster">
-                <image src="{{item.img}}" />
+    <scroll-view class="scroll-view" wx:if="{{!loading&&isLogin}}" scroll-y class="book-list">
+            <view class="book-item" wx:for="{{collects}}" wx:key="id" bindtap="goBook" data-name="{{item.title}}">
+                <view class="book-poster">
+                    <image src="{{item.img}}" />
+                </view>
+                <view class="book-info">
+                    <view class="book-info-title">{{item.title}}</view>
+                    <view class="book-info-other">{{item.intro}}</view>
+                </view>
             </view>
-            <view class="book-info">
-                <view class="book-info-title">{{item.title}}</view>
-                <view class="book-info-other">{{item.intro}}</view>
-            </view>
-        </view>
-    </view>
+    </scroll-view>
+
 </view>
 <view wx:if="{{tabCur}}" class="set">
     <view class="set-body">

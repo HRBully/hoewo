@@ -1,0 +1,106 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/5/19 上午7:23:25
+使用方法：
+在 C:\Users\hogsk\WeChatProjects\HoeWo\pages\weather\weather.wxml 引入模板
+
+```
+<import src="weather.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
+```
+
+在 C:\Users\hogsk\WeChatProjects\HoeWo\pages\weather\weather.wxss 中引入样式
+```
+@import "./weather.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="app sk-image" style="background: -webkit-linear-gradient(top, #7fdc9f, #37cd69);">
+      <view class="header">
+        <view class="info">
+          <image class="localIcon sk-image"></image>
+          <view class="city sk-transparent sk-text-14-2857-690 sk-text">营口</view>
+          <view class="date sk-transparent sk-text-14-2857-395 sk-text">（2022-05-19）</view>
+        </view>
+        <view class="update sk-transparent">07:23:18 更新
+          <image class="refreshIcon sk-image"></image>
+        </view>
+      </view>
+      <view class="today">
+        <view class="baseInfo">
+          <view class="temperature sk-transparent">19
+            <view class="symbol sk-transparent sk-text-14-2857-842 sk-text">℃</view>
+          </view>
+          <view class="weatherIcon">
+            <image class="image sk-image"></image>
+          </view>
+          <view class="detail">
+            <view class="type sk-transparent sk-text-14-2857-923 sk-text">晴</view>
+            <view class="temperature sk-transparent sk-text-14-2857-875 sk-text">气压：1012</view>
+          </view>
+        </view>
+        <view class="moreInfo">
+          <view class="item sk-transparent sk-text-14-2857-25 sk-text">湿度：47%</view>
+          <view class="separator"></view>
+          <view class="item sk-transparent sk-text-14-2857-330 sk-text">风向：南</view>
+          <view class="separator"></view>
+          <view class="item sk-transparent sk-text-14-2857-436 sk-text">风力：3级</view>
+        </view>
+      </view>
+      <view class="forecast">
+        <view class="container">
+          <view class="item" style="width: 100%;">
+            <view class="sk-transparent sk-text-14-2857-142 sk-text">20日（星期五）</view>
+            <view class="info">
+              <image class="icon sk-image"></image>
+              <view class="type sk-transparent sk-text-14-2857-645 sk-text">多云转晴 </view>
+            </view>
+            <view class="sk-transparent sk-text-14-2857-957 sk-text">24 / 15 ℃</view>
+          </view>
+          <view class="item" style="width: 100%;">
+            <view class="sk-transparent sk-text-14-2857-253 sk-text">21日（星期六）</view>
+            <view class="info">
+              <image class="icon sk-image"></image>
+              <view class="type sk-transparent sk-opacity">晴 </view>
+            </view>
+            <view class="sk-transparent sk-text-14-2857-225 sk-text">25 / 16 ℃</view>
+          </view>
+          <view class="item" style="width: 100%;">
+            <view class="sk-transparent sk-text-14-2857-55 sk-text">22日（星期日）</view>
+            <view class="info">
+              <image class="icon sk-image"></image>
+              <view class="type sk-transparent sk-text-14-2857-438 sk-text">晴转多云 </view>
+            </view>
+            <view class="sk-transparent sk-text-14-2857-38 sk-text">24 / 16 ℃</view>
+          </view>
+          <view class="item" style="width: 100%;">
+            <view class="sk-transparent sk-text-14-2857-284 sk-text">23日（星期一）</view>
+            <view class="info">
+              <image class="icon sk-image"></image>
+              <view class="type sk-transparent sk-opacity">晴 </view>
+            </view>
+            <view class="sk-transparent sk-text-14-2857-265 sk-text">27 / 17 ℃</view>
+          </view>
+          <view class="item" style="width: 100%;">
+            <view class="sk-transparent sk-text-14-2857-456 sk-text">24日（星期二）</view>
+            <view class="info">
+              <image class="icon sk-image"></image>
+              <view class="type sk-transparent sk-text-14-2857-702 sk-text">晴转多云 </view>
+            </view>
+            <view class="sk-transparent sk-text-14-2857-394 sk-text">27 / 17 ℃</view>
+          </view>
+          <view class="item" style="width: 100%;">
+            <view class="sk-transparent sk-text-14-2857-683 sk-text">25日（星期三）</view>
+            <view class="info">
+              <image class="icon sk-image"></image>
+              <view class="type sk-transparent sk-text-14-2857-327 sk-text">多云转小雨 </view>
+            </view>
+            <view class="sk-transparent sk-text-14-2857-775 sk-text">26 / 16 ℃</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

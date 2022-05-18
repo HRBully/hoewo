@@ -1,4 +1,5 @@
 /* pages/details/details.wxss */
+@import "./details.skeleton.wxss";
 .card-container {
     position: relative;
     margin: 0 auto;

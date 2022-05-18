@@ -1,1 +1,2 @@
 /* pages/cont/cont.wxss */
+@import "./cont.skeleton.wxss";

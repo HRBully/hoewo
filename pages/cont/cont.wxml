@@ -1,2 +1,4 @@
 <!--pages/cont/cont.wxml-->
+<import src="cont.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
 <pre-build id="preContent" bindName="{{title}}" data="{{content}}" />

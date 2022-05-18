@@ -1,3 +1,4 @@
+@import "./identify.skeleton.wxss";
 .top-img {
     margin: 20rpx;
     width: 95%;

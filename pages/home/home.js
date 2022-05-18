@@ -29,6 +29,7 @@ Page({
         currentTab: 0, // 当前 swiper-item
         consultFlag: true, // 节流
         newsFlag: true, // 节流
+        loading:true
     },
     // 获取节气信息
     getSolarTerm() {
@@ -236,6 +237,13 @@ Page({
         this.getSolarTerm()
         this.getConsult()
         this.getNews()
+        let that = this
+        var set=setInterval(function(){
+            clearInterval(set);
+            that.setData({
+                loading:false,//停止骨架屏
+            })
+          },500)
     },
 
     /**

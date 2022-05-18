@@ -1,4 +1,6 @@
 <!-- 图片展示 -->
+<import src="identify.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
 <view class="top-img">
     <image src="{{image}}"></image>
 </view>
@@ -6,7 +8,7 @@
 <!-- 选择图片及植物识别 -->
 <view class="center">
     <text class="selece-img" wx:if="{{isShow}}">请选择图片！</text>
-    <view class="selece-btn">
+    <view class="selece-btn" wx:if="{{!loading}}">
         <button bindtap="imgSelect">选择图片</button>
         <button type="primary" bindtap="plant">植物识别</button>
     </view>

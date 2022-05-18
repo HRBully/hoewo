@@ -14,6 +14,7 @@ Page({
         liveData:{},
         // 天气预报
         forecast:[],
+        loading:true
     },
     /**
      * 生命周期函数--监听页面加载
@@ -21,6 +22,13 @@ Page({
     onLoad: function (options) {
         this.getLiveWeather()
         this.getNextWeather()
+        let that = this
+        var set=setInterval(function(){
+            clearInterval(set);
+            that.setData({
+                loading:false,//停止骨架屏
+            })
+          },1000)
     },
     /**
      * 获取当前天气

@@ -16,7 +16,8 @@ Page({
         },
         ],
         lists: [],
-        isCollect: false
+        isCollect: false,
+        loading:true
     },
     getintro(title) {
         wx.cloud.database().collection('bookintro').where({
@@ -123,15 +124,18 @@ Page({
                     this.setData({
                         isCollect: true
                     })
-                } else {
-                    this.setData({
-                        isCollect: false
-                    })
                 }
             })
-            console.log(this.data.isCollect)
+            
         })
         this.getintro(title)
+        let that = this
+        var set=setInterval(function(){
+            clearInterval(set);
+            that.setData({
+                loading:false,//停止骨架屏
+            })
+          },500)
     },
 
     /**

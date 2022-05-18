@@ -9,6 +9,7 @@ Page({
         token: '',
         result: [],
         contents:[],
+        loading:true,
         /*
           百度AI识别的apikey跟密钥，动用或改动配置请告知
           author@Ned
@@ -161,6 +162,12 @@ Page({
     // 生命周期函数--监听页面加载
     onLoad: function (options) {
         that = this
+        var set=setInterval(function(){
+            clearInterval(set);
+            that.setData({
+              loading:false,//停止骨架屏
+            })
+          },1000)
     },
     // 生命周期函数--监听页面显示
     onShow: function () {

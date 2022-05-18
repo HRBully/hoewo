@@ -1,4 +1,5 @@
 /* pages/home/home.wxss */
+@import "./home.skeleton.wxss";
 .container {
     display: flex;
     flex-direction: column;

@@ -1,7 +1,9 @@
 <!--pages/details/details.wxml-->
+<import src="details.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
 <view class="card-container">
     <view class="book-card-header">
-        <view class="book-info">
+        <view class="book-info" wx:if="{{!loading}}">
             <view class="poster">
                 <image mode="aspectFill" src="{{img}}" />
             </view>
@@ -12,7 +14,7 @@
         </view>
     </view>
 </view>
-<scroll-view scroll-x class="navbar " scroll-with-animation scroll-left="{{scrollLeft}}rpx">
+<scroll-view scroll-x class="navbar " scroll-with-animation scroll-left="{{scrollLeft}}rpx" wx:if="{{!loading}}">
     <view class="nav-item" wx:for="{{tabs}}" wx:key="id" bindtap="tabSelect" data-id="{{index}}">
         <view class="nav-text {{index==tabCur?'tab-on':''}}">{{item.name}}</view>
     </view>
@@ -36,7 +38,7 @@
         </view>
     </view>
 </scroll-view>
-<view class="btns" wx:if="{{!isCollect}}">
+<view class="btns" wx:if="{{!isCollect}}" >
     <text bindtap="read">点击阅读</text>
     <text bindtap="addCollect">点击收藏</text>
 </view>

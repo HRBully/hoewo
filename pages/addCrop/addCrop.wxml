@@ -12,7 +12,7 @@
 <import src="addCrop.skeleton.wxml"/>
 <template is="skeleton" wx:if="{{loading}}" />
 <Header  customTitle="百科"></Header>
-<view class="header">
+<view class="header" wx:if="{{!loading}}">
   <search readOnly="true" bind:readOnlyEle="goSearch" />
 </view>
 <view class="book-list" hidden="{{hidden}}">
