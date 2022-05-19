@@ -16,7 +16,7 @@
                 <view class="verse">{{item}}</view>
             </block>
         </view>
-        <image src="cloud://helpfarmers-5g7z61ck3843e204.6865-helpfarmers-5g7z61ck3843e204-1310763858/springmountain.png" class="spring-mountain"></image>
+        <image src="cloud://helpfarmers-5g7z61ck3843e204.6865-helpfarmers-5g7z61ck3843e204-1310763858/{{season}}mountain.png" class="spring-mountain"></image>
         <!-- 节气 -->
         <view class="solarTerm">{{solarTerm}}</view>
     </view>

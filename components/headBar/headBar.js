@@ -37,21 +37,11 @@ Component({
                     bgColor:'#72db95'
                 })
                 break;
-            case 'summer':
-                this.setData({
-                    bgColor:'#fade4c'
-                })
-                break;
             case 'autumn':
                 this.setData({
-                    bgColor:'#f1b083'
+                    bgColor:'#f3c3b0'
                 })
                 break;
-            case 'winter':
-                this.setData({
-                    bgColor:'#90a3de'
-                })
-                break
         }
         this.setData({
             titleHeight: app.globalData.titleHeight,

@@ -15,7 +15,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        themeColor: 'linear-gradient(to bottom , #72db95, #addec2)', // 主题（背景）颜色
+        themeColor: 'linear-gradient(to bottom ,#f3c6b4, #e3d2c8)', // 主题（背景）颜色 秋天 #f3c6b4 to #e3d2c8 春天 #72db95 to #addec2
         tabbarColor: '#37b565', // tabbar颜色
         month: 0, // 今月
         day: 0, // 今天
@@ -29,7 +29,8 @@ Page({
         currentTab: 0, // 当前 swiper-item
         consultFlag: true, // 节流
         newsFlag: true, // 节流
-        loading:true
+        loading:true,
+        season:'autumn'
     },
     // 获取节气信息
     getSolarTerm() {
