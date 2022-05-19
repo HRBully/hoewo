@@ -16,7 +16,7 @@
     </view>
 </scroll-view>
 <view wx:if="{{!tabCur}}">
-    <scroll-view class="scroll-view" wx:if="{{!loading&&isLogin}}" scroll-y class="book-list">
+    <scroll-view class="scroll-view" wx:if="{{!loading&&isLogin}}" scroll-y class="book-list" style="height: calc(100vh - 650rpx);">
             <view class="book-item" wx:for="{{collects}}" wx:key="id" bindtap="goBook" data-name="{{item.title}}">
                 <view class="book-poster">
                     <image src="{{item.img}}" />

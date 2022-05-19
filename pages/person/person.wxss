@@ -240,3 +240,6 @@
     border-top: .5px solid #E8E8EA;
     color: #004b97;
 }
+.scroll-view {
+    
+}

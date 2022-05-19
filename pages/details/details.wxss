@@ -64,7 +64,7 @@
 }
 
 .scroll-view {
-    height: calc(100vh - 571rpx);
+    height: calc(100vh - 720rpx);
 }
 
 .addCollect {
@@ -128,7 +128,7 @@
     width: 100vw;
     z-index: 999;
     padding: 24rpx 40rpx;
-    background: #fff;
+    background: rgb(255, 255, 255);
     justify-content: space-around;
 }
 
