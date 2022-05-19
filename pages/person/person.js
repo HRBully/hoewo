@@ -19,21 +19,21 @@ Page({
         ],
         setitems: [{
             text: '意见反馈',
-            url: '#',
+            url: '/pages/opinion/opinion',
             icon: '../../images/personicon/spring-advice.png',
             tips: '',
             arrows: ''
         },
         {
             text: '关于我们',
-            url: '#',
+            url: '/pages/about/about',
             icon: '../../images/personicon/spring-about.png',
             tips: '',
             arrows: ''
         },
         {
             text: '联系客服',
-            url: '#',
+            fun: 'customersService',
             icon: '../../images/personicon/spring-service.png',
             tips: '',
             arrows: ''
@@ -184,4 +184,10 @@ Page({
             })
         }
     },
+    customersService(e) {
+        const { unshow } = e.target.dataset;
+        this.setData({
+            contact: !unshow ? true : false
+        })
+    }
 })

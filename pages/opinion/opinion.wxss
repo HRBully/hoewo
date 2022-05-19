@@ -1,0 +1,24 @@
+/* pages/feedback/feedback.wxss */
+.container {
+    min-height: 60vh;
+    justify-content: flex-start;
+  }
+  
+  .feed_box {
+    margin: 8%;
+    padding: 1%;
+    border: 6rpx dashed #6cd793;
+    font-size: 30rpx;
+    height: 350rpx;
+    width: 80%;
+  }
+  
+  .button_box {
+    margin-top: 30rpx;
+  }
+  
+  .button_box button {
+    border-radius: 45rpx;
+    background-color: #6cd793;
+    color: white;
+  }

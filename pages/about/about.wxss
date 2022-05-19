@@ -1,0 +1,37 @@
+/* pages/about/about.wxss */
+.container>view {
+    margin-top: 50rpx;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 50rpx;
+    text-align: center;
+  }
+  
+  .title {
+    background-color: #6cd793;
+    border-radius: 30rpx;
+    color: white;
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+  
+  .content {
+    margin-top: 50rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  
+  image {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    width: 280rpx;
+    height: 280rpx;
+  }
+  
+  .intro .content {
+    flex-direction: column;
+  }
+  
+  .member .content {}

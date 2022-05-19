@@ -10,7 +10,9 @@
         "components/searchInput/searchInput",
         "components/headBar/headBar",
         "pages/cont/cont",
-        "pages/identify/identify"
+        "pages/identify/identify",
+        "pages/about/about",
+        "pages/opinion/opinion"
     ],
     "tabBar": {
         "custom": true,

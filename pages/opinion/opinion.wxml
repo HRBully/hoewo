@@ -1,0 +1,8 @@
+<Header backHomeFlag customTitle="意见反馈"></Header>
+<!--pages/feedback/feedback.wxml-->
+<view class="container">
+  <textarea name="feedback" class="feed_box" placeholder="请输入您的宝贵意见" model:value="{{value}}" confirm-type="done" bindconfirm="onput"></textarea>
+  <view class="button_box">
+    <button disabled="{{isputting}}" loading="{{isputting}}" catchtap="onput">提交</button>
+  </view>
+</view>

@@ -174,7 +174,6 @@
 .set-list .set-list-text {
     padding: 20rpx;
     display: flex;
-    align-items: center;
 }
 
 .set-list-img {
@@ -210,4 +209,34 @@
 
 .set-switch {
     padding-right: 0rpx;
+}
+.modal_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600rpx;
+    background: #f7f7f7;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.modal_title {
+    padding: 20rpx 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.modal_content {
+    padding: 20rpx 0;
+    font-size: 1.2em;
+}
+
+.modal_confirm {
+    margin-top: 20rpx;
+    padding: 20rpx 0;
+    width: 100% !important;
+    font-size: 19px;
+    font-weight: 500;
+    border-top: .5px solid #E8E8EA;
+    color: #004b97;
 }

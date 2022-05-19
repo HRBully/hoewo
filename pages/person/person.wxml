@@ -32,7 +32,7 @@
 <view wx:if="{{tabCur}}" class="set">
     <view class="set-body">
         <block wx:for="{{setitems}}" wx:key="setitem">
-            <navigator url="item.url" class="set-list">
+            <navigator url="{{item.fun ? '#' : item.url}}" class="set-list" catchtap="{{item.fun}}">
                 <view class="set-list-text">
                     <view class="set-list-img">
                         <image src="{{item.icon}}"></image>
@@ -63,3 +63,10 @@
 
     </view>
 </view>
+<page-container show="{{contact}}" custom-style="height:auto;width:auto;position:absolute;top:40vh;left:50%;transform: translate(-50%);" overlay-style="background:none;" position="center" data-unshow="1" bind:beforeleave="customersService">
+    <view class="modal_box">
+        <view class="modal_title">提示</view>
+        <view class="modal_content">确认联系客服吗？</view>
+        <button class="modal_confirm" open-type="contact" bindcontact="handleContact" session-from="sessionFrom" data-unshow="1" catchtap="customersService">确认联系</button>
+    </view>
+</page-container>
