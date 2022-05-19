@@ -9,27 +9,21 @@ switch (Month) {
     case 3:
     case 4:
     case 5:
-        var season = 'spring'
-        app.globalData.season = 'spring'
-        break;
     case 6:
     case 7:
     case 8:
-        var season = 'summer'
-        app.globalData.season = 'summer'
+        var season = 'spring'
+        app.globalData.season = 'spring'
         break;
     case 9:
     case 10:
     case 11:
-        var season = 'autumn'
-        app.globalData.season = 'autumn'
-        break;
     case 12:
     case 1:
     case 2:
-        var season = 'winter'
-        app.globalData.season = 'winter'
-        break
+        var season = 'autumn'
+        app.globalData.season = 'autumn'
+        break;
 }
 Component({
     /**
@@ -56,23 +50,23 @@ Component({
         selectedColor: "#6cd793",
         borderStyle: "#fff",
         list: [{
-            selectedIconPath: `../images/${season}-homeActive.png`,
-            iconPath: `../images/${season}-home.png`,
+            selectedIconPath: `../images/tabicon/${season}-home-active.png`,
+            iconPath: `../images/tabicon/${season}-home.png`,
             pagePath: "../home/home",
             text: "首页"
         }, {
-            selectedIconPath: `../images/${season}-addActive.png`,
-            iconPath: `../images/${season}-add.png`,
+            selectedIconPath: `../images/tabicon/${season}-book-active.png`,
+            iconPath: `../images/tabicon/${season}-book.png`,
             pagePath: "../addCrop/addCrop",
             text: "添加"
         }, {
-            selectedIconPath: `../images/${season}-addActive.png`,
-            iconPath: `../images/${season}-add.png`,
+            selectedIconPath: `../images/tabicon/${season}-camera-active.png`,
+            iconPath: `../images/tabicon/${season}-camera.png`,
             pagePath: "../identify/identify",
             text: "识别"
         }, {
-            selectedIconPath: `../images/${season}-personActive.png`,
-            iconPath: `../images/${season}-person.png`,
+            selectedIconPath: `../images/tabicon/${season}-person-active.png`,
+            iconPath: `../images/tabicon/${season}-person.png`,
             pagePath: "../person/person",
             text: "个人"
         }]

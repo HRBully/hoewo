@@ -34,7 +34,7 @@
             <navigator url="item.url" class="set-list">
                 <view class="set-list-text">
                     <view class="set-list-img">
-                        <image src="../../images/home.png"></image>
+                        <image src="{{item.icon}}"></image>
                     </view>
                     {{item.text}}
                 </view>
@@ -49,7 +49,7 @@
             <view class="set-list" bindtap="openSetting">
                 <view class="set-list-text">
                     <view class="set-list-img">
-                        <image src="../../images/home.png"></image>
+                        <image src="../../images/shouquan.png"></image>
                     </view>授权设置
                 </view>
                 <view class="set-list-arrow ">
