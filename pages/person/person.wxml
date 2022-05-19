@@ -1,11 +1,12 @@
 <!--pages/person/person.wxml-->
 <import src="person.skeleton.wxml" />
 <template is="skeleton" wx:if="{{loading}}" />
-<view class="head" wx:if="{{!isLogin}}" bindtap="login">
+<Header  customTitle="个人中心"></Header>
+<view class="head" wx:if="{{!isLogin&&!loading}}" bindtap="login">
     <image src="../../images/head.png" class="head-img"></image>
     <view class="head-name">点击登录</view>
 </view>
-<view class="head" wx:else>
+<view class="head" wx:if="{{isLogin&&!loading}}">
     <image src="{{userImg}}" class="head-img"></image>
     <view class="head-name">{{userName}}</view>
 </view>
@@ -49,7 +50,7 @@
             <view class="set-list" bindtap="openSetting">
                 <view class="set-list-text">
                     <view class="set-list-img">
-                        <image src="../../images/shouquan.png"></image>
+                        <image src="../../images/personicon/spring-accredit.png"></image>
                     </view>授权设置
                 </view>
                 <view class="set-list-arrow ">

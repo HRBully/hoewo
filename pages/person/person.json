@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+    "usingComponents": {
+        "Header": "/components/headBar/headBar"
+    },
+    "navigationStyle": "custom"
 }

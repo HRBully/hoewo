@@ -1,7 +1,8 @@
 <!-- 图片展示 -->
 <import src="identify.skeleton.wxml"/>
 <template is="skeleton" wx:if="{{loading}}" />
-<view class="top-img">
+<Header  customTitle="农害识别"></Header>
+<view class="top-img" wx:if="{{!loading}}">
     <image src="{{image}}"></image>
 </view>
 

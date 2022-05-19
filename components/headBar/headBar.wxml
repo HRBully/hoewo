@@ -10,10 +10,10 @@
     <!-- 返回+首页 -->
     <view wx:if="{{backHomeFlag}}" class="backHome_box" style="width:{{capsuleObj.width}}px; height:{{capsuleObj.height}}px; top:{{capsuleObj.top}}px;">
         <view class="customIcon backIcon" bindtap="backClick">
-            <image src="/images/customBack.png"></image>
+            <image src="/images/back.png"></image>
         </view>
         <view class="customIcon homeIcon" bindtap="homeClick">
-            <image src="/images/customHome.png"></image>
+            <image src="/images/home.png"></image>
         </view>
     </view>
 

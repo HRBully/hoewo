@@ -20,21 +20,21 @@ Page({
         setitems: [{
             text: '意见反馈',
             url: '#',
-            icon: '',
+            icon: '../../images/personicon/spring-advice.png',
             tips: '',
             arrows: ''
         },
         {
             text: '关于我们',
             url: '#',
-            icon: '',
+            icon: '../../images/personicon/spring-about.png',
             tips: '',
             arrows: ''
         },
         {
             text: '联系客服',
             url: '#',
-            icon: '',
+            icon: '../../images/personicon/spring-service.png',
             tips: '',
             arrows: ''
         }

@@ -1,5 +1,7 @@
 {
     "usingComponents": {
-        "pre-build": "/components/preBuild/preBuild"
-      }
+        "pre-build": "/components/preBuild/preBuild",
+        "Header": "/components/headBar/headBar"
+    },
+    "navigationStyle": "custom"
 }

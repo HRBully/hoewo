@@ -1,5 +1,5 @@
 <!--
-此文件为开发者工具生成，生成时间: 2022/5/18 下午4:25:52
+此文件为开发者工具生成，生成时间: 2022/5/19 下午4:12:16
 使用方法：
 在 C:\Users\hogsk\WeChatProjects\HoeWo\pages\person\person.wxml 引入模板
 
@@ -17,56 +17,75 @@
 -->
 <template name="skeleton">
   <view class="sk-container">
+    <view is="components/headBar/headBar">
+      <view class="headBar--customHeader_box" style="height:84px; background-color:#72db95;">
+        <view class="headBar--customHeader_title sk-transparent sk-text-25-0000-274 sk-text" style="top: 48px; height: 32px; line-height: 32px; background-position-x: 50%;">
+          个人中心
+        </view>
+      </view>
+      <view class="headBar--customWrap" style="height:84px;"></view>
+    </view>
     <view class="head">
       <image class="head-img sk-image"></image>
-      <view class="head-name sk-transparent sk-text-14-2857-201 sk-text">猪皮</view>
+      <view class="head-name sk-transparent sk-text-14-2857-400 sk-text">点击登录</view>
     </view>
-    <scroll-view scroll-with-animation="true" scroll-x="true" class="navbar" scroll-left="0">
+    <scroll-view scroll-with-animation="true" scroll-x="true" class="navbar" scroll-left="-100">
       <view class="nav-item" data-id="0">
-        <view class="nav-text tab-on sk-transparent sk-text-14-2857-423 sk-text">收藏</view>
+        <view class="nav-text sk-transparent sk-text-14-2857-108 sk-text">收藏</view>
       </view>
       <view class="nav-item" data-id="1">
-        <view class="nav-text sk-transparent sk-text-14-2857-391 sk-text">设置</view>
+        <view class="nav-text tab-on sk-transparent sk-text-14-2857-913 sk-text">设置</view>
       </view>
     </scroll-view>
-    <view>
-      <view class="book-list">
-        <view class="book-item" data-name="小麦1">
-          <view class="book-poster">
+    <view class="set">
+      <view class="set-body">
+        <navigator class="set-list">
+          <view class="set-list-text sk-transparent">
+            <view class="set-list-img">
+              <image class="sk-image"></image>
+            </view>
+            意见反馈
+          </view>
+          <view class="set-list-arrow">
             <image class="sk-image"></image>
           </view>
-          <view class="book-info">
-            <view class="book-info-title sk-transparent sk-text-14-2857-248 sk-text">小麦1</view>
-            <view class="book-info-other sk-transparent sk-text-14-2857-88 sk-text">秦腔也称“乱弹”，是现存最古老、最大的剧种，被誉为百戏之源，流行遍及中国西北地区的陕西、甘肃、青海、宁夏、西藏一带。</view>
+        </navigator>
+        <view class="divLine"></view>
+        <navigator class="set-list">
+          <view class="set-list-text sk-transparent">
+            <view class="set-list-img">
+              <image class="sk-image"></image>
+            </view>
+            关于我们
           </view>
-        </view>
-        <view class="book-item" data-name="玉米2">
-          <view class="book-poster">
+          <view class="set-list-arrow">
             <image class="sk-image"></image>
           </view>
-          <view class="book-info">
-            <view class="book-info-title sk-transparent sk-text-14-2857-989 sk-text">玉米2</view>
-            <view class="book-info-other sk-transparent sk-text-14-2857-83 sk-text">秦腔也称“乱弹”，是现存最古老、最大的剧种，被誉为百戏之源，流行遍及中国西北地区的陕西、甘肃、青海、宁夏、西藏一带。</view>
+        </navigator>
+        <view class="divLine"></view>
+        <navigator class="set-list">
+          <view class="set-list-text sk-transparent">
+            <view class="set-list-img">
+              <image class="sk-image"></image>
+            </view>
+            联系客服
           </view>
-        </view>
-        <view class="book-item" data-name="水稻3">
-          <view class="book-poster">
+          <view class="set-list-arrow">
             <image class="sk-image"></image>
           </view>
-          <view class="book-info">
-            <view class="book-info-title sk-transparent sk-text-14-2857-21 sk-text">水稻3</view>
-            <view class="book-info-other sk-transparent sk-text-14-2857-479 sk-text">秦腔也称“乱弹”，是现存最古老、最大的剧种，被誉为百戏之源，流行遍及中国西北地区的陕西、甘肃、青海、宁夏、西藏一带。</view>
+        </navigator>
+        <view class="divLine"></view>
+        <view class="set-list">
+          <view class="set-list-text sk-transparent">
+            <view class="set-list-img">
+              <image class="sk-image"></image>
+            </view>授权设置
           </view>
-        </view>
-        <view class="book-item" data-name="马铃薯4">
-          <view class="book-poster">
+          <view class="set-list-arrow">
             <image class="sk-image"></image>
           </view>
-          <view class="book-info">
-            <view class="book-info-title sk-transparent sk-text-14-2857-211 sk-text">马铃薯4</view>
-            <view class="book-info-other sk-transparent sk-text-14-2857-667 sk-text">秦腔也称“乱弹”，是现存最古老、最大的剧种，被誉为百戏之源，流行遍及中国西北地区的陕西、甘肃、青海、宁夏、西藏一带。</view>
-          </view>
         </view>
+        <view class="divLine"></view>
       </view>
     </view>
   </view>

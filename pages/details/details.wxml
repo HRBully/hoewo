@@ -1,6 +1,7 @@
 <!--pages/details/details.wxml-->
 <import src="details.skeleton.wxml"/>
 <template is="skeleton" wx:if="{{loading}}" />
+<Header  backHomeFlag customTitle="农作物详情"></Header>
 <view class="card-container">
     <view class="book-card-header">
         <view class="book-info" wx:if="{{!loading}}">

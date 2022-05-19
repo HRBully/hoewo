@@ -1,4 +1,5 @@
 <!--pages/search/search.wxml-->
+<Header  backHomeFlag customTitle="搜一搜"></Header>
 <search bind:search="search" />
 <view class="book-list">
     <view class="book-item" wx:for="{{books}}" wx:key="id">

@@ -13,6 +13,7 @@
 .customIcon {
     display: flex;
     flex: 1;
+    justify-content: center;
 }
 
 .customIcon image {

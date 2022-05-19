@@ -1,5 +1,7 @@
 {
     "usingComponents": {
-        "search": "/components/searchInput/searchInput"
-      }
+        "search": "/components/searchInput/searchInput",
+        "Header": "/components/headBar/headBar"
+      },
+      "navigationStyle": "custom"
 }
