@@ -8,7 +8,12 @@
     height: 164rpx;
     margin: 20rpx auto;
     border-radius: 44rpx;
+}
+.spring-color {
     color: #15ad67;
+}
+.autumn-color {
+    color: #d17a46;
 }
 .today {
     display: flex;
@@ -17,8 +22,12 @@
     flex-direction: column;
     width: 49%;
     height: 100rpx;
+}
+.spring-box {
     border-right: 3rpx solid #65d78b;
-
+}
+.autumn-box {
+    border-right: 3rpx solid #65d78b;
 }
 .tomorrow {
     display: flex;

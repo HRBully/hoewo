@@ -30,7 +30,7 @@ Page({
         consultFlag: true, // 节流
         newsFlag: true, // 节流
         loading:true,
-        season:'autumn'
+        season:'spring'
     },
     // 获取节气信息
     getSolarTerm() {
@@ -238,6 +238,7 @@ Page({
         this.getSolarTerm()
         this.getConsult()
         this.getNews()
+       
         let that = this
         var set=setInterval(function(){
             clearInterval(set);
@@ -245,6 +246,22 @@ Page({
                 loading:false,//停止骨架屏
             })
           },500)
+          const app = getApp();
+          this.setData({
+              season:app.globalData.season
+          })
+          switch(app.globalData.season) {
+              case 'spring':
+              this.setData({
+                  themeColor: 'linear-gradient(to bottom ,#72db95, #addec2)'
+              }) 
+              break
+              case 'autumn':
+              this.setData({
+                  themeColor: 'linear-gradient(to bottom ,#f3c6b4, #e3d2c8)'
+              })
+              break
+          }
     },
 
     /**

@@ -1,7 +1,7 @@
 <!--components/weather/weather.wxml-->
-<view class="box" catchtap="toWeather">
+<view class="box {{season}}-color" catchtap="toWeather">
 <!-- 今日天气 -->
-    <view class="today">
+    <view class="today {{season}}-box">
     <!-- 第一行 -->
         <view class="top">
         <!-- 天气图标 -->

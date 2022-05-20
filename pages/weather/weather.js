@@ -23,6 +23,11 @@ Page({
         this.getLiveWeather()
         this.getNextWeather()
         let that = this
+        const app = getApp();
+        this.setData({
+            season:app.globalData.season
+        })
+        
         var set=setInterval(function(){
             clearInterval(set);
             that.setData({

@@ -8,7 +8,6 @@ Component({
     properties: {
 
     },
-
     /**
      * 组件的初始数据
      */
@@ -28,9 +27,15 @@ Component({
         nexttemL: '', //明天最低温度
         nextwin: '', //空气水平
         nextmonth: '', //月份
-        nextday: 0 // 明天
+        nextday: 0 ,// 明天
+        season:''
     },
-
+    attached:function() {
+        const app = getApp();
+        this.setData({
+            season:app.globalData.season
+        })
+    },
     /**
      * 组件的方法列表
      */
