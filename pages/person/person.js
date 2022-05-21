@@ -2,54 +2,83 @@ Page({
     data: {
         //判断小程序的API，回调，参数，组件等是否在当前版本可用。
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
-        loading:true,
+        loading: true,
         isHide: true,
         isLogin: true,
+        season: 'spring',
         openid: '',
         tabCur: 0, //默认选中
         collects: [],
         tabs: [{
-            name: '收藏',
-            id: 0
-        },
-        {
-            name: '设置',
-            id: 1
-        },
+                name: '收藏',
+                id: 0
+            },
+            {
+                name: '设置',
+                id: 1
+            },
         ],
         setitems: [{
-            text: '意见反馈',
-            url: '/pages/opinion/opinion',
-            icon: '../../images/personicon/spring-advice.png',
-            tips: '',
-            arrows: ''
-        },
-        {
-            text: '关于我们',
-            url: '/pages/about/about',
-            icon: '../../images/personicon/spring-about.png',
-            tips: '',
-            arrows: ''
-        },
-        {
-            text: '联系客服',
-            fun: 'customersService',
-            icon: '../../images/personicon/spring-service.png',
-            tips: '',
-            arrows: ''
-        }
+                text: '意见反馈',
+                url: '/pages/opinion/opinion',
+                icon: '../../images/personicon/spring-advice.png',
+                tips: '',
+                arrows: ''
+            },
+            {
+                text: '关于我们',
+                url: '/pages/about/about',
+                icon: '../../images/personicon/spring-about.png',
+                tips: '',
+                arrows: ''
+            },
+            {
+                text: '联系客服',
+                fun: 'customersService',
+                icon: '../../images/personicon/spring-service.png',
+                tips: '',
+                arrows: ''
+            }
         ]
     },
 
     onLoad: function (options) {
         this.isLogin()
         let that = this
-        var set=setInterval(function(){
+        var set = setInterval(function () {
             clearInterval(set);
             that.setData({
-                loading:false,//停止骨架屏
+                loading: false, //停止骨架屏
             })
-          },2000)
+        }, 2000)
+        const app = getApp();
+        this.setData({
+            season: app.globalData.season
+        })
+        this.setData({
+            setitems:  [{
+                    text: '意见反馈',
+                    url: '/pages/opinion/opinion',
+                    icon: '../../images/personicon/'+app.globalData.season+'-advice.png',
+                    tips: '',
+                    arrows: ''
+                },
+                {
+                    text: '关于我们',
+                    url: '/pages/about/about',
+                    icon: '../../images/personicon/'+app.globalData.season+'-about.png',
+                    tips: '',
+                    arrows: ''
+                },
+                {
+                    text: '联系客服',
+                    fun: 'customersService',
+                    icon: '../../images/personicon/'+app.globalData.season+'-service.png',
+                    tips: '',
+                    arrows: ''
+                }
+            ]
+        })
     },
     onShow() {
         this.changeIcon()
@@ -69,8 +98,8 @@ Page({
     login() {
         console.log(1)
         wx.getUserProfile({
-            desc: '用户完善会员资料',
-        })
+                desc: '用户完善会员资料',
+            })
             .then(res => {
                 wx.showToast({
                     title: '登录成功',
@@ -123,8 +152,8 @@ Page({
     },
     getCollects(openid) {
         wx.cloud.database().collection('collects').where({
-            _openid: openid
-        }).get()
+                _openid: openid
+            }).get()
             .then(res => {
                 console.log(res.data)
                 this.setData({
@@ -185,7 +214,9 @@ Page({
         }
     },
     customersService(e) {
-        const { unshow } = e.target.dataset;
+        const {
+            unshow
+        } = e.target.dataset;
         this.setData({
             contact: !unshow ? true : false
         })

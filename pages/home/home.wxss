@@ -24,12 +24,13 @@
     display: flex;
     flex-direction: column;
     position: absolute;
+    z-index: 2;
 }
 
 .spring-mountain {
     height: 250rpx;
     position: relative;
-    left: 60rpx;
+    left: 20rpx;
 }
 
 .remain-time {
@@ -88,8 +89,11 @@
     border-bottom: solid 4rpx #7d7d7d;
 }
 
-.active {
+.spring-active {
     border-bottom: solid 4rpx #39a863;
+}
+.autumn-active {
+    border-bottom: solid 4rpx #d9926a;
 }
 .article-swiper {
   width: 100%;

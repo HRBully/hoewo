@@ -1,5 +1,5 @@
 <!--
-此文件为开发者工具生成，生成时间: 2022/5/19 下午4:12:16
+此文件为开发者工具生成，生成时间: 2022/5/21 上午7:58:20
 使用方法：
 在 C:\Users\hogsk\WeChatProjects\HoeWo\pages\person\person.wxml 引入模板
 
@@ -18,75 +18,26 @@
 <template name="skeleton">
   <view class="sk-container">
     <view is="components/headBar/headBar">
-      <view class="headBar--customHeader_box" style="height:84px; background-color:#72db95;">
-        <view class="headBar--customHeader_title sk-transparent sk-text-25-0000-274 sk-text" style="top: 48px; height: 32px; line-height: 32px; background-position-x: 50%;">
+      <view class="headBar--customHeader_box" style="height:60px; background-color:#72db95;">
+        <view class="headBar--customHeader_title sk-transparent sk-text-29-6875-952 sk-text" style="top: 24px; height: 32px; line-height: 32px; background-position-x: 50%;">
           个人中心
         </view>
       </view>
-      <view class="headBar--customWrap" style="height:84px;"></view>
+      <view class="headBar--customWrap" style="height:60px;"></view>
     </view>
     <view class="head">
       <image class="head-img sk-image"></image>
-      <view class="head-name sk-transparent sk-text-14-2857-400 sk-text">点击登录</view>
+      <view class="head-name sk-transparent sk-text-14-2857-878 sk-text">点击登录</view>
     </view>
-    <scroll-view scroll-with-animation="true" scroll-x="true" class="navbar" scroll-left="-100">
+    <scroll-view scroll-with-animation="true" scroll-x="true" class="navbar" scroll-left="0">
       <view class="nav-item" data-id="0">
-        <view class="nav-text sk-transparent sk-text-14-2857-108 sk-text">收藏</view>
+        <view class="nav-text tab-on sk-transparent sk-text-14-2857-479 sk-text">收藏</view>
       </view>
       <view class="nav-item" data-id="1">
-        <view class="nav-text tab-on sk-transparent sk-text-14-2857-913 sk-text">设置</view>
+        <view class="nav-text sk-transparent sk-text-14-2857-435 sk-text">设置</view>
       </view>
     </scroll-view>
-    <view class="set">
-      <view class="set-body">
-        <navigator class="set-list">
-          <view class="set-list-text sk-transparent">
-            <view class="set-list-img">
-              <image class="sk-image"></image>
-            </view>
-            意见反馈
-          </view>
-          <view class="set-list-arrow">
-            <image class="sk-image"></image>
-          </view>
-        </navigator>
-        <view class="divLine"></view>
-        <navigator class="set-list">
-          <view class="set-list-text sk-transparent">
-            <view class="set-list-img">
-              <image class="sk-image"></image>
-            </view>
-            关于我们
-          </view>
-          <view class="set-list-arrow">
-            <image class="sk-image"></image>
-          </view>
-        </navigator>
-        <view class="divLine"></view>
-        <navigator class="set-list">
-          <view class="set-list-text sk-transparent">
-            <view class="set-list-img">
-              <image class="sk-image"></image>
-            </view>
-            联系客服
-          </view>
-          <view class="set-list-arrow">
-            <image class="sk-image"></image>
-          </view>
-        </navigator>
-        <view class="divLine"></view>
-        <view class="set-list">
-          <view class="set-list-text sk-transparent">
-            <view class="set-list-img">
-              <image class="sk-image"></image>
-            </view>授权设置
-          </view>
-          <view class="set-list-arrow">
-            <image class="sk-image"></image>
-          </view>
-        </view>
-        <view class="divLine"></view>
-      </view>
-    </view>
+    <view></view>
+    <page-container custom-style="height:auto;width:auto;position:absolute;top:40vh;left:50%;transform: translate(-50%);" data-unshow="1" overlay-style="background:none;" position="center"></page-container>
   </view>
 </template>

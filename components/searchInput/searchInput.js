@@ -21,7 +21,8 @@ Component({
 
   data: {
     // icon 的大小
-    iconSize: 15
+    iconSize: 15,
+    season:'autumn'
   },
 
   attached() {
@@ -30,6 +31,10 @@ Component({
       this.setData({
         iconSize: Math.round(_screenWidth / 750 * 25)
       });
+      const app = getApp();
+          this.setData({
+              season:app.globalData.season
+          })
     } catch (e) {
       console.error(e);
     }

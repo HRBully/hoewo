@@ -18,10 +18,14 @@
   padding-right: 15rpx;
   box-sizing: border-box;
   border-radius: 50rpx;
-  border: 1rpx solid #6cd793;
   background: #fff;
 }
-
+.spring-border {
+    border: 1rpx solid #6cd793;
+}
+.autumn-border {
+    border: 1rpx solid #fbb79f;
+}
 .search-bar__icon {
   position: relative;
   margin-right: 15rpx;

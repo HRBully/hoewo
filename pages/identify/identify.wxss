@@ -70,9 +70,18 @@
     margin: 20rpx;
     line-height: 35rpx;
 }
-.selece-btn button{
+.spring-btn {
+    background-color: #07c160;
+    color: white;
+}
+.autumn-btn {
+    background-color: #fab69f;
+    color: white;
+}
+.selece-btn .check{
     background-color: hsla(0, 0%, 97%, 0.698);
 }
+
 .scroll-view {
     height: calc(100vh - 850rpx);
 }
@@ -109,9 +118,13 @@
     right: 0;
     width: 8rpx;
     height: 100%;
+}
+.spring-item::after{
     background-color: #84e1a3;
 }
-
+.autumn-item::after{
+    background-color: #f3c3b0;
+}
 .mulu-item .mid {
     margin-left: 35rpx;
     margin-right: auto;

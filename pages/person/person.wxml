@@ -3,7 +3,7 @@
 <template is="skeleton" wx:if="{{loading}}" />
 <Header  customTitle="个人中心"></Header>
 <view class="head" wx:if="{{!isLogin&&!loading}}" bindtap="login">
-    <image src="../../images/head.png" class="head-img"></image>
+    <image src="../../images/{{season}}-people.png" class="head-img"></image>
     <view class="head-name">点击登录</view>
 </view>
 <view class="head" wx:if="{{isLogin&&!loading}}">
@@ -12,7 +12,7 @@
 </view>
 <scroll-view scroll-x class="navbar " scroll-with-animation scroll-left="{{scrollLeft}}rpx" wx:if="{{!loading}}">
     <view class="nav-item" wx:for="{{tabs}}" wx:key="id" bindtap="tabSelect" data-id="{{index}}">
-        <view class="nav-text {{index==tabCur?'tab-on':''}}">{{item.name}}</view>
+        <view class="nav-text {{index==tabCur?season+'-tab-on':''}}">{{item.name}}</view>
     </view>
 </scroll-view>
 <view wx:if="{{!tabCur}}">
@@ -50,7 +50,7 @@
             <view class="set-list" bindtap="openSetting">
                 <view class="set-list-text">
                     <view class="set-list-img">
-                        <image src="../../images/personicon/spring-accredit.png"></image>
+                        <image src="../../images/personicon/{{season}}-accredit.png"></image>
                     </view>授权设置
                 </view>
                 <view class="set-list-arrow ">

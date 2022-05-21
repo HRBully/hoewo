@@ -15,7 +15,8 @@ Page({
           author@Ned
         */
         apiKey: "KCGyrRIFg50RwMEt5ROIIEYc",
-        secretKey: "wwiGniA2LFKGn0G3FfYcWay4Qpoei99G"
+        secretKey: "wwiGniA2LFKGn0G3FfYcWay4Qpoei99G",
+        season:''
     },
     //选择图片按钮
     imgSelect() {
@@ -168,6 +169,10 @@ Page({
               loading:false,//停止骨架屏
             })
           },1000)
+          const app = getApp();
+          this.setData({
+              season:app.globalData.season
+          })
     },
     // 生命周期函数--监听页面显示
     onShow: function () {

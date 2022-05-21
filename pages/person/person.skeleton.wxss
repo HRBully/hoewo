@@ -1,5 +1,5 @@
 /*
-此文件为开发者工具生成，生成时间: 2022/5/19 下午4:12:16
+此文件为开发者工具生成，生成时间: 2022/5/21 上午7:58:20
 
 在 C:\Users\hogsk\WeChatProjects\HoeWo\pages\person\person.wxss 中引入样式
 ```
@@ -11,9 +11,9 @@
 .sk-transparent {
     color: transparent !important;
   }
-.sk-text-25-0000-274 {
-    background-image: linear-gradient(transparent 25.0000%, #EEEEEE 0%, #EEEEEE 75.0000%, transparent 0%) !important;
-    background-size: 100% 64.0000rpx;
+.sk-text-29-6875-952 {
+    background-image: linear-gradient(transparent 29.6875%, #EEEEEE 0%, #EEEEEE 70.3125%, transparent 0%) !important;
+    background-size: 100% 75.0000rpx;
     position: absolute !important;
   }
 .sk-text {
@@ -23,19 +23,19 @@
     color: transparent !important;
     background-repeat: repeat-y !important;
   }
-.sk-text-14-2857-400 {
+.sk-text-14-2857-878 {
     background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
-    background-size: 100% 44.8000rpx;
+    background-size: 100% 52.5000rpx;
     position: relative !important;
   }
-.sk-text-14-2857-108 {
+.sk-text-14-2857-479 {
     background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
-    background-size: 100% 39.2000rpx;
+    background-size: 100% 52.5000rpx;
     position: relative !important;
   }
-.sk-text-14-2857-913 {
+.sk-text-14-2857-435 {
     background-image: linear-gradient(transparent 14.2857%, #EEEEEE 0%, #EEEEEE 85.7143%, transparent 0%) !important;
-    background-size: 100% 53.2000rpx;
+    background-size: 100% 36.0938rpx;
     position: relative !important;
   }
 .sk-image {

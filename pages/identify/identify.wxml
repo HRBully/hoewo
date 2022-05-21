@@ -11,7 +11,7 @@
     <text class="selece-img" wx:if="{{isShow}}">请选择图片！</text>
     <view class="selece-btn" wx:if="{{!loading}}">
         <button bindtap="imgSelect">选择图片</button>
-        <button type="primary" bindtap="plant">植物识别</button>
+        <button  bindtap="plant" class="{{season}}-btn">植物识别</button>
     </view>
 </view>
 
@@ -30,7 +30,7 @@
     <view class="mulu-content">
         <view class="mulu-list">
             <view class="mulu-item" wx:for="{{contents}}" wx:key="index" bindtap="goCont" data-chapter="{{item.chapter}}">
-                <view class="left">{{index+1}}</view>
+                <view class="left {{season}}-item">{{index+1}}</view>
                 <view class="mid">
                     <view class="mulu-title">{{item.title}}</view>
                     <view class="mulu-intro">{{}}</view>

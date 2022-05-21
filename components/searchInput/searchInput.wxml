@@ -1,5 +1,5 @@
 <view class="search-bar">
-  <view class="search-bar__box" catchtap="{{readOnly ? '_readOnly' : ''}}">
+  <view class="search-bar__box {{season}}-border" catchtap="{{readOnly ? '_readOnly' : ''}}">
     <icon class="search-bar__icon" type="search" size="{{iconSize}}" />
     <view class="search-bar__divider" />
     <input class="search-bar__input" type="text" placeholder="{{placeholder}}" value="{{value}}" disabled="{{readOnly}}" bindinput="_searchInput" bindconfirm="_searchConfirm" confirm-type="search" />

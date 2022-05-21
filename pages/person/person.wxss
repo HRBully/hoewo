@@ -48,12 +48,19 @@
     box-sizing: border-box;
 }
 
-.tab-on {
+.spring-tab-on {
     color: #6cd793;
     /* 选中放大 */
     font-size: 38rpx !important;
     font-weight: 600;
     border-bottom: 4rpx solid #6cd793 !important;
+}
+.autumn-tab-on {
+    color: #df7373;
+    /* 选中放大 */
+    font-size: 38rpx !important;
+    font-weight: 600;
+    border-bottom: 4rpx solid #df7373 !important;
 }
 
 .scroll-view {

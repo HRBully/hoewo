@@ -1,5 +1,5 @@
 <!--
-此文件为开发者工具生成，生成时间: 2022/5/18 下午7:04:06
+此文件为开发者工具生成，生成时间: 2022/5/21 上午7:58:48
 使用方法：
 在 C:\Users\hogsk\WeChatProjects\HoeWo\pages\home\home.wxml 引入模板
 
@@ -18,49 +18,49 @@
 <template name="skeleton">
   <view class="sk-container">
     <view is="components/headBar/headBar">
-      <view class="headBar--customHeader_box" style="height:84px; background-color:#72db95;">
-        <view class="headBar--menu_box" style="height:32px; top:48px;">
+      <view class="headBar--customHeader_box" style="height:60px; background-color:#72db95;">
+        <view class="headBar--menu_box" style="height:32px; top:24px;">
           <view class="headBar--customIcon">
             <image class="sk-image"></image>
             <view is="components/location/location">
               <view class="location--container">
-                <view class="location--location sk-transparent sk-text-14-2857-594 sk-text" style="background-position-x: 50%;">营口市</view>
+                <view class="location--location sk-transparent sk-text-14-2857-255 sk-text" style="background-position-x: 50%;">北京</view>
               </view>
             </view>
           </view>
         </view>
-        <view class="headBar--customHeader_title sk-transparent sk-text-25-0000-557 sk-text" style="top: 48px; height: 32px; line-height: 32px; background-position-x: 50%;">
+        <view class="headBar--customHeader_title sk-transparent sk-text-29-6875-111 sk-text" style="top: 24px; height: 32px; line-height: 32px; background-position-x: 50%;">
           首页
         </view>
       </view>
-      <view class="headBar--customWrap" style="height:84px;"></view>
+      <view class="headBar--customWrap" style="height:60px;"></view>
     </view>
-    <view class="container sk-image" style="background-image: linear-gradient(to bottom , #72db95, #addec2);">
+    <view class="container sk-image" style="background-image: linear-gradient(to bottom ,#72db95, #addec2);">
       <view class="home-title">
         <view class="title-left">
-          <view class="remain-time sk-transparent sk-text-14-2857-544 sk-text">距离小满还有3天</view>
-          <view class="current-time sk-transparent sk-text-14-2857-477 sk-text">5月18日</view>
-          <view class="verse sk-transparent sk-text-14-2857-8 sk-text">小满温和春意浓</view>
-          <view class="verse sk-transparent sk-text-14-2857-859 sk-text">防治蚜虫麦秆蝇</view>
+          <view class="remain-time sk-transparent sk-text-14-2857-963 sk-text">距离小满还有0天</view>
+          <view class="current-time sk-transparent sk-text-14-2857-527 sk-text">5月21日</view>
+          <view class="verse sk-transparent sk-text-14-2857-726 sk-text">小满温和春意浓</view>
+          <view class="verse sk-transparent sk-text-14-2857-324 sk-text">防治蚜虫麦秆蝇</view>
         </view>
         <image class="spring-mountain sk-image"></image>
-        <view class="solarTerm sk-transparent sk-text-14-2857-170 sk-text">小满</view>
+        <view class="solarTerm sk-transparent sk-opacity">小满</view>
       </view>
       <view class="weather">
         <view is="components/weather/weather" id="weather">
-          <view class="weather--box">
-            <view class="weather--today">
+          <view class="weather--box weather--spring-color">
+            <view class="weather--today weather--spring-box">
               <view class="weather--top">
                 <view class="weather--wea_icon">
                   <image class="sk-image"></image>
                 </view>
-                <view class="weather--tem sk-transparent sk-text-14-2857-113 sk-text">20℃</view>
-                <view class="weather--date sk-transparent sk-text-38-0952-503 sk-text">5/18</view>
+                <view class="weather--tem sk-transparent sk-text-14-2857-677 sk-text">23℃</view>
+                <view class="weather--date sk-transparent sk-text-38-8889-580 sk-text">5/21</view>
               </view>
               <view class="weather--bottom">
-                <view class="sk-transparent sk-text-14-2857-297 sk-text">25℃/14℃</view>
-                <view class="sk-transparent sk-opacity">晴</view>
-                <view class="sk-transparent sk-text-14-2857-103 sk-text">西南风</view>
+                <view class="sk-transparent sk-text-14-2857-224 sk-text">35℃/20℃</view>
+                <view class="sk-transparent sk-opacity">雾</view>
+                <view class="sk-transparent sk-text-14-2857-758 sk-text">西北风</view>
               </view>
             </view>
             <view class="weather--tomorrow">
@@ -68,13 +68,13 @@
                 <view class="weather--wea_icon">
                   <image class="sk-image"></image>
                 </view>
-                <view class="weather--tem sk-transparent sk-text-14-2857-8 sk-text">24℃</view>
-                <view class="weather--date sk-transparent sk-text-38-0952-518 sk-text">5/19</view>
+                <view class="weather--tem sk-transparent sk-text-14-2857-21 sk-text">35℃</view>
+                <view class="weather--date sk-transparent sk-text-38-8889-488 sk-text">5/22</view>
               </view>
               <view class="weather--bottom">
-                <view class="sk-transparent sk-text-14-2857-907 sk-text">24℃/15℃</view>
-                <view class="sk-transparent sk-text-14-2857-543 sk-text">多云转晴</view>
-                <view class="sk-transparent sk-text-14-2857-278 sk-text">西南风/西南风</view>
+                <view class="sk-transparent sk-text-14-2857-233 sk-text">35℃/21℃</view>
+                <view class="sk-transparent sk-opacity">晴</view>
+                <view class="sk-transparent sk-text-14-2857-978 sk-text">西南风/西南风</view>
               </view>
             </view>
           </view>
@@ -82,66 +82,50 @@
       </view>
       <view class="article">
         <view class="article-select">
-          <view class="select active sk-transparent sk-text-19-6970-899 sk-text" style="background-position-x: 50%;">咨询</view>
-          <view class="select sk-transparent sk-text-19-6970-141 sk-text" style="background-position-x: 50%;">新闻</view>
+          <view class="select active sk-transparent sk-text-19-6429-365 sk-text" style="background-position-x: 50%;">咨询</view>
+          <view class="select sk-transparent sk-text-19-6429-791 sk-text" style="background-position-x: 50%;">新闻</view>
         </view>
-        <swiper class="article-swiper" current="0" style="height: 348px; " autoplay="false">
+        <swiper class="article-swiper" current="0" style="height: 205px; " autoplay="false">
           <swiper-item item-id="0" style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
-            <scroll-view scroll-y="true" style="height: 348px; ">
+            <scroll-view scroll-y="true" style="height: 205px; ">
               <view class="article-swiper-item">
                 <view is="components/mesCard/mesCard" class="item">
                   <view class="mesCard--card">
-                    <view class="mesCard--title sk-transparent sk-text-14-2857-660 sk-text">小麦病虫综合防治技术</view>
+                    <view class="mesCard--title sk-transparent sk-text-14-2857-983 sk-text">小麦病虫综合防治技术</view>
                     <view class="mesCard--content">
-                      <view class="mesCard--message sk-transparent sk-text-14-2857-839 sk-text">小麦病虫种类多，为害期长，在防治上要坚持“预防为主，综合防治”的植保方针，加强病虫的预测预报，掌握控害的主动权，以农业防治为基础，重点防治小麦纹枯病、赤霉病、白粉病、汲浆虫、穗蚜，兼治其他病虫；选用高效、低毒、低残留农药，减少用药次数，降低用药量，以保护天敌减轻病虫为害，应采取以下技术措施。</view>
+                      <view class="mesCard--message sk-transparent sk-text-14-2857-551 sk-text">小麦病虫种类多，为害期长，在防治上要坚持“预防为主，综合防治”的植保方针，加强病虫的预测预报，掌握控害的主动权，以农业防治为基础，重点防治小麦纹枯病、赤霉病、白粉病、汲浆虫、穗蚜，兼治其他病虫；选用高效、低毒、低残留农药，减少用药次数，降低用药量，以保护天敌减轻病虫为害，应采取以下技术措施。</view>
                     </view>
                   </view>
                 </view>
                 <view is="components/mesCard/mesCard" class="item">
                   <view class="mesCard--card">
-                    <view class="mesCard--title sk-transparent sk-text-14-2857-714 sk-text">小麦病虫综合防治技术</view>
+                    <view class="mesCard--title sk-transparent sk-text-14-2857-870 sk-text">小麦病虫综合防治技术</view>
                     <view class="mesCard--content">
-                      <view class="mesCard--message sk-transparent sk-text-14-2857-687 sk-text">小麦病虫种类多，为害期长，在防治上要坚持“预防为主，综合防治”的植保方针，加强病虫的预测预报，掌握控害的主动权，以农业防治为基础，重点防治小麦纹枯病、赤霉病、白粉病、汲浆虫、穗蚜，兼治其他病虫；选用高效、低毒、低残留农药，减少用药次数，降低用药量，以保护天敌减轻病虫为害，应采取以下技术措施。</view>
+                      <view class="mesCard--message sk-transparent sk-text-14-2857-555 sk-text">小麦病虫种类多，为害期长，在防治上要坚持“预防为主，综合防治”的植保方针，加强病虫的预测预报，掌握控害的主动权，以农业防治为基础，重点防治小麦纹枯病、赤霉病、白粉病、汲浆虫、穗蚜，兼治其他病虫；选用高效、低毒、低残留农药，减少用药次数，降低用药量，以保护天敌减轻病虫为害，应采取以下技术措施。</view>
                     </view>
                   </view>
                 </view>
                 <view is="components/mesCard/mesCard" class="item">
                   <view class="mesCard--card">
-                    <view class="mesCard--title sk-transparent sk-text-14-2857-862 sk-text">小麦</view>
+                    <view class="mesCard--title sk-transparent sk-text-14-2857-746 sk-text">小麦</view>
                     <view class="mesCard--content">
-                      <view class="mesCard--message sk-transparent sk-text-14-2857-994 sk-text">小麦病虫种类多，为害期长，在防治上要坚持“预防为主，综合防治”的植保方针，加强病虫的预测预报，掌握控害的主动权，以农业防治为基础，重点防治小麦纹枯病、赤霉病、白粉病、汲浆虫、穗蚜，兼治其他病虫；选用高效、低毒、低残留农药，减少用药次数，降低用药量，以保护天敌减轻病虫为害，应采取以下技术措施。</view>
+                      <view class="mesCard--message sk-transparent sk-text-14-2857-800 sk-text">小麦病虫种类多，为害期长，在防治上要坚持“预防为主，综合防治”的植保方针，加强病虫的预测预报，掌握控害的主动权，以农业防治为基础，重点防治小麦纹枯病、赤霉病、白粉病、汲浆虫、穗蚜，兼治其他病虫；选用高效、低毒、低残留农药，减少用药次数，降低用药量，以保护天敌减轻病虫为害，应采取以下技术措施。</view>
                     </view>
                   </view>
                 </view>
                 <view is="components/mesCard/mesCard" class="item">
                   <view class="mesCard--card">
-                    <view class="mesCard--title sk-transparent sk-text-14-2857-556 sk-text">小麦</view>
+                    <view class="mesCard--title sk-transparent sk-text-14-2857-369 sk-text">小麦</view>
                     <view class="mesCard--content">
-                      <view class="mesCard--message sk-transparent sk-text-14-2857-752 sk-text">小麦病虫种类多，为害期长，在防治上要坚持“预防为主，综合防治”的植保方针，加强病虫的预测预报，掌握控害的主动权，以农业防治为基础，重点防治小麦纹枯病、赤霉病、白粉病、汲浆虫、穗蚜，兼治其他病虫；选用高效、低毒、低残留农药，减少用药次数，降低用药量，以保护天敌减轻病虫为害，应采取以下技术措施。</view>
+                      <view class="mesCard--message sk-transparent sk-text-14-2857-72 sk-text">小麦病虫种类多，为害期长，在防治上要坚持“预防为主，综合防治”的植保方针，加强病虫的预测预报，掌握控害的主动权，以农业防治为基础，重点防治小麦纹枯病、赤霉病、白粉病、汲浆虫、穗蚜，兼治其他病虫；选用高效、低毒、低残留农药，减少用药次数，降低用药量，以保护天敌减轻病虫为害，应采取以下技术措施。</view>
                     </view>
                   </view>
                 </view>
                 <view is="components/mesCard/mesCard" class="item">
                   <view class="mesCard--card">
-                    <view class="mesCard--title sk-transparent sk-text-14-2857-867 sk-text">小麦</view>
+                    <view class="mesCard--title sk-transparent sk-text-14-2857-664 sk-text">小麦</view>
                     <view class="mesCard--content">
                       <view class="mesCard--message sk-transparent sk-opacity">2</view>
-                    </view>
-                  </view>
-                </view>
-                <view is="components/mesCard/mesCard" class="item">
-                  <view class="mesCard--card">
-                    <view class="mesCard--title sk-transparent sk-text-14-2857-201 sk-text">小麦</view>
-                    <view class="mesCard--content">
-                      <view class="mesCard--message sk-transparent sk-text-14-2857-346 sk-text">消息</view>
-                    </view>
-                  </view>
-                </view>
-                <view is="components/mesCard/mesCard" class="item">
-                  <view class="mesCard--card">
-                    <view class="mesCard--title sk-transparent sk-text-14-2857-333 sk-text">小麦</view>
-                    <view class="mesCard--content">
-                      <view class="mesCard--message sk-transparent sk-text-14-2857-114 sk-text">2112</view>
                     </view>
                   </view>
                 </view>

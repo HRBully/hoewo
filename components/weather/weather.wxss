@@ -24,10 +24,10 @@
     height: 100rpx;
 }
 .spring-box {
-    border-right: 3rpx solid #65d78b;
+    border-right: 5rpx solid #65d78b;
 }
 .autumn-box {
-    border-right: 3rpx solid #65d78b;
+    border-right: 5rpx solid #df7373;
 }
 .tomorrow {
     display: flex;
