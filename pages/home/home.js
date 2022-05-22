@@ -30,7 +30,7 @@ Page({
         consultFlag: true, // 节流
         newsFlag: true, // 节流
         loading:true,
-        season:'spring'
+        season:''
     },
     // 获取节气信息
     getSolarTerm() {

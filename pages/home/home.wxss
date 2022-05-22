@@ -26,40 +26,107 @@
     position: absolute;
     z-index: 2;
 }
-
+@-webkit-keyframes fadeInOut {
+    0% {
+        opacity:0;
+     }
+    100% {
+        opacity:1;
+    }
+}
 .spring-mountain {
     height: 250rpx;
     position: relative;
     left: 20rpx;
+    -webkit-animation-name: fadeInOut;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-iteration-count: 1;
 }
-
+/* 日期 */
 .remain-time {
     font-size: 24rpx;
     letter-spacing: 10rpx;
     font-weight: 600;
+    animation: 3s linear 0s normal date;
 }
-
 .current-time {
     font-size: 60rpx;
     letter-spacing: 35rpx;
     padding-top: 15rpx;
-
+    animation: 3s linear 0s normal date;
 }
-
+/* 日期动画 */
+@keyframes date {
+    0% {
+        opacity: 0;
+        transform:  translate3d(-500px, 0, 0);
+        animation-timing-function: linear;
+    }
+    30% {
+        opacity: .5;
+        transform:  translate3d(-250, 0, 0);
+        animation-timing-function: linear;
+    }
+    50% {
+        opacity: .5;
+        transform:  translate3d(-200, 0, 0);
+        animation-timing-function: linear;
+    }
+    75% {
+        opacity: 1;
+        transform:  translate3d(-100, 0, 0);
+        animation-timing-function: linear;
+    }
+    100% {
+        opacity: 1;
+        transform:  translate3d(0, 0, 0);
+        animation-timing-function: linear;
+    }
+}
+/* 节气成语 */
 .verse {
     font-size: 20rpx;
     font-weight: 600;
     padding-top: 10rpx;
+    animation: fadeInAnimation ease 3s; 
+    animation-iteration-count: 1; /*设置动画播放次数*/
+    animation-fill-mode: forwards;
 }
-
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; /*设置不透明度*/
+    } 
+    100% { 
+        opacity: 1; 
+    } 
+} 
 .solarTerm {
     font-family: '华文行楷';
     position: relative;
     right: 60rpx;
     width: 35rpx;
     font-size: 100rpx;
+    animation: 2s linear 0s normal enter;
 }
-
+@keyframes enter {
+    0% {
+        opacity: 0;
+        transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 0, 0);
+        animation-timing-function: linear;
+    }
+    50% {
+        opacity: .5;
+        transform: scale3d(0.75, 0.75, 0.75) translate3d(0, 0, 0);
+        animation-timing-function: linear;
+    }
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+        animation-timing-function: linear;
+    }
+}
 .article {
     display: flex;
     flex-direction: column;
