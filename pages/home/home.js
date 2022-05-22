@@ -19,6 +19,7 @@ Page({
         tabbarColor: '#37b565', // tabbar颜色
         month: 0, // 今月
         day: 0, // 今天
+        remainTimeSentence: '', //节气提醒字符串
         remainTime: 0, // 剩余时间
         solarTerm: '夏至', // 节气
         verse: [], // 诗句
@@ -29,8 +30,8 @@ Page({
         currentTab: 0, // 当前 swiper-item
         consultFlag: true, // 节流
         newsFlag: true, // 节流
-        loading:true,
-        season:''
+        loading: true,
+        season: ''
     },
     // 获取节气信息
     getSolarTerm() {
@@ -68,12 +69,20 @@ Page({
                 let current = this.getRemainTime(this.data.month, this.data.day)
                 // 今天距离节气所在天数
                 let remainTime = future - current
+                // 拼接节气提示语句
+                let remainTimeSentence = ''
+                if(remainTime) {
+                    remainTimeSentence = `距离${solarTerm}还有${remainTime}天`
+                } else {
+                    remainTimeSentence = `今日${solarTerm}，新的开始`
+                }
                 // 将诗句转成数组
                 let verse = data.verse.split('，')
                 this.setData({
                     solarTerm,
                     verse,
-                    remainTime
+                    remainTime,
+                    remainTimeSentence
                 })
             }
         })
@@ -206,19 +215,19 @@ Page({
     },
     // 获取swiper 高度
     getSwiperHeight() {
-        setTimeout(()=> {
-        let systemInfo = wx.getSystemInfoSync()
-        let heightTabbar = wx.getStorageSync('heightTabbar')
-        let pageHeight = systemInfo.windowHeight  - systemInfo.statusBarHeight - heightTabbar- 60
-        let height = pageHeight - heightTitle - heightWeather - heightSelect  -10
-        this.setData({
-            currentHeight: height
-        })
+        setTimeout(() => {
+            let systemInfo = wx.getSystemInfoSync()
+            let heightTabbar = wx.getStorageSync('heightTabbar')
+            let pageHeight = systemInfo.windowHeight - systemInfo.statusBarHeight - heightTabbar - 60
+            let height = pageHeight - heightTitle - heightWeather - heightSelect - 10
+            this.setData({
+                currentHeight: height
+            })
         }, 500)
 
     },
     // 获取其他页面元素宽度
-    getHeight(){
+    getHeight() {
         let query = this.createSelectorQuery();
         query.select('.home-title').boundingClientRect(rect => {
             heightTitle = rect.height;
@@ -238,37 +247,37 @@ Page({
         this.getSolarTerm()
         this.getConsult()
         this.getNews()
-       
+
         let that = this
-        var set=setInterval(function(){
+        var set = setInterval(function () {
             clearInterval(set);
             that.setData({
-                loading:false,//停止骨架屏
+                loading: false, //停止骨架屏
             })
-          },500)
-          const app = getApp();
-          this.setData({
-              season:app.globalData.season
-          })
-          switch(app.globalData.season) {
-              case 'spring':
-              this.setData({
-                  themeColor: 'linear-gradient(to bottom ,#72db95, #addec2)'
-              }) 
-              break
-              case 'autumn':
-              this.setData({
-                  themeColor: 'linear-gradient(to bottom ,#f3c6b4, #e3d2c8)'
-              })
-              break
-          }
+        }, 500)
+        const app = getApp();
+        this.setData({
+            season: app.globalData.season
+        })
+        switch (app.globalData.season) {
+            case 'spring':
+                this.setData({
+                    themeColor: 'linear-gradient(to bottom ,#72db95, #addec2)'
+                })
+                break
+            case 'autumn':
+                this.setData({
+                    themeColor: 'linear-gradient(to bottom ,#f3c6b4, #e3d2c8)'
+                })
+                break
+        }
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-        this.getHeight()       
+        this.getHeight()
     },
     /**
      * 生命周期函数--监听页面显示

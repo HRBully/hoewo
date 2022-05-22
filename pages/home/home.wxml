@@ -8,7 +8,7 @@
         <!-- 日期，诗句 -->
         <view class="title-left">
             <!-- 距离节气日期 -->
-            <view class="remain-time">距离{{solarTerm}}还有{{remainTime}}天</view>
+            <view class="remain-time">{{remainTimeSentence}}</view>
             <!-- 今日日期 -->
             <view class="current-time">{{month}}月{{day}}日</view>
             <!-- 节气诗句 -->
