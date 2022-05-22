@@ -49,11 +49,11 @@
 }
 
 .spring-tab-on {
-    color: #6cd793;
+    color: #2c7546;
     /* 选中放大 */
     font-size: 38rpx !important;
     font-weight: 600;
-    border-bottom: 4rpx solid #6cd793 !important;
+    border-bottom: 4rpx solid #2c7546 !important;
 }
 .autumn-tab-on {
     color: #df7373;
