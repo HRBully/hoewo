@@ -1,4 +1,5 @@
 // pages/home/home.js
+let util = require('../../utils/util.js')
 let year = 2022
 // 下拉刷新次数
 let accountConsult = 0
@@ -244,21 +245,13 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let that = this
+        const app = getApp()
         this.getSolarTerm()
         this.getConsult()
         this.getNews()
-
-        let that = this
-        var set = setInterval(function () {
-            clearInterval(set);
-            that.setData({
-                loading: false, //停止骨架屏
-            })
-        }, 500)
-        const app = getApp();
-        this.setData({
-            season: app.globalData.season
-        })
+        util.loadScreen(that,500)
+        util.setSeason(that)
         switch (app.globalData.season) {
             case 'spring':
                 this.setData({

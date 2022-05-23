@@ -1,6 +1,7 @@
 // components/weather/weather.js 
 let city = '北京'
 let locationCom = require('../../request/location.js') 
+let util = require('../../utils/util.js')
 Component({
     /**
      * 组件的属性列表
@@ -31,10 +32,8 @@ Component({
         season:''
     },
     attached:function() {
-        const app = getApp();
-        this.setData({
-            season:app.globalData.season
-        })
+        let that = this
+        util.setSeason(that)
     },
     /**
      * 组件的方法列表

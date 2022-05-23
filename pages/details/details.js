@@ -1,4 +1,5 @@
 // pages/details/details.js
+let util = require('../../utils/util.js')
 Page({
 
     /**
@@ -7,17 +8,17 @@ Page({
     data: {
         tabCur: 0, //默认选中
         tabs: [{
-            name: '介绍',
-            id: 0
-        },
-        {
-            name: '目录',
-            id: 1
-        },
+                name: '介绍',
+                id: 0
+            },
+            {
+                name: '目录',
+                id: 1
+            },
         ],
         lists: [],
         isCollect: false,
-        loading:true
+        loading: true
     },
     getintro(title) {
         wx.cloud.database().collection('bookintro').where({
@@ -40,10 +41,10 @@ Page({
         })
     },
     /**
-    * 添加收藏函数
-    * 1. 判断登录
-    * 2. 调用添加接口为数据库添加收藏数据
-    */
+     * 添加收藏函数
+     * 1. 判断登录
+     * 2. 调用添加接口为数据库添加收藏数据
+     */
     addCollect: function () {
         let openid = wx.getStorageSync('openid')
         if (openid) {
@@ -108,8 +109,10 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        console.log(options.title)
-        let { title } = options;
+        let that = this
+        let {
+            title
+        } = options;
         let openid = wx.getStorageSync('key')
         this.setData({
             title,
@@ -126,20 +129,11 @@ Page({
                     })
                 }
             })
-            
+
         })
         this.getintro(title)
-        let that = this
-        var set=setInterval(function(){
-            clearInterval(set);
-            that.setData({
-                loading:false,//停止骨架屏
-            })
-          },500)
-          const app = getApp();
-          this.setData({
-              season: app.globalData.season
-          })
+        util.loadScreen(that, 500)
+        util.setSeason(that)
     },
 
     /**

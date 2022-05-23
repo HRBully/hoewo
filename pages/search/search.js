@@ -7,7 +7,6 @@ Page({
     data: {
         books: [],
     },
-
     search(event) {
         this.setData({
             books: [],

@@ -1,3 +1,4 @@
+let util = require('../../utils/util.js')
 Page({
     /**
      * 页面的初始数据
@@ -13,14 +14,8 @@ Page({
      */
     onLoad: function (options) {
         this.getBooks(this.data.books.length)
-        var _this=this;
-        var set=setInterval(function(){
-          clearInterval(set);
-          _this.setData({
-            loading:false,//停止骨架屏
-            hidden:false
-          })
-        },1500)
+        var that =this;
+        util.loadScreen(that,1500)
     },
     /**
      * 生命周期函数--监听页面显示

@@ -13,6 +13,23 @@ const formatNumber = n => {
     n = n.toString()
     return n[1] ? n : `0${n}`
 }
+const loadScreen = (that,time) => {
+    var set = setInterval(function () {
+        clearInterval(set);
+        that.setData({
+            loading: false, //停止骨架屏
+            hidden:false
+        })
+    }, time)
+}
+const setSeason = (that) => {
+    const app = getApp();
+    that.setData({
+        season: app.globalData.season
+    })
+}
 module.exports = {
-    formatTime
+    formatTime,
+    loadScreen,
+    setSeason
 }

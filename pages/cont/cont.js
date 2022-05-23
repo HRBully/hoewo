@@ -1,14 +1,18 @@
 // pages/cont/cont.js
+let util = require('../../utils/util.js')
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        loading:true
+        loading: true
     },
     getcontent() {
-        let { title, chapter } = this.data
+        let {
+            title,
+            chapter
+        } = this.data
         wx.cloud.database().collection('contents').where({
             title,
             chapter
@@ -24,19 +28,18 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        let { title, chapter } = options
+        let {
+            title,
+            chapter
+        } = options
         this.setData({
             title,
             chapter
         })
         this.getcontent()
         let that = this
-        var set=setInterval(function(){
-            clearInterval(set);
-            that.setData({
-                loading:false,//停止骨架屏
-            })
-          },1000)
+        util.loadScreen(that, 1000)
+        util.setSeason(that)
     },
 
     /**

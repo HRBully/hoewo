@@ -1,6 +1,7 @@
 
 var that = ''
 
+let util = require('../../utils/util.js')
 Page({
     data: {
         isShow: false,
@@ -162,17 +163,9 @@ Page({
     },
     // 生命周期函数--监听页面加载
     onLoad: function (options) {
-        that = this
-        var set=setInterval(function(){
-            clearInterval(set);
-            that.setData({
-              loading:false,//停止骨架屏
-            })
-          },1000)
-          const app = getApp();
-          this.setData({
-              season:app.globalData.season
-          })
+        let that = this
+        util.loadScreen(that,1000)
+        util.setSeason(that)
     },
     // 生命周期函数--监听页面显示
     onShow: function () {

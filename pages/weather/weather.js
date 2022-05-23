@@ -1,4 +1,5 @@
 // pages/weather/weather.js
+let util = require('../../utils/util.js')
 Page({
 
     /**
@@ -19,13 +20,12 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let that = this
+        const app = getApp()
         this.getLiveWeather()
         this.getNextWeather()
-        let that = this
-        const app = getApp();
-        this.setData({
-            season: app.globalData.season
-        })
+        util.setSeason(that)
+        util.loadScreen(that,1000)
         switch (app.globalData.season) {
             case 'spring':
                 this.setData({
@@ -44,12 +44,6 @@ Page({
                 })
                 break
         }
-        var set = setInterval(function () {
-            clearInterval(set);
-            that.setData({
-                loading: false, //停止骨架屏
-            })
-        }, 1000)
     },
     /**
      * 获取当前天气

@@ -1,3 +1,4 @@
+let util = require('../../utils/util.js')
 Page({
     data: {
         //判断小程序的API，回调，参数，组件等是否在当前版本可用。
@@ -43,18 +44,11 @@ Page({
     },
 
     onLoad: function (options) {
-        this.isLogin()
         let that = this
-        var set = setInterval(function () {
-            clearInterval(set);
-            that.setData({
-                loading: false, //停止骨架屏
-            })
-        }, 2000)
-        const app = getApp();
-        this.setData({
-            season: app.globalData.season
-        })
+        const app = getApp()
+        this.isLogin()
+        util.loadScreen(that,2000)
+        util.setSeason(that)
         this.setData({
             setitems:  [{
                     text: '意见反馈',
