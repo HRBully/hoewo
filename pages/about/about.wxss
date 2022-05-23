@@ -7,8 +7,15 @@
     text-align: center;
   }
   
-  .title {
+  .spring-title {
     background-color: #6cd793;
+    border-radius: 30rpx;
+    color: white;
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+  .autumn-title {
+    background-color: #f3c3b0;
     border-radius: 30rpx;
     color: white;
     font-size: 1.2em;

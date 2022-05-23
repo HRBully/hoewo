@@ -13,6 +13,7 @@ switch (Month) {
     case 7:
     case 8:
         var season = 'spring'
+        var text_color = '#6cd793'
         app.globalData.season = 'spring'
         break;
     case 9:
@@ -22,6 +23,7 @@ switch (Month) {
     case 1:
     case 2:
         var season = 'autumn'
+        var text_color = '#df7373'
         app.globalData.season = 'autumn'
         break;
 }
@@ -39,7 +41,6 @@ Component({
                 wx.setStorageSync('heightTabbar', rect.height) // 将获取到的高度设置缓存，以便之后使用
             }).exec();
         }
-
     },
     /**
      * 组件的初始数据
@@ -47,26 +48,26 @@ Component({
     data: {
         selected: 0,
         color: "#a9b7b7",
-        selectedColor: "#6cd793",
+        selectedColor: text_color,
         borderStyle: "#fff",
         list: [{
             selectedIconPath: `../images/tabicon/${season}-home-active.png`,
-            iconPath: `../images/tabicon/${season}-home.png`,
+            iconPath: `../images/tabicon/spring-home.png`,
             pagePath: "../home/home",
             text: "首页"
         }, {
             selectedIconPath: `../images/tabicon/${season}-book-active.png`,
-            iconPath: `../images/tabicon/${season}-book.png`,
+            iconPath: `../images/tabicon/spring-book.png`,
             pagePath: "../addCrop/addCrop",
             text: "添加"
         }, {
             selectedIconPath: `../images/tabicon/${season}-camera-active.png`,
-            iconPath: `../images/tabicon/${season}-camera.png`,
+            iconPath: `../images/tabicon/spring-camera.png`,
             pagePath: "../identify/identify",
             text: "识别"
         }, {
             selectedIconPath: `../images/tabicon/${season}-person-active.png`,
-            iconPath: `../images/tabicon/${season}-person.png`,
+            iconPath: `../images/tabicon/spring-person.png`,
             pagePath: "../person/person",
             text: "个人"
         }]

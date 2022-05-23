@@ -4,12 +4,13 @@
 <Header  backHomeFlag customTitle="农作物详情"></Header>
 <view class="card-container">
     <view class="book-card-header">
-        <view class="book-info" wx:if="{{!loading}}">
+        <view class="{{season}}-book-info book-info" wx:if="{{!loading}}">
             <view class="poster">
                 <image mode="aspectFill" src="{{img}}" />
             </view>
             <view class="info">
                 <view class="title">{{title}}</view>
+                <view class="center"></view>
                 <view class="media">{{intro}}</view>
             </view>
         </view>
@@ -17,7 +18,7 @@
 </view>
 <scroll-view scroll-x class="navbar " scroll-with-animation scroll-left="{{scrollLeft}}rpx" wx:if="{{!loading}}">
     <view class="nav-item" wx:for="{{tabs}}" wx:key="id" bindtap="tabSelect" data-id="{{index}}">
-        <view class="nav-text {{index==tabCur?'tab-on':''}}">{{item.name}}</view>
+        <view class="nav-text {{index==tabCur?season+'-tab-on':''}}">{{item.name}}</view>
     </view>
 </scroll-view>
 <!-- 简介 -->
@@ -29,7 +30,7 @@
     <view class="mulu-content">
         <view class="mulu-list">
             <view class="mulu-item" wx:for="{{lists}}" wx:key="index" bindtap="goCont" data-chapter="{{item.chapter}}">
-                <view class="left">{{item.chapter}}</view>
+                <view class="{{season}} left">{{item.chapter}}</view>
                 <view class="mid">
                     <view class="mulu-title">{{item.name}}</view>
                     <view class="mulu-intro">{{item.intro}}</view>
@@ -40,10 +41,10 @@
     </view>
 </scroll-view>
 <view class="btns" wx:if="{{!isCollect}}" >
-    <text bindtap="read">点击阅读</text>
-    <text bindtap="addCollect">点击收藏</text>
+    <text bindtap="read" class="{{season}}">点击阅读</text>
+    <text bindtap="addCollect" class="{{season}}">点击收藏</text>
 </view>
 <view class="btns" wx:else="{{!isCollect}}">
-    <text bindtap="read">点击阅读</text>
+    <text bindtap="read" class="{{season}}">点击阅读</text>
     <text id="untext" bindtap="removeCollect">取消收藏</text>
 </view>

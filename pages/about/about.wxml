@@ -2,7 +2,7 @@
 <Header backHomeFlag customTitle="关于我们"></Header>
 <view class="container">
   <view class="intro">
-    <view class="title">小程序介绍</view>
+    <view class="title {{season}}-title">小程序介绍</view>
     <view class="content">
       <!-- <image mode="aspectFill" src="/images/logo.png"></image> -->
       <!-- <image mode="aspectFill" src="cloud://cloud1-0gekdmc8c1d576f8.636c-cloud1-0gekdmc8c1d576f8-1311277417/devmember/logo.png"></image> -->
@@ -10,7 +10,7 @@
     </view>
   </view>
   <view class="member">
-    <view class="title">开发成员</view>
+    <view class="title {{season}}-title">开发成员</view>
     <view class="content">
       <!-- <image mode="aspectFill" src="cloud://cloud1-0gekdmc8c1d576f8.636c-cloud1-0gekdmc8c1d576f8-1311277417/devmember/ned.png"></image>
       <image mode="aspectFill" src="cloud://cloud1-0gekdmc8c1d576f8.636c-cloud1-0gekdmc8c1d576f8-1311277417/devmember/hogskin.jpg"></image>

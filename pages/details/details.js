@@ -136,6 +136,10 @@ Page({
                 loading:false,//停止骨架屏
             })
           },500)
+          const app = getApp();
+          this.setData({
+              season: app.globalData.season
+          })
     },
 
     /**

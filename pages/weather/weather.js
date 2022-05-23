@@ -1,4 +1,3 @@
-
 // pages/weather/weather.js
 Page({
 
@@ -11,10 +10,10 @@ Page({
         // 背景色深
         bgc2: '#37cd69',
         // 当日天气
-        liveData:{},
+        liveData: {},
         // 天气预报
-        forecast:[],
-        loading:true
+        forecast: [],
+        loading: true
     },
     /**
      * 生命周期函数--监听页面加载
@@ -25,32 +24,53 @@ Page({
         let that = this
         const app = getApp();
         this.setData({
-            season:app.globalData.season
+            season: app.globalData.season
         })
-        
-        var set=setInterval(function(){
+        switch (app.globalData.season) {
+            case 'spring':
+                this.setData({
+                    // 背景色浅
+                    bgc1: '#7fdc9f',
+                    // 背景色深
+                    bgc2: '#37cd69',
+                })
+                break
+            case 'autumn':
+                this.setData({
+                    // 背景色浅
+                    bgc1: '#e4d1c6',
+                    // 背景色深
+                    bgc2: '#f3c6b4',
+                })
+                break
+        }
+        var set = setInterval(function () {
             clearInterval(set);
             that.setData({
-                loading:false,//停止骨架屏
+                loading: false, //停止骨架屏
             })
-          },1000)
+        }, 1000)
     },
     /**
      * 获取当前天气
      */
-    getLiveWeather(){
-        wx.showToast({ title: '正在加载...', icon: 'loading', duration: 2000000 })
+    getLiveWeather() {
+        wx.showToast({
+            title: '正在加载...',
+            icon: 'loading',
+            duration: 2000000
+        })
         wx.request({
             url: 'https://v0.yiketianqi.com/free/day/api?unescape=1&version=v1&appid=44831462&appsecret=nyT7UNR2',
             //成功回调
             success: (res) => {
                 wx.hideToast();
-                
+
                 // 当前时间
                 let date = new Date()
-                let hour = date.getHours()<10?'0'+date.getHours():date.getHours()
-                let minutes = date.getMinutes()<10?'0'+date.getMinutes():date.getMinutes()
-                let sec = date.getSeconds()<10?'0'+date.getSeconds():date.getSeconds()
+                let hour = date.getHours() < 10 ? '0' + date.getHours() : date.getHours()
+                let minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
+                let sec = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()
                 let liveTime = `${hour}:${minutes}:${sec}`
                 // 当前天气
                 let liveData = {}
@@ -72,18 +92,30 @@ Page({
             fail: (error) => {
                 wx.hideToast();
                 if (error) {
-                wx.showModal({ title: '请求失败', content: "请不要多次重复请求，间隔一会儿再来试试吧~", showCancel: false });
+                    wx.showModal({
+                        title: '请求失败',
+                        content: "请不要多次重复请求，间隔一会儿再来试试吧~",
+                        showCancel: false
+                    });
                 } else {
-                wx.showModal({ title: '请求超时', content: '请检查网络设置', showCancel: false });
+                    wx.showModal({
+                        title: '请求超时',
+                        content: '请检查网络设置',
+                        showCancel: false
+                    });
                 }
             }
         })
     },
-        /**
+    /**
      * 获取天气预报
      */
-    getNextWeather(){
-        wx.showToast({ title: '正在加载...', icon: 'loading', duration: 2000000 })
+    getNextWeather() {
+        wx.showToast({
+            title: '正在加载...',
+            icon: 'loading',
+            duration: 2000000
+        })
         wx.request({
             url: 'https://yiketianqi.com/api?unescape=1&version=v1&appid=44831462&appsecret=nyT7UNR2',
             //成功回调
@@ -91,7 +123,7 @@ Page({
                 wx.hideToast();
                 let forecast = []
                 forecast = res.data.data
-                forecast.splice(0,1)
+                forecast.splice(0, 1)
                 forecast.forEach((item) => {
                     // 图片路径
                     item.weatherPic = `../../images/tianqi/${item.wea_img}.png`
@@ -108,9 +140,17 @@ Page({
             fail: (error) => {
                 wx.hideToast();
                 if (error) {
-                wx.showModal({ title: '请求失败', content: "请不要多次重复请求，间隔一会儿再来试试吧~", showCancel: false });
+                    wx.showModal({
+                        title: '请求失败',
+                        content: "请不要多次重复请求，间隔一会儿再来试试吧~",
+                        showCancel: false
+                    });
                 } else {
-                wx.showModal({ title: '请求超时', content: '请检查网络设置', showCancel: false });
+                    wx.showModal({
+                        title: '请求超时',
+                        content: '请检查网络设置',
+                        showCancel: false
+                    });
                 }
             }
         })
@@ -118,8 +158,8 @@ Page({
     /**
      * 更新、刷新实时天气
      */
-    onRefreshBtnClick(){
-        this.getLiveWeather()  
+    onRefreshBtnClick() {
+        this.getLiveWeather()
     },
     /**
      * 生命周期函数--监听页面初次渲染完成

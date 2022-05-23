@@ -12,7 +12,10 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-
+        const app = getApp();
+        this.setData({
+            season: app.globalData.season
+        })
     },
 
     /**

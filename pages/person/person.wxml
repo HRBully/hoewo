@@ -59,8 +59,6 @@
             </view>
             <view class="divLine"></view>
         </block>
-        <button class="set-outlog" wx:if="{{isLogin}}" bindtap="outLog">退出登录</button>
-
     </view>
 </view>
 <page-container show="{{contact}}" custom-style="height:auto;width:auto;position:absolute;top:40vh;left:50%;transform: translate(-50%);" overlay-style="background:none;" position="center" data-unshow="1" bind:beforeleave="customersService">
