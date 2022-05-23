@@ -148,11 +148,7 @@
     justify-content: space-around;
 }
 
-.btns .spring {
-    color: #2c7546;
-    background-color: rgba(28, 222, 70, 0.068);
-    border: 2rpx solid #2c7546;
-}
+
 .btns text {
     flex-basis: 260rpx;
     flex-shrink: 0;
@@ -166,6 +162,11 @@
     margin-left: 28rpx;
     display: inline-block;
     box-sizing: border-box;
+}
+.btns .spring {
+    color: #2c7546;
+    background-color: rgba(28, 222, 70, 0.068);
+    border: 2rpx solid #2c7546;
 }
 .btns .autumn {
     color: #df7373;

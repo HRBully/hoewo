@@ -3,29 +3,18 @@ const app = getApp()
 // 季节判断
 let date = new Date()
 let Month = date.getMonth()
-console.log(Month)
-console.log(typeof Month)
-switch (Month) {
-    case 3:
-    case 4:
-    case 5:
-    case 6:
-    case 7:
-    case 8:
-        var season = 'spring'
-        var text_color = '#6cd793'
-        app.globalData.season = 'spring'
-        break;
-    case 9:
-    case 10:
-    case 11:
-    case 12:
-    case 1:
-    case 2:
-        var season = 'autumn'
-        var text_color = '#df7373'
-        app.globalData.season = 'autumn'
-        break;
+let pattern = /[3-8]/
+let season, text_color
+// 切换主题
+// Month = 9
+if (pattern.test(Month)) {
+    season = 'spring'
+    text_color = '#6cd793'
+    app.globalData.season = 'spring'
+} else {
+    season = 'autumn'
+    text_color = '#df7373'
+    app.globalData.season = 'autumn'
 }
 Component({
     /**
