@@ -16,7 +16,7 @@
                 <view class="verse">{{item}}</view>
             </block>
         </view>
-        <image src="../../images/{{season}}mountain.png" class="spring-mountain"></image>
+        <image src="{{mountainSrc}}" class="spring-mountain"></image>
         <!-- 节气 -->
         <view class="solarTerm">{{solarTerm}}</view>
     </view>

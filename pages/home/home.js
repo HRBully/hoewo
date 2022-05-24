@@ -11,11 +11,11 @@ let heightSelect = 0
 let heightTabbar = 0
 
 Page({
-
     /**
      * 页面的初始数据
      */
     data: {
+        mountainSrc:"",  //mountain图片路径
         themeColor: 'linear-gradient(to bottom ,#f3c6b4, #e3d2c8)', // 主题（背景）颜色 秋天 #f3c6b4 to #e3d2c8 春天 #72db95 to #addec2
         tabbarColor: '#37b565', // tabbar颜色
         month: 0, // 今月
@@ -264,6 +264,14 @@ Page({
                 })
                 break
         }
+        // 获取季节
+        const season = app.globalData.season
+        // 拼接好图片路径
+        const mountainSrc = `../../images/${season}mountain.png`
+        // 填充到data里，供给页面加载读取
+        this.setData(
+            { mountainSrc:mountainSrc }
+        )
     },
 
     /**
@@ -276,6 +284,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
+        
         this.changeIcon()
         this.getSwiperHeight()
     },
