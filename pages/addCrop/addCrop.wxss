@@ -1,7 +1,8 @@
-
 @import "./addCrop.skeleton.wxss";
+
 .book-list {
     width: 100%;
+    margin-bottom: 140rpx;
 }
 
 .book-list .book-item {
@@ -80,6 +81,7 @@
     position: relative;
     z-index: 2;
 }
+
 .book-item .book-uncollect text {
     height: 60rpx;
     line-height: 60rpx;
@@ -93,7 +95,8 @@
     color: #f87b5b;
     position: relative;
     z-index: 2;
-  }
+}
+
 .loader {
     position: absolute;
     left: 40%;
@@ -123,7 +126,7 @@
 
 .dot:nth-child(3) {
     animation-delay: 0.3s;
-    background:#6cd793;
+    background: #6cd793;
 }
 
 .dot:nth-child(4) {

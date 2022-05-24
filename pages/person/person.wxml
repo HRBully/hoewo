@@ -16,7 +16,7 @@
     </view>
 </scroll-view>
 <view wx:if="{{!tabCur}}">
-    <scroll-view class="scroll-view" wx:if="{{!loading&&isLogin}}" scroll-y class="book-list" style="height: calc(100vh - 650rpx);">
+    <scroll-view class="scroll-view" wx:if="{{!loading&&isLogin}}" scroll-y class="book-list" style="height: calc(100vh - 700rpx);">
             <view class="book-item" wx:for="{{collects}}" wx:key="id" bindtap="goBook" data-name="{{item.title}}">
                 <view class="book-poster">
                     <image src="{{item.img}}" />
@@ -59,6 +59,7 @@
             </view>
             <view class="divLine"></view>
         </block>
+
     </view>
 </view>
 <page-container show="{{contact}}" custom-style="height:auto;width:auto;position:absolute;top:40vh;left:50%;transform: translate(-50%);" overlay-style="background:none;" position="center" data-unshow="1" bind:beforeleave="customersService">

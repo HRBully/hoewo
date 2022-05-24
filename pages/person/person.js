@@ -3,6 +3,7 @@ Page({
     data: {
         //判断小程序的API，回调，参数，组件等是否在当前版本可用。
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        heighttab:48,
         loading: true,
         isHide: true,
         isLogin: true,
@@ -46,6 +47,9 @@ Page({
     onLoad: function (options) {
         let that = this
         const app = getApp()
+        this.setData({
+            heighttab:wx.getStorageSync('heightTabbar')
+        })
         this.isLogin()
         util.loadScreen(that,2000)
         util.setSeason(that)

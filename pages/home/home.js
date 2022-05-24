@@ -192,6 +192,11 @@ Page({
             // currentHeight: height
         })
     },
+    gocont:function(e) {
+        wx.navigateTo({
+            url: '../cont/cont?id=' + e.currentTarget.dataset.id+'&port='+e.currentTarget.dataset.cont
+        })
+    },
     swiperChange(e) {
         if (e.detail.current === 0) {
             this.toConsult()

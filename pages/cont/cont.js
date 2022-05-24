@@ -24,19 +24,37 @@ Page({
             this.selectComponent('#preContent').build();
         })
     },
+    
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
         let {
             title,
-            chapter
+            chapter,
+            id,
+            port
         } = options
         this.setData({
             title,
-            chapter
+            chapter,
+            id,
+            port
         })
-        this.getcontent()
+        if(id) {
+            console.log(id)
+            wx.cloud.database().collection(port).where({
+                _id:id
+            }).get().then(res => {
+                console.log(res.data[0].content)
+                this.setData({
+                    content: res.data[0].content
+                })
+                this.selectComponent('#preContent').build();
+            })
+        }else {
+            this.getcontent()
+        }
         let that = this
         util.loadScreen(that, 1000)
         util.setSeason(that)

@@ -37,7 +37,7 @@
                     <view class="article-swiper-item">
                         <!-- 咨询文章列表 -->
                         <block wx:for="{{consult}}" wx:key="index">
-                            <x-card mescontent="{{item}}" class="item"></x-card>
+                            <x-card mescontent="{{item}}" class="item" bindtap="gocont" data-id="{{item._id}}" data-cont="consult"></x-card>
                         </block>
                     </view>
                 </scroll-view>
@@ -48,7 +48,7 @@
                     <view class="article-swiper-item">
                         <!-- 新闻文章列表 -->
                         <block wx:for="{{news}}" wx:key="index">
-                            <x-card mescontent="{{item}}"></x-card>
+                            <x-card mescontent="{{item}}" bindtap="gocont" data-id="{{item._id}}" data-cont="news"></x-card>
                         </block>
                     </view>
                 </scroll-view>
