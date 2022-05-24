@@ -6,7 +6,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        loading: true
+        loading: true,
+        title:'详情'
     },
     getcontent() {
         let {
@@ -46,7 +47,7 @@ Page({
             wx.cloud.database().collection(port).where({
                 _id:id
             }).get().then(res => {
-                console.log(res.data[0].content)
+                console.log(res)
                 this.setData({
                     content: res.data[0].content
                 })

@@ -1,5 +1,5 @@
 <!--pages/cont/cont.wxml-->
 <import src="cont.skeleton.wxml"/>
 <template is="skeleton" wx:if="{{loading}}" />
-<Header  backHomeFlag customTitle="文章详情"></Header>
+<Header  backHomeFlag customTitle="详情"></Header>
 <pre-build id="preContent" bindName="{{title}}" data="{{content}}" />
