@@ -1,2 +1,3 @@
 /* pages/search/search.wxss */
 @import "../addCrop/addCrop.wxss";
+@import "./search.skeleton.wxss";

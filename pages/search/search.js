@@ -1,4 +1,5 @@
 // pages/search/search.js
+let util = require('../../utils/util.js')
 Page({
 
     /**
@@ -6,6 +7,7 @@ Page({
      */
     data: {
         books: [],
+        loading:false
     },
     search(event) {
         this.setData({
@@ -14,6 +16,9 @@ Page({
         const {
             value
         } = event.detail
+        this.setData({
+            loading:true
+        })
         wx.cloud.callFunction({
             name: 'search',
             data: {
@@ -22,6 +27,7 @@ Page({
             }
         }).then((res) => {
             console.log(res);
+            let that = this
             const {
                 result
             } = res;
@@ -35,6 +41,7 @@ Page({
                     duration: 1500
                 })
             }
+            util.loadScreen(that)
             this.setData({
                 books
             })

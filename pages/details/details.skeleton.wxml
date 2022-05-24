@@ -1,5 +1,5 @@
 <!--
-此文件为开发者工具生成，生成时间: 2022/5/21 上午7:59:33
+此文件为开发者工具生成，生成时间: 2022/5/24 下午2:01:50
 使用方法：
 在 C:\Users\hogsk\WeChatProjects\HoeWo\pages\details\details.wxml 引入模板
 
@@ -18,8 +18,8 @@
 <template name="skeleton">
   <view class="sk-container">
     <view is="components/headBar/headBar">
-      <view class="headBar--customHeader_box" style="height:60px; background-color:#72db95;">
-        <view class="headBar--backHome_box" style="width:87px; height:32px; top:24px;">
+      <view class="headBar--customHeader_box" style="height:84px; background-color:#72db95;">
+        <view class="headBar--backHome_box" style="width:87px; height:32px; top:48px;">
           <view class="headBar--customIcon headBar--backIcon">
             <image class="sk-image"></image>
           </view>
@@ -27,84 +27,99 @@
             <image class="sk-image"></image>
           </view>
         </view>
-        <view class="headBar--customHeader_title sk-transparent sk-text-29-6875-932 sk-text" style="top: 24px; height: 32px; line-height: 32px; background-position-x: 50%;">
+        <view class="headBar--customHeader_title sk-transparent sk-text-25-0000-487 sk-text" style="top: 48px; height: 32px; line-height: 32px; background-position-x: 50%;">
           农作物详情
         </view>
       </view>
-      <view class="headBar--customWrap" style="height:60px;"></view>
+      <view class="headBar--customWrap" style="height:84px;"></view>
     </view>
     <view class="card-container">
       <view class="book-card-header">
-        <view class="book-info">
+        <view class="spring-book-info book-info">
           <view class="poster">
             <image mode="aspectFill" class="sk-image"></image>
           </view>
           <view class="info">
-            <view class="title sk-transparent sk-text-14-2857-508 sk-text">小麦1</view>
-            <view class="media sk-transparent sk-text-14-2857-491 sk-text">秦腔也称“乱弹”，是现存最古老、最大的剧种，被誉为百戏之源，流行遍及中国西北地区的陕西、甘肃、青海、宁夏、西藏一带。</view>
+            <view class="title sk-transparent sk-text-14-2857-192 sk-text">玉米2</view>
+            <view class="center"></view>
+            <view class="media sk-transparent sk-text-14-2857-38 sk-text">秦腔也称“乱弹”，是现存最古老、最大的剧种，被誉为百戏之源，流行遍及中国西北地区的陕西、甘肃、青海、宁夏、西藏一带。</view>
           </view>
         </view>
       </view>
     </view>
-    <scroll-view scroll-with-animation="true" scroll-x="true" class="navbar" scroll-left="-85">
+    <scroll-view scroll-with-animation="true" scroll-x="true" class="navbar" scroll-left="-100">
       <view class="nav-item" data-id="0">
-        <view class="nav-text sk-transparent sk-text-14-2857-159 sk-text">介绍</view>
+        <view class="nav-text sk-transparent sk-text-14-2857-408 sk-text">介绍</view>
       </view>
       <view class="nav-item" data-id="1">
-        <view class="nav-text tab-on sk-transparent sk-text-14-2857-98 sk-text">目录</view>
+        <view class="nav-text spring-tab-on sk-transparent sk-text-14-2857-440 sk-text">目录</view>
       </view>
     </scroll-view>
     <scroll-view scroll-y="true" class="scroll-view">
       <view class="mulu-content">
         <view class="mulu-list">
           <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="1">
-            <view class="left sk-transparent sk-text-20-0000-560 sk-text sk-pseudo sk-pseudo-circle">1</view>
+            <view class="spring left sk-transparent sk-text-18-7500-952 sk-text sk-pseudo sk-pseudo-circle">1</view>
             <view class="mid">
-              <view class="mulu-title sk-transparent sk-text-14-2857-82 sk-text">历史渊源</view>
-              <view class="mulu-intro sk-transparent sk-text-16-6667-399 sk-text">秦腔的产生与发展有着深刻的历史渊源与厚重的文化背景。在秦腔发展与传播的各个阶段，都有着独</view>
+              <view class="mulu-title sk-transparent sk-text-14-2857-571 sk-text">历史渊源</view>
+              <view class="mulu-intro sk-transparent sk-text-16-6667-359 sk-text">秦腔的产生与发展有着深刻的历史渊源与厚重的文化背景。在秦腔发展与传播的各个阶段，都有着独</view>
             </view>
           </view>
           <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="2">
-            <view class="left sk-transparent sk-text-20-0000-896 sk-text sk-pseudo sk-pseudo-circle">2</view>
+            <view class="spring left sk-transparent sk-text-18-7500-374 sk-text sk-pseudo sk-pseudo-circle">2</view>
             <view class="mid">
-              <view class="mulu-title sk-transparent sk-text-14-2857-65 sk-text">语言</view>
-              <view class="mulu-intro sk-transparent sk-text-16-6667-243 sk-text">秦腔作为一种地方文化，所以它一大的特点是所谓的唱、念全都是以陕西关中方言为基础的，同时也融入了我国汉唐时期的一些诗、词、曲的</view>
+              <view class="mulu-title sk-transparent sk-text-14-2857-444 sk-text">语言</view>
+              <view class="mulu-intro sk-transparent sk-text-16-6667-219 sk-text">秦腔作为一种地方文化，所以它一大的特点是所谓的唱、念全都是以陕西关中方言为基础的，同时也融入了我国汉唐时期的一些诗、词、曲的</view>
             </view>
           </view>
           <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="3">
-            <view class="left sk-transparent sk-text-20-0000-100 sk-text sk-pseudo sk-pseudo-circle">3</view>
+            <view class="spring left sk-transparent sk-text-18-7500-737 sk-text sk-pseudo sk-pseudo-circle">3</view>
             <view class="mid">
-              <view class="mulu-title sk-transparent sk-text-14-2857-465 sk-text">唱腔</view>
-              <view class="mulu-intro sk-transparent sk-text-16-6667-780 sk-text">秦腔的唱腔为板式变化体，也就是以一个曲调为基调，通过节拍、节奏、旋律、速度等的变化而形成一系列不同的板式。秦腔唱腔包括“板路”和“彩腔”两部分，板路有二六板、慢板、箭板、二倒板</view>
+              <view class="mulu-title sk-transparent sk-text-14-2857-115 sk-text">唱腔</view>
+              <view class="mulu-intro sk-transparent sk-text-16-6667-120 sk-text">秦腔的唱腔为板式变化体，也就是以一个曲调为基调，通过节拍、节奏、旋律、速度等的变化而形成一系列不同的板式。秦腔唱腔包括“板路”和“彩腔”两部分，板路有二六板、慢板、箭板、二倒板</view>
             </view>
           </view>
           <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="4">
-            <view class="left sk-transparent sk-text-20-0000-806 sk-text sk-pseudo sk-pseudo-circle">4</view>
+            <view class="spring left sk-transparent sk-text-18-7500-340 sk-text sk-pseudo sk-pseudo-circle">4</view>
             <view class="mid">
-              <view class="mulu-title sk-transparent sk-text-14-2857-492 sk-text">音乐</view>
-              <view class="mulu-intro sk-transparent sk-text-16-6667-740 sk-text">秦腔曲牌分弦乐、唢呐、海笛、笙管、昆曲、套曲六类，主要为弦乐和唢呐曲牌。秦腔的音乐伴奏，向</view>
+              <view class="mulu-title sk-transparent sk-text-14-2857-938 sk-text">音乐</view>
+              <view class="mulu-intro sk-transparent sk-text-16-6667-220 sk-text">秦腔曲牌分弦乐、唢呐、海笛、笙管、昆曲、套曲六类，主要为弦乐和唢呐曲牌。秦腔的音乐伴奏，向</view>
             </view>
           </view>
           <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="5">
-            <view class="left sk-transparent sk-text-20-0000-520 sk-text sk-pseudo sk-pseudo-circle">5</view>
+            <view class="spring left sk-transparent sk-text-18-7500-661 sk-text sk-pseudo sk-pseudo-circle">5</view>
             <view class="mid">
-              <view class="mulu-title sk-transparent sk-text-14-2857-804 sk-text">角色</view>
-              <view class="mulu-intro sk-transparent sk-text-16-6667-295 sk-text">秦腔的表演自成一家，生旦净丑，各有千秋。秦腔的角色体制有四生、六旦、二净、一丑，共计十三门，又称“十三头网子”。其突出特点主要体</view>
+              <view class="mulu-title sk-transparent sk-text-14-2857-899 sk-text">角色</view>
+              <view class="mulu-intro sk-transparent sk-text-16-6667-830 sk-text">秦腔的表演自成一家，生旦净丑，各有千秋。秦腔的角色体制有四生、六旦、二净、一丑，共计十三门，又称“十三头网子”。其突出特点主要体</view>
             </view>
           </view>
           <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="6">
-            <view class="left sk-transparent sk-text-20-0000-55 sk-text sk-pseudo sk-pseudo-circle">6</view>
+            <view class="spring left sk-transparent sk-text-18-7500-838 sk-text sk-pseudo sk-pseudo-circle">6</view>
             <view class="mid">
-              <view class="mulu-title sk-transparent sk-text-14-2857-30 sk-text">绝活</view>
-              <view class="mulu-intro sk-transparent sk-text-16-6667-911 sk-text">秦腔的表演技艺非常丰富，身段和特技应有尽有，常用的有趟马、拉架子、吐火、扑跌、扫灯花、耍火棍枪背、顶灯、咬牙转椅等。神话戏的表演技艺，更为奇特而多姿。如演《黄河阵》，要用五种法宝道具，如量天尺、翻天印，可施放长串</view>
+              <view class="mulu-title sk-transparent sk-text-14-2857-592 sk-text">绝活</view>
+              <view class="mulu-intro sk-transparent sk-text-16-6667-665 sk-text">秦腔的表演技艺非常丰富，身段和特技应有尽有，常用的有趟马、拉架子、吐火、扑跌、扫灯花、耍火棍枪背、顶灯、咬牙转椅等。神话戏的表演技艺，更为奇特而多姿。如演《黄河阵》，要用五种法宝道具，如量天尺、翻天印，可施放长串</view>
+            </view>
+          </view>
+          <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="7">
+            <view class="spring left sk-transparent sk-text-18-7500-686 sk-text sk-pseudo sk-pseudo-circle">7</view>
+            <view class="mid">
+              <view class="mulu-title sk-transparent sk-text-14-2857-765 sk-text">服饰</view>
+              <view class="mulu-intro sk-transparent sk-text-16-6667-237 sk-text">秦腔的服饰经过长期的发展演变，逐渐形成了约定俗成的规律性的程式，尺寸的大小、质地的优劣、纹饰的选择。色泽的浓淡以及各种颜色，都有着独特的寓意。服饰的宽、大、长、直代表文、富；短、小、窄、曲，代表武、贫。服饰厚、重、滑代表文、富；轻、薄、软、素代表武、贫</view>
+            </view>
+          </view>
+          <view class="mulu-item sk-pseudo sk-pseudo-circle" data-chapter="8">
+            <view class="spring left sk-transparent sk-text-18-7500-422 sk-text sk-pseudo sk-pseudo-circle">8</view>
+            <view class="mid">
+              <view class="mulu-title sk-transparent sk-text-14-2857-44 sk-text">传承保护</view>
+              <view class="mulu-intro sk-transparent sk-text-16-6667-505 sk-text">2019年11月，《国家级非物质文化遗产代表性项目保护单位名单》公布，甘肃秦腔艺术剧院有限责任</view>
             </view>
           </view>
         </view>
       </view>
     </scroll-view>
     <view class="btns">
-      <text class="sk-transparent sk-text-32-0000-812 sk-text" style="background-position-x: 50%;">点击阅读</text>
-      <text class="sk-transparent sk-text-32-0000-664 sk-text" style="background-position-x: 50%;">点击收藏</text>
+      <text class="spring sk-transparent sk-text-31-6667-6 sk-text" style="background-position-x: 50%;">点击阅读</text>
+      <text id="untext" class="sk-transparent sk-text-31-6667-972 sk-text" style="background-position-x: 50%;">取消收藏</text>
     </view>
   </view>
 </template>
