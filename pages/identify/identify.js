@@ -116,10 +116,18 @@ Page({
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
             success: (res) => {
-                console.log(res);
-                this.setData({
+                console.log(res.data.result)
+                if(res.data.result[0].name === "非植物"){
+                  wx.showModal({
+                    title: '提示',
+                    content:'图片为非植物，请重新上传',
+                  })
+                }else{
+                  this.setData({
                     result: that.resultFilter(res.data.result)
-                })
+                  })
+                }
+                
             },
             complete: () => {
                 wx.hideLoading()
