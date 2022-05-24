@@ -41,7 +41,11 @@ Page({
             console.log(contents)
         })
     },
-
+    goBook(e) {
+        wx.navigateTo({
+            url: '../details/details?title=' + e.currentTarget.dataset.name
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */

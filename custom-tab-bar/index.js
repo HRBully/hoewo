@@ -6,7 +6,7 @@ let Month = date.getMonth()
 let pattern = /[3-8]/
 let season, text_color
 // 切换主题
-Month = 9
+// Month = 9
 if (pattern.test(Month)) {
     season = 'spring'
     text_color = '#6cd793'
