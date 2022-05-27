@@ -41,11 +41,11 @@ Page({
                     duration: 1500
                 })
             }
-            util.loadScreen(that)
+            console.log(util)
+            util.loadScreen(that,1000)
             this.setData({
                 books
             })
-            console.log(contents)
         })
     },
     goBook(e) {

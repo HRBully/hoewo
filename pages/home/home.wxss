@@ -175,3 +175,61 @@
 swiper-item {
   overflow: visible;
 }
+.loader {
+    position: absolute;
+    left: 40%;
+    margin-left: 10%;
+    margin-top: 30%;
+    transform: translate3d(-50%, -50%, 0);
+}
+.dot {
+    width: 24rpx;
+    height: 24rpx;
+    background: #3ac;
+    border-radius: 100%;
+    display: inline-block;
+    animation: slide 1s infinite;
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0.1s;
+    background: #6cd793;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+    background: #6cd793;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.3s;
+    background: #6cd793;
+}
+
+.dot:nth-child(4) {
+    animation-delay: 0.4s;
+    background: #6cd793;
+}
+
+.dot:nth-child(5) {
+    animation-delay: 0.5s;
+    background: #6cd793;
+}
+
+
+
+@keyframes slide {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .3;
+        transform: scale(2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}

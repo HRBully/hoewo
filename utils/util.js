@@ -28,8 +28,15 @@ const setSeason = (that) => {
         season: app.globalData.season
     })
 }
+const errModal = () => {
+    wx.showModal({
+        title: '提示',
+        content:'无法连接到网络',
+    })
+}
 module.exports = {
     formatTime,
     loadScreen,
-    setSeason
+    setSeason,
+    errModal
 }

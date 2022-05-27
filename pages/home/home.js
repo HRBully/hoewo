@@ -255,7 +255,7 @@ Page({
         this.getSolarTerm()
         this.getConsult()
         this.getNews()
-        util.loadScreen(that,500)
+        util.loadScreen(that,1000)
         util.setSeason(that)
         switch (app.globalData.season) {
             case 'spring':

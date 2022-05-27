@@ -1,7 +1,7 @@
 <!--pages/home/home.wxml-->
-<import src="home.skeleton.wxml"/>
+<import src="home.skeleton.wxml" />
 <template is="skeleton" wx:if="{{loading}}" />
-<Header menuFlag customTitle="首页"></Header>
+<Header menuFlag customTitle=""></Header>
 <view class="container" style="background-image: {{themeColor}};">
     <!-- 文字日期诗句 -->
     <view class="home-title">
@@ -25,7 +25,7 @@
         <x-weather id="weather"></x-weather>
     </view>
     <!-- 文章 -->
-    <view class="article">
+    <view class="article" wx:if="{{!loading}}">
         <!-- 文章选择类型 -->
         <view class="article-select">
             <view class="select {{selectFlag?season+'-active':''}}" bindtap="toConsult">咨询</view>
@@ -33,6 +33,13 @@
         </view>
         <swiper class="article-swiper" style="height: {{currentHeight}}px; " bindchange="swiperChange" current="{{currentTab}}">
             <swiper-item item-id="0">
+                <view class="loader" wx:if="{{!consult.length}}">
+                    <view class="dot"></view>
+                    <view class="dot"></view>
+                    <view class="dot"></view>
+                    <view class="dot"></view>
+                    <view class="dot"></view>
+                </view>
                 <scroll-view style="height: {{currentHeight}}px; " scroll-y="true" bindscrolltolower="getConsult">
                     <view class="article-swiper-item">
                         <!-- 咨询文章列表 -->

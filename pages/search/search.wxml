@@ -3,7 +3,7 @@
 <search bind:search="search" />
 <import src="search.skeleton.wxml"/>
 <template is="skeleton" wx:if="{{loading}}" />
-<view class="book-list">
+<view class="book-list" wx:if="{{!loading}}">
     <view class="book-item" wx:for="{{books}}" wx:key="id" bindtap="goBook" data-name="{{item.title}}">
         <view class="book-poster">
             <image src="{{item.img}}" />

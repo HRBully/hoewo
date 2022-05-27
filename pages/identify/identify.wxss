@@ -19,7 +19,7 @@
     width: 95%;
 }
 .center-text {
-    padding: 20rpx;
+
     text-align: center;
     color: #35d492;
     font-size: 25rpx;

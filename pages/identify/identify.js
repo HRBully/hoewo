@@ -124,7 +124,7 @@ Page({
                   })
                 }else{
                   this.setData({
-                    result: that.resultFilter(res.data.result)
+                    result: this.resultFilter(res.data.result)
                   })
                 }
                 
@@ -174,6 +174,7 @@ Page({
         let that = this
         util.loadScreen(that,1000)
         util.setSeason(that)
+        console.log(wx.getStorageSync('heightTabbar'))
     },
     // 生命周期函数--监听页面显示
     onShow: function () {

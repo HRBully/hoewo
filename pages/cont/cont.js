@@ -57,7 +57,7 @@ Page({
             this.getcontent()
         }
         let that = this
-        util.loadScreen(that, 1000)
+        util.loadScreen(that, 300)
         util.setSeason(that)
     },
 

@@ -2,4 +2,4 @@
 <import src="cont.skeleton.wxml"/>
 <template is="skeleton" wx:if="{{loading}}" />
 <Header  backHomeFlag customTitle="详情"></Header>
-<pre-build id="preContent" bindName="{{title}}" data="{{content}}" />
+<pre-build id="preContent" bindName="{{title}}" data="{{content}}"/>
