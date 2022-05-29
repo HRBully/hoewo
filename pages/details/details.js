@@ -45,7 +45,12 @@ Page({
      * 1. 判断登录
      * 2. 调用添加接口为数据库添加收藏数据
      */
+    // 防抖之后的收藏函数
+    _debounceAc:function (){
+        util.debounce(this.addCollect,1500)()
+    },
     addCollect: function () {
+        console.log("执行一次")
         let openid = wx.getStorageSync('openid')
         if (openid) {
             wx.cloud.database().collection('collects').add({

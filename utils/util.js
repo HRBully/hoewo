@@ -34,9 +34,22 @@ const errModal = () => {
         content:'无法连接到网络',
     })
 }
+let TIMEOUT   // 防抖时间戳
+const debounce = (fun,time) =>{
+    console.log(time)
+    return  () => {
+        clearTimeout(TIMEOUT);
+        var that = this;
+        TIMEOUT = setTimeout(function(){
+            fun.apply(that,arguments);
+        }, time);
+    }
+}
+
 module.exports = {
     formatTime,
     loadScreen,
     setSeason,
-    errModal
+    errModal,
+    debounce
 }

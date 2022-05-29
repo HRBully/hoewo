@@ -42,7 +42,7 @@
 </scroll-view>
 <view class="btns" wx:if="{{!isCollect}}" >
     <text bindtap="read" class="{{season}}">点击阅读</text>
-    <text bindtap="addCollect" class="{{season}}">点击收藏</text>
+    <text bindtap="_debounceAc" class="{{season}}">点击收藏</text>
 </view>
 <view class="btns" wx:else="{{!isCollect}}">
     <text bindtap="read" class="{{season}}">点击阅读</text>
