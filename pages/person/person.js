@@ -212,9 +212,11 @@ Page({
         }
     },
     customersService(e) {
+        console.log(e.target.dataset)
         const {
             unshow
         } = e.target.dataset;
+        console.log(unshow)
         this.setData({
             contact: !unshow ? true : false
         })

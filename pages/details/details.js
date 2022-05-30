@@ -47,7 +47,7 @@ Page({
      */
     // 防抖之后的收藏函数
     _debounceAc:function (){
-        util.debounce(this.addCollect,1500)()
+        util.debounce(this.addCollect,1000)()
     },
     addCollect: function () {
         console.log("执行一次")
@@ -115,14 +115,17 @@ Page({
      */
     onLoad: function (options) {
         let that = this
+        let app = getApp()
         let {
             title
         } = options;
         let openid = wx.getStorageSync('key')
         this.setData({
             title,
-            openid
+            openid,
+            titleHeight:app.globalData.titleHeight
         })
+        console.log(app.globalData.titleHeight)
         wx.cloud.database().collection('collects').where({
             _openid: openid
         }).get().then(res => {

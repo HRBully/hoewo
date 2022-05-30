@@ -26,7 +26,7 @@
     <pre-build id="preIntroduce" bindName="{{title}}" data="{{introduce}}" />
 </view>
 <!-- 目录 -->
-<scroll-view class="scroll-view" hidden="{{!tabCur}}" scroll-y>
+<scroll-view class="scroll-view" style="height: calc(100vh - 591rpx - {{titleHeight}}px);" hidden="{{!tabCur}}" scroll-y>
     <view class="mulu-content">
         <view class="mulu-list">
             <view class="mulu-item" wx:for="{{lists}}" wx:key="index" bindtap="goCont" data-chapter="{{item.chapter}}">

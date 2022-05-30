@@ -74,7 +74,7 @@
 }
 
 .scroll-view {
-    height: calc(100vh - 720rpx);
+    
 }
 
 .addCollect {

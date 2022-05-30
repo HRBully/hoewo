@@ -86,6 +86,5 @@
         </view>
       </scroll-view>
     </view>
-    <page-container custom-style="height:auto;width:auto;position:absolute;top:40vh;left:50%;transform: translate(-50%);" data-unshow="1" overlay-style="background:none;" position="center"></page-container>
   </view>
 </template>
