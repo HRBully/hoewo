@@ -23,7 +23,7 @@ Page({
             name: 'search',
             data: {
                 content: value,
-                type:'books'
+                type:'bookintro'
             }
         }).then((res) => {
             console.log(res);
@@ -32,9 +32,9 @@ Page({
                 result
             } = res;
             let {
-                books,contents
+                bookintro,contents
             } = result;
-            if (!books) {
+            if (!bookintro) {
                 wx.showToast({
                     title: '暂无相关信息',
                     icon: 'none',
@@ -44,13 +44,13 @@ Page({
             console.log(util)
             util.loadScreen(that,1000)
             this.setData({
-                books
+                bookintro
             })
         })
     },
     goBook(e) {
         wx.navigateTo({
-            url: '../details/details?title=' + e.currentTarget.dataset.name
+            url: '../details/details?id=' + e.currentTarget.dataset.id + '&title=' + e.currentTarget.dataset.name
         })
     },
     /**

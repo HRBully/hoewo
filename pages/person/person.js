@@ -3,7 +3,7 @@ Page({
     data: {
         //判断小程序的API，回调，参数，组件等是否在当前版本可用。
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
-        heighttab:48,
+        heighttab: 48,
         loading: true,
         isHide: true,
         isLogin: true,
@@ -11,6 +11,7 @@ Page({
         openid: '',
         tabCur: 0, //默认选中
         collects: [],
+        bgcolor:'#72db95',
         tabs: [{
                 name: '收藏',
                 id: 0
@@ -48,30 +49,41 @@ Page({
         let that = this
         const app = getApp()
         this.setData({
-            heighttab:wx.getStorageSync('heightTabbar')
+            heighttab: wx.getStorageSync('heightTabbar')
         })
         this.isLogin()
-        util.loadScreen(that,2000)
+        util.loadScreen(that,1000)
         util.setSeason(that)
+        if(this.data.season !== 'spring') {
+            this.setData({
+                bgcolor:'#f3c3b0'
+            })
+        }
         this.setData({
-            setitems:  [{
+            setitems: [{
+                    text: '我的收藏',
+                    url: '/pages/collects/collects',
+                    icon: '../../images/personicon/' + app.globalData.season + '-collect.png',
+                    tips: '',
+                    arrows: ''
+                }, {
                     text: '意见反馈',
                     url: '/pages/opinion/opinion',
-                    icon: '../../images/personicon/'+app.globalData.season+'-advice.png',
+                    icon: '../../images/personicon/' + app.globalData.season + '-advice.png',
                     tips: '',
                     arrows: ''
                 },
                 {
                     text: '关于我们',
                     url: '/pages/about/about',
-                    icon: '../../images/personicon/'+app.globalData.season+'-about.png',
+                    icon: '../../images/personicon/' + app.globalData.season + '-about.png',
                     tips: '',
                     arrows: ''
                 },
                 {
                     text: '联系客服',
                     fun: 'customersService',
-                    icon: '../../images/personicon/'+app.globalData.season+'-service.png',
+                    icon: '../../images/personicon/' + app.globalData.season + '-service.png',
                     tips: '',
                     arrows: ''
                 }
@@ -153,7 +165,6 @@ Page({
                 _openid: openid
             }).get()
             .then(res => {
-                console.log(res.data)
                 this.setData({
                     collects: res.data
                 })
@@ -180,27 +191,17 @@ Page({
             })
         }
     },
-    removeCollect(e) {
-        let collect = e.currentTarget.dataset.item
-        wx.cloud.database().collection('collects').doc(collect._id).remove({
-            success: res => {
-                console.log(res)
-                wx.showToast({
-                    title: '取消收藏成功',
-                })
-                let arr = this.data.collects.filter(item => {
-                    return item._id !== collect._id
-                })
-                this.setData({
-                    collects: arr
-                })
-            }
-        })
-    },
     goBook(e) {
-        wx.navigateTo({
-            url: '../details/details?title=' + e.currentTarget.dataset.name
+        wx.cloud.database().collection('bookintro').where({
+            title: e.currentTarget.dataset.name
+        }).get().then(res => {
+            wx.navigateTo({
+                url: '../details/details?id=' + res.data[0]._id + '&title=' + e.currentTarget.dataset.name
+            })
         })
+        console.log(e.currentTarget.dataset.cId)
+
+
     },
     // 解决需要点击两次 tabbar 图标才会变换
     changeIcon() {

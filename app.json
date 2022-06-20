@@ -12,7 +12,8 @@
         "pages/cont/cont",
         "pages/identify/identify",
         "pages/about/about",
-        "pages/opinion/opinion"
+        "pages/opinion/opinion",
+        "pages/collects/collects"
     ],
     "tabBar": {
         "custom": true,

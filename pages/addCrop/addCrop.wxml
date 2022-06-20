@@ -16,7 +16,7 @@
   <search readOnly="true" bind:readOnlyEle="goSearch" />
 </view>
 <view class="book-list" hidden="{{hidden}}">
-    <view class="book-item" wx:for="{{books}}" wx:key="id" bindtap="goBook" data-name="{{item.title}}">
+    <view class="book-item" wx:for="{{books}}" wx:key="id" bindtap="goBook" data-id="{{item._id}}" data-name="{{item.title}}">
         <view class="book-poster">
             <image lazy-load="true" src="{{item.img}}" />
         </view>

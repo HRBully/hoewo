@@ -20,16 +20,17 @@ Page({
         isCollect: false,
         loading: true
     },
-    getintro(title) {
-        wx.cloud.database().collection('bookintro').where({
-            title: title
-        }).get().then(res => {
+    getintro(id) {
+        console.log(id)
+        wx.cloud.database().collection('bookintro').doc(id).get().then(res => {
             console.log(res)
             this.setData({
-                img: res.data[0].img,
-                intro: res.data[0].intro,
-                introduce: res.data[0]?.introduce,
-                lists: res.data[0].section
+                title:res.data.title,
+                img: res.data.img,
+                intro: res.data.intro,
+                introduce: res.data.introduce,
+                lists: res.data.section,
+                id:res.data.id
             })
             this.selectComponent('#preIntroduce').build();
         })
@@ -53,6 +54,7 @@ Page({
         console.log("执行一次")
         let openid = wx.getStorageSync('openid')
         if (openid) {
+            console.log(1)
             wx.cloud.database().collection('collects').add({
                 data: {
                     title: this.data.title,
@@ -117,10 +119,13 @@ Page({
         let that = this
         let app = getApp()
         let {
+            id,
             title
         } = options;
+        console.log(options)
         let openid = wx.getStorageSync('key')
         this.setData({
+            id,
             title,
             openid,
             titleHeight:app.globalData.titleHeight
@@ -131,6 +136,8 @@ Page({
         }).get().then(res => {
             console.log(res.data)
             res.data.forEach(item => {
+                console.log(this.data.title === item.title)
+                console.log(this.data.title,item.title)
                 if (this.data.title === item.title) {
                     this.setData({
                         isCollect: true
@@ -139,7 +146,7 @@ Page({
             })
 
         })
-        this.getintro(title)
+        this.getintro(id)
         util.loadScreen(that, 500)
         util.setSeason(that)
     },

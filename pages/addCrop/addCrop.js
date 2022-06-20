@@ -26,8 +26,9 @@ Page({
     },
     // 详情路由跳转
     goBook(e) {
+        console.log(e.currentTarget.dataset.id)
         wx.navigateTo({
-            url: '../details/details?title=' + e.currentTarget.dataset.name
+            url: '../details/details?id=' + e.currentTarget.dataset.id + '&title=' + e.currentTarget.dataset.name
         })
     },
     /**
@@ -48,7 +49,7 @@ Page({
         wx.showLoading({
             title: '加载中',
         })
-        wx.cloud.database().collection('books').skip(n).limit(8).get().then(res => {
+        wx.cloud.database().collection('bookintro').skip(n).limit(8).get().then(res => {
             console.log(res.data)
             wx.hideLoading()
             this.setData({
@@ -92,7 +93,7 @@ Page({
         this.setData({
             books: []
         })
-        wx.cloud.database().collection('books').skip(this.data.books.length).limit(7).get().then(res => {
+        wx.cloud.database().collection('bookintro').skip(this.data.books.length).limit(7).get().then(res => {
             console.log(res.data)
             wx.hideLoading()
             this.setData({

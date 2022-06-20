@@ -97,10 +97,11 @@ Page({
                     duration: 1500
                 })
             }
-            console.log(contents)
+            contents.splice(6,contents.length-1)
             this.setData({
-                contents
+                contents:contents
             })
+            console.log()
             console.log(this.data.contents)
         })
     },
@@ -171,10 +172,15 @@ Page({
     },
     // 生命周期函数--监听页面加载
     onLoad: function (options) {
+        let app = getApp()
         let that = this
         util.loadScreen(that,1000)
         util.setSeason(that)
         console.log(wx.getStorageSync('heightTabbar'))
+        this.setData({
+            titleHeight:app.globalData.titleHeight,
+            heightTabbar:wx.getStorageSync('heightTabbar')
+        })
     },
     // 生命周期函数--监听页面显示
     onShow: function () {

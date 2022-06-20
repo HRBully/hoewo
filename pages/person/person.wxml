@@ -2,6 +2,7 @@
 <import src="person.skeleton.wxml" />
 <template is="skeleton" wx:if="{{loading}}" />
 <Header  customTitle="个人中心"></Header>
+<view class="head-bg" style="background-color: {{bgcolor}};"></view>
 <view class="head" wx:if="{{!isLogin&&!loading}}" bindtap="login">
     <image src="../../images/{{season}}-people.png" class="head-img"></image>
     <view class="head-name">点击登录</view>
@@ -10,26 +11,7 @@
     <image src="{{userImg}}" class="head-img"></image>
     <view class="head-name">{{userName}}</view>
 </view>
-<scroll-view scroll-x class="navbar " scroll-with-animation scroll-left="{{scrollLeft}}rpx" wx:if="{{!loading}}">
-    <view class="nav-item" wx:for="{{tabs}}" wx:key="id" bindtap="tabSelect" data-id="{{index}}">
-        <view class="nav-text {{index==tabCur?season+'-tab-on':''}}">{{item.name}}</view>
-    </view>
-</scroll-view>
-<view wx:if="{{!tabCur}}">
-    <scroll-view class="scroll-view" wx:if="{{!loading&&isLogin}}" scroll-y class="book-list" style="height: calc(100vh - 700rpx);">
-            <view class="book-item" wx:for="{{collects}}" wx:key="id" bindtap="goBook" data-name="{{item.title}}">
-                <view class="book-poster">
-                    <image src="{{item.img}}" />
-                </view>
-                <view class="book-info">
-                    <view class="book-info-title">{{item.title}}</view>
-                    <view class="book-info-other">{{item.intro}}</view>
-                </view>
-            </view>
-    </scroll-view>
-
-</view>
-<view wx:if="{{tabCur}}" class="set">
+<view  class="set" wx:if="{{!loading}}">
     <view class="set-body">
         <block wx:for="{{setitems}}" wx:key="setitem">
             <navigator url="{{item.fun ? '#' : item.url}}" class="set-list" catchtap="{{item.fun}}">

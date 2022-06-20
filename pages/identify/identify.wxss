@@ -18,10 +18,15 @@
     margin: 20rpx;
     width: 95%;
 }
-.center-text {
+.spring-center-text {
 
     text-align: center;
     color: #35d492;
+    font-size: 25rpx;
+}
+.autumn-center-text {
+    text-align: center;
+    color: #fab69f;
     font-size: 25rpx;
 }
 .selece-img {
@@ -83,7 +88,7 @@
 }
 
 .scroll-view {
-    height: calc(100vh - 850rpx);
+    height: calc(100vh - 900rpx);
 }
 
 .mulu-content {

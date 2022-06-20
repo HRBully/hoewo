@@ -1,10 +1,9 @@
-<!--pages/search/search.wxml-->
-<Header  backHomeFlag customTitle="搜一搜"></Header>
-<search bind:search="search" />
-<import src="search.skeleton.wxml"/>
+<!--pages/collects/collects.wxml-->
+<import src="collects.skeleton.wxml"/>
 <template is="skeleton" wx:if="{{loading}}" />
-<view class="book-list" wx:if="{{!loading}}">
-    <view class="book-item" wx:for="{{bookintro}}" wx:key="id" bindtap="goBook" data-id="{{item._id}}" data-name="{{item.title}}">
+<Header  backHomeFlag customTitle="农作物详情"></Header>
+<view class="book-list">
+    <view class="book-item" wx:for="{{collects}}" wx:key="id" bindtap="goBook" data-name="{{item.title}}" data-id="{{item.id}}">
         <view class="book-poster">
             <image src="{{item.img}}" />
         </view>

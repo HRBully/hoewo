@@ -6,16 +6,16 @@
     <view class="content">
       <!-- <image mode="aspectFill" src="/images/logo.png"></image> -->
       <!-- <image mode="aspectFill" src="cloud://cloud1-0gekdmc8c1d576f8.636c-cloud1-0gekdmc8c1d576f8-1311277417/devmember/logo.png"></image> -->
-      <text></text>
+      <text>口袋农识小程序是以推广农业作物，农业病害解决百科为主，附加天气，农业新闻，农业资讯等服务，其以农害识别智能推荐为核心来帮助农民防治病虫害，达到一个良好的防治效果</text>
     </view>
   </view>
-  <view class="member">
+  <!-- <view class="member">
     <view class="title {{season}}-title">开发成员</view>
     <view class="content">
-      <!-- <image mode="aspectFill" src="cloud://cloud1-0gekdmc8c1d576f8.636c-cloud1-0gekdmc8c1d576f8-1311277417/devmember/ned.png"></image>
+      <image mode="aspectFill" src="cloud://cloud1-0gekdmc8c1d576f8.636c-cloud1-0gekdmc8c1d576f8-1311277417/devmember/ned.png"></image>
       <image mode="aspectFill" src="cloud://cloud1-0gekdmc8c1d576f8.636c-cloud1-0gekdmc8c1d576f8-1311277417/devmember/hogskin.jpg"></image>
-      <image mode="aspectFill" src="cloud://cloud1-0gekdmc8c1d576f8.636c-cloud1-0gekdmc8c1d576f8-1311277417/devmember/conard.jpg"></image> -->
+      <image mode="aspectFill" src="cloud://cloud1-0gekdmc8c1d576f8.636c-cloud1-0gekdmc8c1d576f8-1311277417/devmember/conard.jpg"></image>
     </view>
 
-  </view>
+  </view> -->
 </view>

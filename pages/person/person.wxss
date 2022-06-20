@@ -1,24 +1,32 @@
 /* pages/person/person.wxss */
 @import "./person.skeleton.wxss";
 
+.head-bg {
+    height: 150rpx;
+}
 .head {
     width: 100%;
     height: 300rpx;
+    position: relative;
+    top: -120rpx;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 }
 
 .head-img {
     width: 150rpx;
     height: 150rpx;
     margin-bottom: 20rpx;
+    border-radius: 50%;
 }
 
 .navbar {
     width: 100%;
     height: 90rpx;
+    position: relative;
     /* 文本不换行 */
     white-space: nowrap;
     display: flex;
@@ -26,6 +34,7 @@
     border-bottom: 1rpx solid #eee;
     background: #fff;
     align-items: center;
+    top: -120rpx;
 }
 
 .nav-item {
@@ -47,7 +56,6 @@
     letter-spacing: 4rpx;
     box-sizing: border-box;
 }
-
 .spring-tab-on {
     color: #2c7546;
     /* 选中放大 */
@@ -164,7 +172,8 @@
 }
 
 .set {
-    margin-top: 50rpx;
+   position: relative;
+   top: -100rpx;
     display: flex;
     flex-direction: column;
     align-items: center;

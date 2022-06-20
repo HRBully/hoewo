@@ -26,6 +26,7 @@
     <text>{{item.score}}</text>
   </view>
 </view> -->
+<view wx:if="{{contents.length}}" class="{{season}}-center-text">根据识别结果为您推荐以下内容</view>
 <scroll-view class="scroll-view" scroll-y>
     <view class="mulu-content">
         <view class="mulu-list">
@@ -40,4 +41,3 @@
         </view>
     </view>
 </scroll-view>
-<view wx:if="{{contents.length}}" class="center-text">根据识别结果为您推荐以上内容</view>
