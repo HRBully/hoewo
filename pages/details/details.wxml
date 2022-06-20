@@ -10,7 +10,6 @@
             </view>
             <view class="info">
                 <view class="title">{{title}}</view>
-                <view class="center"></view>
                 <view class="media">{{intro}}</view>
             </view>
         </view>

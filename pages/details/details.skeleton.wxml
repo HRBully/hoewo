@@ -18,7 +18,7 @@
 <template name="skeleton">
   <view class="sk-container">
     <view is="components/headBar/headBar">
-      <view class="headBar--customHeader_box" style="height:84px; background-color:#72db95;">
+      <view class="headBar--customHeader_box" >
         <view class="headBar--backHome_box" style="width:87px; height:32px; top:48px;">
           <view class="headBar--customIcon headBar--backIcon">
             <image class="sk-image"></image>
@@ -34,14 +34,13 @@
       <view class="headBar--customWrap" style="height:84px;"></view>
     </view>
     <view class="card-container">
-      <view class="book-card-header">
-        <view class="spring-book-info book-info">
+      <view class="">
+        <view class="spring-book-info book-info" style="border-color: #eeeeee;">
           <view class="poster">
             <image mode="aspectFill" class="sk-image"></image>
           </view>
           <view class="info">
             <view class="title sk-transparent sk-text-14-2857-192 sk-text">玉米2</view>
-            <view class="center"></view>
             <view class="media sk-transparent sk-text-14-2857-38 sk-text">秦腔也称“乱弹”，是现存最古老、最大的剧种，被誉为百戏之源，流行遍及中国西北地区的陕西、甘肃、青海、宁夏、西藏一带。</view>
           </view>
         </view>

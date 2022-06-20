@@ -17,8 +17,8 @@
 -->
 <template name="skeleton">
   <view class="sk-container">
-    <view is="components/headBar/headBar">
-      <view class="headBar--customHeader_box" style="height:84px; background-color:#72db95;">
+    <view >
+      <view class="headBar--customHeader_box" >
         <view class="headBar--customHeader_title sk-transparent sk-text-25-0000-135 sk-text" style="top: 48px; height: 32px; line-height: 32px; background-position-x: 50%;">
           百科
         </view>

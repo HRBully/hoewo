@@ -17,8 +17,8 @@
 -->
 <template name="skeleton">
   <view class="sk-container">
-    <view is="components/headBar/headBar">
-      <view class="headBar--customHeader_box" style="height:84px; background-color:#72db95;">
+    <view >
+      <view class="headBar--customHeader_box" >
         <view class="headBar--menu_box" style="height:32px; top:48px;">
           <view class="headBar--customIcon">
             <image class="sk-image"></image>
