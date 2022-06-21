@@ -11,7 +11,7 @@
  -->
 <import src="addCrop.skeleton.wxml"/>
 <template is="skeleton" wx:if="{{loading}}" />
-<Header  customTitle="百科"></Header>
+<Header  customTitle="农识百科"></Header>
 <view class="header" wx:if="{{!loading}}">
   <search readOnly="true" bind:readOnlyEle="goSearch" />
 </view>

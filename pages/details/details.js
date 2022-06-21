@@ -147,7 +147,7 @@ Page({
 
         })
         this.getintro(id)
-        util.loadScreen(that, 500)
+        util.loadScreen(that, 300)
         util.setSeason(that)
     },
 

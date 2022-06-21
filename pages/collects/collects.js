@@ -26,7 +26,7 @@ Page({
                 this.setData({
                     collects: res.data
                 })
-                util.loadScreen(this, 2000)
+                util.loadScreen(this, 1500)
                 util.setSeason(this)
             })
     },
@@ -44,14 +44,15 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady() {
-
+        
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        let openid = wx.getStorageSync('openid')
+        this.getCollects(openid)
     },
 
     /**

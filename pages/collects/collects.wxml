@@ -1,8 +1,8 @@
 <!--pages/collects/collects.wxml-->
 <import src="collects.skeleton.wxml"/>
 <template is="skeleton" wx:if="{{loading}}" />
-<Header  backHomeFlag customTitle="农作物详情"></Header>
-<view class="book-list">
+<Header  backHomeFlag customTitle="我的收藏"></Header>
+<view class="book-list" hidden="{{loading}}">
     <view class="book-item" wx:for="{{collects}}" wx:key="id" bindtap="goBook" data-name="{{item.title}}" data-id="{{item.id}}">
         <view class="book-poster">
             <image src="{{item.img}}" />

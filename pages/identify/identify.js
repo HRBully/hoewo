@@ -170,6 +170,11 @@ Page({
             })
         }
     },
+    goCont(e) {
+        wx.navigateTo({
+            url: '../cont/cont?title=' + e.currentTarget.dataset.title + '&&chapter=' + e.currentTarget.dataset.chapter,
+        })
+    },
     // 生命周期函数--监听页面加载
     onLoad: function (options) {
         let app = getApp()

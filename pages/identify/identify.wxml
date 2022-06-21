@@ -30,10 +30,10 @@
 <scroll-view class="scroll-view" scroll-y>
     <view class="mulu-content">
         <view class="mulu-list">
-            <view class="mulu-item" wx:for="{{contents}}" wx:key="index" bindtap="goCont" data-chapter="{{item.chapter}}">
+            <view class="mulu-item" wx:for="{{contents}}" wx:key="index" bindtap="goCont" data-chapter="{{item.chapter}}" data-title="{{item.title}}">
                 <view class="left {{season}}-item">{{index+1}}</view>
                 <view class="mid">
-                    <view class="mulu-title">{{item.title}}</view>
+                    <view class="mulu-title">{{item.name}}</view>
                     <view class="mulu-intro">{{}}</view>
                 </view>
             </view>
