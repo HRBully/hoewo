@@ -103,11 +103,10 @@
     } 
 } 
 .solarTerm {
-    font-family: '华文行楷';
     position: relative;
     right: 60rpx;
     width: 35rpx;
-    font-size: 100rpx;
+    font-size: 70rpx;
     animation: 2s linear 0s normal enter;
 }
 @keyframes enter {

@@ -55,6 +55,12 @@ Page({
             this.setData({
                 books: this.data.books.concat(res.data)
             })
+            if(res.data.length === 0) {
+                wx.showToast({
+                  title: '已经到底了',
+                  icon:"none"
+                })
+            }
         })
     },
      /**

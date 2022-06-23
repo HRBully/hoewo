@@ -40,9 +40,11 @@ Page({
     //植物识别
     plant() {
         if (!this.data.base64Img) {
-            this.setData({
-                isShow: true
-            })
+            wx.showToast({
+                title: '识别前请上传图片',
+                icon: 'none',
+                duration:2000
+              })
             return
         }
         this.getToken()
