@@ -27,7 +27,7 @@
             },
             {
                 "pagePath": "pages/addCrop/addCrop",
-                "text": "添加"
+                "text": "农识"
             },
             {
                 "pagePath": "pages/identify/identify",

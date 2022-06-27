@@ -53,7 +53,7 @@ Component({
             selectedIconPath: `../images/tabicon/${season}-book-active.png`,
             iconPath: `../images/tabicon/spring-book.png`,
             pagePath: "../addCrop/addCrop",
-            text: "添加"
+            text: "农识"
         }, {
             selectedIconPath: `../images/tabicon/${season}-camera-active.png`,
             iconPath: `../images/tabicon/spring-camera.png`,

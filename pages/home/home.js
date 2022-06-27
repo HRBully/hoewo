@@ -284,6 +284,7 @@ Page({
      */
     onReady: function () {
         this.getHeight()
+        // this.getSwiperHeight()
     },
     /**
      * 生命周期函数--监听页面显示
