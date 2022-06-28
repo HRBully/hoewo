@@ -77,7 +77,7 @@ Component({
                 city = wx.getStorageSync('city')
             }
             wx.request({
-                url: `https://yiketianqi.com/api?unescape=1&version=v1&appid=44831462&appsecret=nyT7UNR2&city=${city}`,
+                url: `https://v0.yiketianqi.com/free/week/api?unescape=1&version=v1&appid=44831462&appsecret=nyT7UNR2&city=${city}`,
                 success: (res) => {
                     // 今日日期
                     let date = res.data.data[0].date
@@ -89,6 +89,8 @@ Component({
                     let nextdateArry = date.split('-')
                     let nextmonth = dateArry[1] * 1
                     let nextday = dateArry[2] * 1
+                    let Nexttem = ( res.data.data[1].tem_day * 1 + res.data.data[1].tem_night * 1 ) / 2
+                    let nexttem = Math.ceil(Nexttem) + '℃'
                     this.setData({
                         // 今日
                         month,
@@ -96,12 +98,13 @@ Component({
                         // 明日
                         nextmonth,
                         nextday,
+                        nexttem,
                         nextwea_img: `../../images/tianqi/${res.data.data[1].wea_img}.png`,
                         nextwea: res.data.data[1].wea,
-                        nexttem: res.data.data[1].tem,
-                        nexttemH: res.data.data[1].tem1,
-                        nexttemL: res.data.data[1].tem2,
-                        nextwin: res.data.data[1].win.join('/'),
+                        nexttemH: res.data.data[1].tem_day + '℃',
+                        nexttemL: res.data.data[1].tem_night + '℃',
+                        // nextwin: res.data.data[1].win.join('/'),
+                        nextwin: res.data.data[1].win
                     })
                 }
             })

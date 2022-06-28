@@ -55,7 +55,7 @@ Page({
             duration: 2000000
         })
         wx.request({
-            url: 'https://v0.yiketianqi.com/free/day/api?unescape=1&version=v1&appid=44831462&appsecret=nyT7UNR2',
+            url: `https://v0.yiketianqi.com/free/day/api?unescape=1&version=v1&appid=44831462&appsecret=nyT7UNR2`,
             //成功回调
             success: (res) => {
                 wx.hideToast();
@@ -111,7 +111,7 @@ Page({
             duration: 2000000
         })
         wx.request({
-            url: 'https://yiketianqi.com/api?unescape=1&version=v1&appid=44831462&appsecret=nyT7UNR2',
+            url: `https://v0.yiketianqi.com/free/week/api?unescape=1&version=v1&appid=44831462&appsecret=nyT7UNR2`,
             //成功回调
             success: (res) => {
                 wx.hideToast();
@@ -122,9 +122,10 @@ Page({
                     // 图片路径
                     item.weatherPic = `../../images/tianqi/${item.wea_img}.png`
                     // 白天气温
-                    item.tem1 = item.tem1.split('℃')[0]
+                    item.tem1 = item.tem_day
                     // 夜间气温
-                    item.tem2 = item.tem2.split('℃')[0]
+                    item.tem2 = item.tem_night
+                    item.date = item.date.split('-')[1] + '-' +item.date.split('-')[2] 
                 })
                 this.setData({
                     forecast

@@ -58,7 +58,7 @@
         <!-- 天气信息 -->
         <view class="container">
             <view style="width: 100%;" wx:for="{{ forecast }}" wx:index="index" wx:key="week" class="item">
-                <view>{{ item.day }}</view>
+                <view>{{ item.date }}</view>
                 <view class="info">
                     <image class="icon" src="{{ item.weatherPic }}"></image>
                     <view class="type">{{ item.wea }} </view>
