@@ -28,7 +28,7 @@
     <view class="article" wx:if="{{!loading}}">
         <!-- 文章选择类型 -->
         <view class="article-select">
-            <view class="select {{selectFlag?season+'-active':''}}" bindtap="toConsult">咨询</view>
+            <view class="select {{selectFlag?season+'-active':''}}" bindtap="toConsult">资讯</view>
             <view class="select {{selectFlag?'':season+'-active'}}" bindtap="toNews">新闻</view>
         </view>
         <swiper class="article-swiper" style="height: {{currentHeight}}px; " bindchange="swiperChange" current="{{currentTab}}">
