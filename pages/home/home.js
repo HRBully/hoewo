@@ -284,7 +284,7 @@ Page({
      */
     onReady: function () {
         this.getHeight()
-        // this.getSwiperHeight()
+        this.getSwiperHeight()
     },
     /**
      * 生命周期函数--监听页面显示
@@ -292,7 +292,7 @@ Page({
     onShow: function () {
         
         this.changeIcon()
-        this.getSwiperHeight()
+        // this.getSwiperHeight()
     },
 
     /**
